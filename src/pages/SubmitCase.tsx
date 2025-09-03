@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import { useTeamAuth } from "@/contexts/TeamAuthContext";
 import { useWebhookSettings } from "@/hooks/useWebhookSettings";
+import { genCaseProtocol, genTeamRecord } from "@/lib/ids";
 import ProtectedRoute from "@/components/ProtectedRoute";
 
 const SubmitCase = () => {
@@ -29,24 +30,6 @@ const SubmitCase = () => {
     consent: false
   });
   const [files, setFiles] = useState<File[]>([]);
-
-  const generateProtocol = () => {
-    const now = new Date();
-    const year = now.getFullYear();
-    const month = String(now.getMonth() + 1).padStart(2, '0');
-    const day = String(now.getDate()).padStart(2, '0');
-    const random = Math.random().toString(36).substr(2, 4).toUpperCase();
-    return `THE-${year}${month}${day}-${random}`;
-  };
-
-  const generateTeamRecord = () => {
-    if (!teamData) return '';
-    const year = new Date().getFullYear();
-    const random = Math.random().toString(36).substr(2, 4).toUpperCase();
-    return `${teamData.team_id}-${year}-${random}`;
-  };
-
-  // ... keep existing code (file handling functions, validation, etc.)
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFiles = Array.from(e.target.files || []);
@@ -152,8 +135,8 @@ const SubmitCase = () => {
     setIsSubmitting(true);
 
     try {
-      const caseProtocol = generateProtocol();
-      const teamRecord = generateTeamRecord();
+      const caseProtocol = genCaseProtocol();
+      const teamRecord = genTeamRecord(teamData?.team_id || '');
       
       // Create file URLs (in a real implementation, these would be signed URLs)
       const fileData = files.map(file => ({
@@ -411,7 +394,7 @@ const SubmitCase = () => {
                       Consentimento para Análise *
                     </Label>
                     <p className="text-xs text-muted-foreground leading-relaxed">
-                      Autorizo o uso dos dados e arquivos enviados exclusivamente para análise do meu caso e geração do Relatório Themis. 
+                      Autorizo o uso dos dados e arquivos enviados exclusivamente para análise do meu caso e geração do Relatório Themis™. 
                       Estou ciente de que este serviço não substitui avaliação médica ou jurídica.
                     </p>
                   </div>
@@ -432,206 +415,6 @@ const SubmitCase = () => {
         </div>
       </div>
     </ProtectedRoute>
-  );
-
-  return (
-    <div className="min-h-screen bg-gradient-secondary">
-      {/* Header */}
-      <header className="border-b bg-card/80 backdrop-blur-sm sticky top-0 z-10">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <Link to="/" className="flex items-center space-x-3">
-              <div className="w-10 h-10 gradient-primary rounded-lg flex items-center justify-center">
-                <Scale className="w-6 h-6 text-primary-foreground" />
-              </div>
-              <h1 className="text-2xl font-bold text-primary">Themis</h1>
-            </Link>
-            <Link to="/">
-              <Button variant="outline" className="transition-smooth">
-                <ArrowLeft className="w-4 h-4 mr-2" />
-                Voltar
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </header>
-
-      {/* Main Content */}
-      <div className="container mx-auto px-4 py-8 max-w-2xl">
-        <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold text-primary mb-4">Enviar Caso</h2>
-          <p className="text-lg text-muted-foreground">
-            Preencha as informações do seu caso para análise jurídico-médica
-          </p>
-        </div>
-
-        <Card className="shadow-elegant">
-          <CardHeader>
-            <CardTitle className="text-primary">Informações do Caso</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Nome Completo */}
-              <div className="space-y-2">
-                <Label htmlFor="requesterName" className="text-sm font-medium text-foreground">
-                  Nome Completo *
-                </Label>
-                <Input
-                  id="requesterName"
-                  type="text"
-                  placeholder="Digite seu nome completo"
-                  value={formData.requesterName}
-                  onChange={(e) => setFormData(prev => ({ ...prev, requesterName: e.target.value }))}
-                  className="transition-smooth focus:ring-2 focus:ring-primary/20"
-                  required
-                />
-              </div>
-
-              {/* Email */}
-              <div className="space-y-2">
-                <Label htmlFor="requesterEmail" className="text-sm font-medium text-foreground">
-                  Email *
-                </Label>
-                <Input
-                  id="requesterEmail"
-                  type="email"
-                  placeholder="seu@email.com"
-                  value={formData.requesterEmail}
-                  onChange={(e) => setFormData(prev => ({ ...prev, requesterEmail: e.target.value }))}
-                  className="transition-smooth focus:ring-2 focus:ring-primary/20"
-                  required
-                />
-              </div>
-
-              {/* Estágio do Processo */}
-              <div className="space-y-2">
-                <Label className="text-sm font-medium text-foreground">
-                  Estágio do Processo *
-                </Label>
-                <Select value={formData.stage} onValueChange={(value) => setFormData(prev => ({ ...prev, stage: value }))}>
-                  <SelectTrigger className="transition-smooth focus:ring-2 focus:ring-primary/20">
-                    <SelectValue placeholder="Selecione o estágio atual" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="inicial">Inicial</SelectItem>
-                    <SelectItem value="contestacao">Contestação</SelectItem>
-                    <SelectItem value="laudo">Laudo</SelectItem>
-                    <SelectItem value="parecer">Parecer</SelectItem>
-                    <SelectItem value="recurso">Recurso</SelectItem>
-                    <SelectItem value="outro">Outro</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-
-              {/* Descrição do Caso */}
-              <div className="space-y-2">
-                <Label htmlFor="description" className="text-sm font-medium text-foreground">
-                  Descrição do Caso * ({formData.description.length}/1500)
-                </Label>
-                <Textarea
-                  id="description"
-                  placeholder="Descreva detalhadamente o caso médico-legal, incluindo circunstâncias, questões médicas envolvidas e objetivos da análise..."
-                  value={formData.description}
-                  onChange={(e) => setFormData(prev => ({ ...prev, description: e.target.value }))}
-                  className="min-h-[150px] transition-smooth focus:ring-2 focus:ring-primary/20"
-                  maxLength={1500}
-                  required
-                />
-                <p className="text-xs text-muted-foreground">
-                  Mínimo 200 caracteres, máximo 1500 caracteres
-                </p>
-              </div>
-
-              {/* Upload de Arquivos */}
-              <div className="space-y-2">
-                <Label className="text-sm font-medium text-foreground">
-                  Documentos PDF * (1-5 arquivos, máx. 10MB cada)
-                </Label>
-                <div className="border-2 border-dashed border-border rounded-lg p-6 text-center transition-smooth hover:border-primary/50">
-                  <Upload className="w-8 h-8 text-muted-foreground mx-auto mb-2" />
-                  <div className="space-y-2">
-                    <p className="text-sm text-muted-foreground">
-                      Clique para selecionar ou arraste arquivos PDF aqui
-                    </p>
-                    <Input
-                      type="file"
-                      accept=".pdf"
-                      multiple
-                      onChange={handleFileChange}
-                      className="hidden"
-                      id="file-upload"
-                    />
-                    <Label
-                      htmlFor="file-upload"
-                      className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 cursor-pointer"
-                    >
-                      Selecionar Arquivos
-                    </Label>
-                  </div>
-                </div>
-
-                {/* Lista de Arquivos */}
-                {files.length > 0 && (
-                  <div className="space-y-2 mt-4">
-                    <p className="text-sm font-medium text-foreground">Arquivos selecionados:</p>
-                    {files.map((file, index) => (
-                      <div key={index} className="flex items-center justify-between p-3 bg-muted rounded-lg">
-                        <div className="flex items-center space-x-3">
-                          <FileText className="w-5 h-5 text-primary" />
-                          <div>
-                            <p className="text-sm font-medium text-foreground">{file.name}</p>
-                            <p className="text-xs text-muted-foreground">{formatFileSize(file.size)}</p>
-                          </div>
-                        </div>
-                        <Button
-                          type="button"
-                          variant="ghost"
-                          size="sm"
-                          onClick={() => removeFile(index)}
-                          className="text-destructive hover:text-destructive hover:bg-destructive/10"
-                        >
-                          <X className="w-4 h-4" />
-                        </Button>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              {/* Consentimento */}
-              <div className="flex items-start space-x-3 p-4 bg-muted/50 rounded-lg">
-                <Checkbox
-                  id="consent"
-                  checked={formData.consent}
-                  onCheckedChange={(checked) => setFormData(prev => ({ ...prev, consent: checked as boolean }))}
-                  className="mt-0.5"
-                />
-                <div className="space-y-1">
-                  <Label htmlFor="consent" className="text-sm font-medium text-foreground cursor-pointer">
-                    Consentimento para Análise *
-                  </Label>
-                  <p className="text-xs text-muted-foreground leading-relaxed">
-                    Autorizo a Themis a analisar os documentos fornecidos para fins de parecer jurídico-médico. 
-                    Confirmo que todos os dados pessoais foram devidamente anonimizados e que possuo autorização 
-                    para compartilhar as informações médicas contidas nos documentos.
-                  </p>
-                </div>
-              </div>
-
-              {/* Submit Button */}
-              <Button
-                type="submit"
-                size="lg"
-                disabled={isSubmitting}
-                className="w-full gradient-primary text-primary-foreground shadow-button hover:shadow-elegant transition-bounce hover:scale-[1.02] disabled:hover:scale-100"
-              >
-                {isSubmitting ? "Enviando..." : "Enviar Caso para Análise"}
-              </Button>
-            </form>
-          </CardContent>
-        </Card>
-      </div>
-    </div>
   );
 };
 
