@@ -8,7 +8,7 @@ import { useToast } from "@/hooks/use-toast";
 const Confirmation = () => {
   const location = useLocation();
   const { toast } = useToast();
-  const { protocolNumber, email } = location.state || {};
+  const { protocolNumber, teamRecord, email, teamId } = location.state || {};
 
   useEffect(() => {
     // If no protocol number, redirect to home
@@ -38,7 +38,7 @@ const Confirmation = () => {
             <div className="w-10 h-10 gradient-primary rounded-lg flex items-center justify-center">
               <Scale className="w-6 h-6 text-primary-foreground" />
             </div>
-            <h1 className="text-2xl font-bold text-primary">Themis</h1>
+            <h1 className="text-2xl font-bold text-primary">Themis™</h1>
           </Link>
         </div>
       </header>
