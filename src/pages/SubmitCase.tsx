@@ -473,15 +473,15 @@ const SubmitCase = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Nome Completo */}
               <div className="space-y-2">
-                <Label htmlFor="fullName" className="text-sm font-medium text-foreground">
+                <Label htmlFor="requesterName" className="text-sm font-medium text-foreground">
                   Nome Completo *
                 </Label>
                 <Input
-                  id="fullName"
+                  id="requesterName"
                   type="text"
                   placeholder="Digite seu nome completo"
-                  value={formData.fullName}
-                  onChange={(e) => setFormData(prev => ({ ...prev, fullName: e.target.value }))}
+                  value={formData.requesterName}
+                  onChange={(e) => setFormData(prev => ({ ...prev, requesterName: e.target.value }))}
                   className="transition-smooth focus:ring-2 focus:ring-primary/20"
                   required
                 />
@@ -489,15 +489,15 @@ const SubmitCase = () => {
 
               {/* Email */}
               <div className="space-y-2">
-                <Label htmlFor="email" className="text-sm font-medium text-foreground">
+                <Label htmlFor="requesterEmail" className="text-sm font-medium text-foreground">
                   Email *
                 </Label>
                 <Input
-                  id="email"
+                  id="requesterEmail"
                   type="email"
                   placeholder="seu@email.com"
-                  value={formData.email}
-                  onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+                  value={formData.requesterEmail}
+                  onChange={(e) => setFormData(prev => ({ ...prev, requesterEmail: e.target.value }))}
                   className="transition-smooth focus:ring-2 focus:ring-primary/20"
                   required
                 />
@@ -508,7 +508,7 @@ const SubmitCase = () => {
                 <Label className="text-sm font-medium text-foreground">
                   Estágio do Processo *
                 </Label>
-                <Select value={formData.processStage} onValueChange={(value) => setFormData(prev => ({ ...prev, processStage: value }))}>
+                <Select value={formData.stage} onValueChange={(value) => setFormData(prev => ({ ...prev, stage: value }))}>
                   <SelectTrigger className="transition-smooth focus:ring-2 focus:ring-primary/20">
                     <SelectValue placeholder="Selecione o estágio atual" />
                   </SelectTrigger>
@@ -525,14 +525,14 @@ const SubmitCase = () => {
 
               {/* Descrição do Caso */}
               <div className="space-y-2">
-                <Label htmlFor="caseDescription" className="text-sm font-medium text-foreground">
-                  Descrição do Caso * ({formData.caseDescription.length}/1500)
+                <Label htmlFor="description" className="text-sm font-medium text-foreground">
+                  Descrição do Caso * ({formData.description.length}/1500)
                 </Label>
                 <Textarea
-                  id="caseDescription"
+                  id="description"
                   placeholder="Descreva detalhadamente o caso médico-legal, incluindo circunstâncias, questões médicas envolvidas e objetivos da análise..."
-                  value={formData.caseDescription}
-                  onChange={(e) => setFormData(prev => ({ ...prev, caseDescription: e.target.value }))}
+                  value={formData.description}
+                  onChange={(e) => setFormData(prev => ({ ...prev, description: e.target.value }))}
                   className="min-h-[150px] transition-smooth focus:ring-2 focus:ring-primary/20"
                   maxLength={1500}
                   required
