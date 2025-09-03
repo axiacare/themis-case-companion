@@ -41,11 +41,11 @@ const Index = () => {
         <div className="container mx-auto text-center max-w-4xl">
           <div className="mb-8">
             <h2 className="text-5xl font-bold text-primary mb-6">
-              Themis™ • Assistente jurídico médica
-              <span className="block text-muted-foreground text-3xl mt-2">para equipes</span>
+              Themis™
+              <span className="block text-muted-foreground text-3xl mt-2">um ambiente inteligente em necessidades jurídicas na saúde</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Ambiente interno e seguro para análise de casos e geração de relatórios/quesitos com apoio de IA.
+              Ambiente interno e seguro, pensado para equipes. Gera relatórios e quesitos para diferentes necessidades jurídico-médicas, com automações e motores de IA.
             </p>
           </div>
           
@@ -72,9 +72,9 @@ const Index = () => {
                 <div className="w-16 h-16 gradient-primary rounded-full flex items-center justify-center mx-auto mb-4 shadow-button">
                   <Users className="w-8 h-8 text-primary-foreground" />
                 </div>
-                <h4 className="text-lg font-semibold text-primary mb-3">1. Acesso da Equipe</h4>
+                <h4 className="text-lg font-semibold text-primary mb-3">1. Acesso da equipe</h4>
                 <p className="text-sm text-muted-foreground">
-                  A equipe acessa o ambiente com login institucional (ID da equipe + senha)
+                  A equipe entra com login institucional (ID da equipe + senha).
                 </p>
               </CardContent>
             </Card>
@@ -84,9 +84,9 @@ const Index = () => {
                 <div className="w-16 h-16 gradient-primary rounded-full flex items-center justify-center mx-auto mb-4 shadow-button">
                   <FileText className="w-8 h-8 text-primary-foreground" />
                 </div>
-                <h4 className="text-lg font-semibold text-primary mb-3">2. Envio de Caso</h4>
+                <h4 className="text-lg font-semibold text-primary mb-3">2. Envio de caso</h4>
                 <p className="text-sm text-muted-foreground">
-                  Envia PDFs médicos e dados do caso através de formulário seguro
+                  Envie PDFs e os dados do caso por formulário seguro.
                 </p>
               </CardContent>
             </Card>
@@ -98,7 +98,7 @@ const Index = () => {
                 </div>
                 <h4 className="text-lg font-semibold text-primary mb-3">3. Análise IA</h4>
                 <p className="text-sm text-muted-foreground">
-                  A Themis™ organiza e gera o relatório estruturado com IA especializada
+                  A Themis organiza o material e estrutura pontos clínicos e técnico-jurídicos usando prompts privados versionados.
                 </p>
               </CardContent>
             </Card>
@@ -110,7 +110,7 @@ const Index = () => {
                 </div>
                 <h4 className="text-lg font-semibold text-primary mb-3">4. Entrega</h4>
                 <p className="text-sm text-muted-foreground">
-                  Relatório enviado por email com protocolo do caso e registro da equipe
+                  O relatório estruturado chega no e-mail institucional com protocolo do caso e registro da equipe.
                 </p>
               </CardContent>
             </Card>
@@ -118,50 +118,17 @@ const Index = () => {
         </div>
       </section>
 
-      {/* AxControl/AxSet Section */}
+      {/* O que é a Themis */}
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-8">
+            <h3 className="text-3xl font-bold text-primary mb-6">O que é a Themis</h3>
+          </div>
           <Card className="shadow-elegant bg-gradient-accent border-primary/20">
             <CardContent className="p-8">
-              <div className="text-center mb-6">
-                <h3 className="text-2xl font-bold text-primary mb-4">
-                  AxControl Themis™ – Ambiente Inteligente em Necessidades Jurídicas na Saúde
-                </h3>
-                <p className="text-muted-foreground mb-4">
-                  <strong>Linha:</strong> Apoio Médico em Processos
-                </p>
-              </div>
-              
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-4">
-                  <div>
-                    <h4 className="font-semibold text-primary mb-2">AxSet ACORDO™</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Estruturando Quesitos Médicos
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-primary mb-2">Método</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Metodologia para construir quesitos técnicos que apoiam o jurídico
-                    </p>
-                  </div>
-                </div>
-                <div className="space-y-4">
-                  <div>
-                    <h4 className="font-semibold text-primary mb-2">Visual</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Relatório Estruturado
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-primary mb-2">Automação</h4>
-                    <p className="text-sm text-muted-foreground">
-                      WebApp + Make + IA (OpenAI Responses)
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <p className="text-lg text-muted-foreground leading-relaxed text-center">
+                A Themis™ é um AxControl™ desenhado pela AxiaCare® para apoiar equipes em necessidades jurídicas na saúde. Combina método, visuais e inteligência (AxIntel™) para transformar documentos extensos em relatórios objetivos. Na parte de quesitos médicos, utiliza o AxSet ACORDO™ — uma metodologia prática para construir quesitos técnicos que apoiam o jurídico e organizam a atuação clínica da equipe. A entrega ocorre por relatórios estruturados, produzidos a partir dos PDFs enviados pelo ambiente da equipe e disponibilizados no e-mail institucional.
+              </p>
             </CardContent>
           </Card>
         </div>
@@ -171,7 +138,7 @@ const Index = () => {
       <section className="py-16 px-4 bg-card">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-primary mb-4">Por que Escolher a Themis™?</h3>
+            <h3 className="text-3xl font-bold text-primary mb-4">Por que escolher a Themis</h3>
           </div>
           
           <div className="grid md:grid-cols-2 gap-8">
@@ -179,28 +146,12 @@ const Index = () => {
               <CardContent className="p-8">
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Shield className="w-6 h-6 text-primary-foreground" />
+                    <FileText className="w-6 h-6 text-primary-foreground" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-semibold text-primary mb-3">Segurança por Equipe</h4>
+                    <h4 className="text-xl font-semibold text-primary mb-3">Relatórios estruturados</h4>
                     <p className="text-muted-foreground">
-                      Dados segregados por equipe, ambiente controlado e auditável. Conformidade total LGPD.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="shadow-card">
-              <CardContent className="p-8">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Clock className="w-6 h-6 text-primary-foreground" />
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-semibold text-primary mb-3">Entrega Rápida</h4>
-                    <p className="text-muted-foreground">
-                      Relatórios técnicos estruturados em até 48 horas, acelerando seus processos jurídicos.
+                      Receba em poucos minutos no seu e-mail institucional, acelerando seus processos jurídicos.
                     </p>
                   </div>
                 </div>
@@ -214,9 +165,9 @@ const Index = () => {
                     <Building className="w-6 h-6 text-primary-foreground" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-semibold text-primary mb-3">Multi-tenant</h4>
+                    <h4 className="text-xl font-semibold text-primary mb-3">Multi-tenant por equipe</h4>
                     <p className="text-muted-foreground">
-                      Cada equipe possui ambiente isolado, com controle total sobre seus dados e casos.
+                      Dados segregados por equipe, com trilha auditável e governança institucional.
                     </p>
                   </div>
                 </div>
@@ -230,9 +181,25 @@ const Index = () => {
                     <Cpu className="w-6 h-6 text-primary-foreground" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-semibold text-primary mb-3">IA Especializada</h4>
+                    <h4 className="text-xl font-semibold text-primary mb-3">IA especializada</h4>
                     <p className="text-muted-foreground">
-                      Análise médico-legal com IA treinada em metodologias técnicas e normas jurídicas.
+                      Linguagem clara e metodologia de quesitos, alinhadas ao trabalho do jurídico.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-card">
+              <CardContent className="p-8">
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Shield className="w-6 h-6 text-primary-foreground" />
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-semibold text-primary mb-3">Ambiente institucional</h4>
+                    <p className="text-muted-foreground">
+                      Fluxo padronizado, política de retenção e acessos definidos pela sua equipe.
                     </p>
                   </div>
                 </div>
@@ -258,6 +225,22 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Disclosure - Importante */}
+      <section className="py-8 px-4 bg-muted/50 border-t">
+        <div className="container mx-auto max-w-4xl">
+          <Card className="border-accent bg-accent/10">
+            <CardContent className="p-6">
+              <div className="text-center">
+                <h4 className="text-lg font-semibold text-primary mb-3">Importante</h4>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  A Themis™ não substitui análise jurídica nem avaliação clínica. É uma ferramenta de apoio para equipes institucionais, que devem revisar e validar tecnicamente as entregas. Em situações urgentes, procure avaliação presencial.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="bg-primary text-primary-foreground py-8 px-4">
         <div className="container mx-auto">
@@ -276,6 +259,9 @@ const Index = () => {
             </p>
             <p className="text-xs mt-4 max-w-2xl mx-auto">
               Serviço de apoio técnico; não substitui avaliação médica ou jurídica.
+            </p>
+            <p className="text-xs text-primary-foreground/60">
+              Ambiente interno por equipe • LGPD.
             </p>
           </div>
           <div className="text-center mt-6">
