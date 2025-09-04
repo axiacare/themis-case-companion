@@ -10,13 +10,16 @@ const Index = () => {
       <header className="border-b bg-card/80 backdrop-blur-sm sticky top-0 z-10">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-4">
               <img 
                 src="/lovable-uploads/d42510ba-dc7b-4281-8c2a-002b976086c3.png"
                 alt="Themis™ Logo" 
-                className="w-10 h-10 rounded-lg object-cover"
+                className="w-12 h-12 rounded-lg object-cover"
               />
-              <h1 className="text-2xl font-bold text-primary">Themis™</h1>
+              <div className="flex flex-col">
+                <h1 className="text-2xl font-bold text-primary">Themis™</h1>
+                <span className="text-sm text-muted-foreground font-medium">AxIntel™</span>
+              </div>
             </div>
             <Link to="/acesso">
               <Button variant="default" className="shadow-button transition-bounce hover:scale-105">
@@ -250,7 +253,7 @@ const Index = () => {
             <img 
               src="/lovable-uploads/d42510ba-dc7b-4281-8c2a-002b976086c3.png"
               alt="Themis™ Logo" 
-              className="w-8 h-8 rounded-lg object-cover"
+              className="w-10 h-10 rounded-lg object-cover"
             />
             <h4 className="text-xl font-semibold">Themis™</h4>
           </div>
