@@ -14,15 +14,15 @@ const Index = () => {
               <img 
                 src="/lovable-uploads/d42510ba-dc7b-4281-8c2a-002b976086c3.png"
                 alt="Themis™ Logo" 
-                className="w-16 h-16 rounded-lg object-cover"
+                className="w-16 h-16 rounded-xl object-cover hover-glow"
               />
               <div className="flex flex-col">
                 <h1 className="text-2xl font-bold text-primary">Themis™</h1>
-                <span className="text-sm text-muted-foreground font-medium">AxIntel™</span>
+                <span className="text-sm text-muted-foreground font-medium">AxControl™</span>
               </div>
             </div>
             <Link to="/acesso">
-              <Button variant="default" className="shadow-button transition-bounce hover:scale-105">
+              <Button variant="default" className="gradient-primary text-primary-foreground shadow-button hover-lift px-6 py-2.5 text-base font-medium">
                 Entrar no ambiente
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
@@ -58,9 +58,9 @@ const Index = () => {
           </div>
           
           <Link to="/acesso">
-            <Button size="lg" className="gradient-primary text-primary-foreground shadow-elegant hover:shadow-button transition-bounce hover:scale-105 px-8 py-4 text-lg">
+            <Button size="lg" className="gradient-primary text-primary-foreground shadow-elegant hover-lift px-10 py-5 text-lg font-semibold rounded-xl">
               Entrar no ambiente
-              <ArrowRight className="w-5 h-5 ml-2" />
+              <ArrowRight className="w-5 h-5 ml-3" />
             </Button>
           </Link>
         </div>
@@ -225,9 +225,9 @@ const Index = () => {
             Acesse o ambiente da sua equipe ou solicite o cadastro para ter um ambiente próprio da Themis™.
           </p>
           <Link to="/acesso">
-            <Button size="lg" className="bg-card text-primary hover:bg-card/90 shadow-elegant hover:shadow-card transition-bounce hover:scale-105 px-8 py-4 text-lg">
+            <Button size="lg" className="bg-card text-primary hover:bg-card/90 shadow-elegant hover-lift px-10 py-4 text-lg font-semibold rounded-xl">
               Entrar no Ambiente
-              <ArrowRight className="w-5 h-5 ml-2" />
+              <ArrowRight className="w-5 h-5 ml-3" />
             </Button>
           </Link>
         </div>
@@ -250,43 +250,81 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-primary text-primary-foreground py-8 px-4">
-        <div className="container mx-auto">
-          <div className="flex items-center justify-center space-x-3 mb-4">
-            <img 
-              src="/lovable-uploads/d42510ba-dc7b-4281-8c2a-002b976086c3.png"
-              alt="Themis™ Logo" 
-              className="w-12 h-12 rounded-lg object-cover"
-            />
-            <div className="flex flex-col items-center">
-              <h4 className="text-xl font-semibold">Themis™</h4>
-              <span className="text-sm text-primary-foreground/70">AxIntel™</span>
+      <footer className="gradient-dark text-primary-foreground py-12 px-4 border-t border-border/10">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
+            {/* Brand Section */}
+            <div className="text-center md:text-left">
+              <div className="flex items-center justify-center md:justify-start space-x-4 mb-4">
+                <img 
+                  src="/lovable-uploads/d42510ba-dc7b-4281-8c2a-002b976086c3.png"
+                  alt="Themis™ Logo" 
+                  className="w-12 h-12 rounded-xl object-cover hover-glow"
+                />
+                <div className="flex flex-col">
+                  <h4 className="text-xl font-bold">Themis™</h4>
+                  <span className="text-sm text-primary-foreground/70">AxControl™</span>
+                </div>
+              </div>
+              <p className="text-sm text-primary-foreground/80 max-w-xs mx-auto md:mx-0">
+                Um ambiente inteligente em necessidades jurídicas na saúde
+              </p>
+            </div>
+
+            {/* Links Section */}
+            <div className="text-center">
+              <h5 className="font-semibold text-primary-foreground mb-4">Links Úteis</h5>
+              <div className="space-y-3">
+                <Link 
+                  to="/politica-privacidade" 
+                  className="block text-primary-foreground/70 hover:text-primary transition-smooth text-sm hover-lift"
+                >
+                  Política de Privacidade
+                </Link>
+                <a 
+                  href="https://www.axcare.com.br" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="block text-primary-foreground/70 hover:text-primary transition-smooth text-sm hover-lift"
+                >
+                  AxiaCare® - www.axcare.com.br
+                </a>
+                <a 
+                  href="https://guithome.com.br" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="block text-primary-foreground/70 hover:text-primary transition-smooth text-sm hover-lift"
+                >
+                  GuiTHome - guithome.com.br
+                </a>
+              </div>
+            </div>
+
+            {/* Information Section */}
+            <div className="text-center md:text-right">
+              <h5 className="font-semibold text-primary-foreground mb-4">Informações</h5>
+              <div className="space-y-2 text-sm text-primary-foreground/80">
+                <p>Powered by AxiaCare®</p>
+                <p>Ambiente interno por equipe</p>
+                <p className="text-xs">LGPD Compliant</p>
+              </div>
             </div>
           </div>
-          <div className="text-center text-primary-foreground/80 space-y-2">
-            <p className="text-sm">
-              Themis™ é um ambiente AxIntel™ da AxiaCare®.
-            </p>
-            <p className="text-sm font-medium">
-              Powered by AxiaCare®
-            </p>
-            <p className="text-sm">
-              © 2025 AxiaCare® • Todos os direitos reservados.
-            </p>
-            <p className="text-xs mt-4 max-w-2xl mx-auto">
-              Serviço de apoio técnico; não substitui avaliação médica ou jurídica.
-            </p>
-            <p className="text-xs text-primary-foreground/60">
-              Ambiente interno por equipe • LGPD.
-            </p>
-          </div>
-          <div className="text-center mt-6">
-            <Link 
-              to="/politica-privacidade" 
-              className="text-primary-foreground/70 hover:text-primary-foreground text-sm underline-offset-4 hover:underline transition-smooth"
-            >
-              Política de Privacidade
-            </Link>
+
+          {/* Bottom Section */}
+          <div className="border-t border-primary-foreground/20 pt-6">
+            <div className="text-center space-y-2">
+              <p className="text-sm text-primary-foreground/90 font-medium">
+                Themis™ é um AxControl™ da AxiaCare®
+              </p>
+              <p className="text-sm text-primary-foreground/80">
+                © 2025 AxiaCare® • Todos os direitos reservados.
+              </p>
+              <p className="text-xs text-primary-foreground/60 max-w-2xl mx-auto leading-relaxed">
+                Serviço de apoio técnico; não substitui avaliação médica ou jurídica. 
+                Em situações urgentes, procure avaliação presencial.
+              </p>
+            </div>
           </div>
         </div>
       </footer>
