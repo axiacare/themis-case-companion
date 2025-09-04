@@ -5,7 +5,7 @@ import { FileText, Scale, Shield, Clock, CheckCircle, ArrowRight, Building, Cpu,
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-secondary">
+    <div className="min-h-screen bg-gradient-secondary dark">
       {/* Header */}
       <header className="border-b bg-card/80 backdrop-blur-sm sticky top-0 z-10">
         <div className="container mx-auto px-4 py-4">
@@ -14,7 +14,7 @@ const Index = () => {
               <img 
                 src="/lovable-uploads/d42510ba-dc7b-4281-8c2a-002b976086c3.png"
                 alt="Themis™ Logo" 
-                className="w-12 h-12 rounded-lg object-cover"
+                className="w-16 h-16 rounded-lg object-cover"
               />
               <div className="flex flex-col">
                 <h1 className="text-2xl font-bold text-primary">Themis™</h1>
@@ -47,10 +47,13 @@ const Index = () => {
           <div className="mb-8">
             <h2 className="text-5xl font-bold text-primary mb-6">
               Themis™
-              <span className="block text-muted-foreground text-3xl mt-2">um ambiente inteligente em necessidades jurídicas na saúde</span>
+              <span className="block text-muted-foreground text-3xl mt-2">Um ambiente inteligente em necessidades jurídicas na saúde</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Ambiente interno e seguro, pensado para equipes. Gera relatórios e quesitos para diferentes necessidades jurídico-médicas, com automações e motores de IA.
+            <p className="text-xl text-primary/80 max-w-3xl mx-auto leading-relaxed mb-6 font-medium">
+              Criado por profissionais da saúde. Potencializado por IA.
+            </p>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Gera relatórios e quesitos para diferentes necessidades jurídico-médicas, com automações e motores de IA pensados para equipes.
             </p>
           </div>
           
@@ -253,13 +256,19 @@ const Index = () => {
             <img 
               src="/lovable-uploads/d42510ba-dc7b-4281-8c2a-002b976086c3.png"
               alt="Themis™ Logo" 
-              className="w-10 h-10 rounded-lg object-cover"
+              className="w-12 h-12 rounded-lg object-cover"
             />
-            <h4 className="text-xl font-semibold">Themis™</h4>
+            <div className="flex flex-col items-center">
+              <h4 className="text-xl font-semibold">Themis™</h4>
+              <span className="text-sm text-primary-foreground/70">AxIntel™</span>
+            </div>
           </div>
           <div className="text-center text-primary-foreground/80 space-y-2">
             <p className="text-sm">
               Themis™ é um ambiente AxIntel™ da AxiaCare®.
+            </p>
+            <p className="text-sm font-medium">
+              Powered by AxiaCare®
             </p>
             <p className="text-sm">
               © 2025 AxiaCare® • Todos os direitos reservados.
