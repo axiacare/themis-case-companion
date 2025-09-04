@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-import { FileText, Scale, Shield, Clock, CheckCircle, ArrowRight, Building, Cpu, Users, Mail } from "lucide-react";
+import { FileText, Scale, Shield, Clock, CheckCircle, ArrowRight, Building, Cpu, Users, Mail, TrendingUp, BarChart3, FileCheck, Target } from "lucide-react";
 
 const Index = () => {
   return (
@@ -66,7 +66,80 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Como Funciona */}
+      {/* AxIntel™ Em Ação - Dashboard */}
+      <section className="py-16 px-4 bg-gradient-accent/30">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold text-primary mb-4">AxIntel™ em Ação</h3>
+            <p className="text-lg text-muted-foreground">Veja nossa inteligência artificial trabalhando em tempo real</p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-6">
+            <Card className="shadow-card hover-lift bg-card/90 backdrop-blur-sm">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 gradient-primary rounded-full flex items-center justify-center mx-auto mb-4 shadow-button">
+                  <FileText className="w-8 h-8 text-primary-foreground" />
+                </div>
+                <div className="text-3xl font-bold text-primary mb-2">98</div>
+                <h4 className="text-lg font-semibold text-primary mb-2">Casos Lidos</h4>
+                <p className="text-sm text-muted-foreground">PDFs analisados pela IA hoje</p>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-card hover-lift bg-card/90 backdrop-blur-sm">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 gradient-accent rounded-full flex items-center justify-center mx-auto mb-4 shadow-button">
+                  <BarChart3 className="w-8 h-8 text-accent-foreground" />
+                </div>
+                <div className="text-3xl font-bold text-primary mb-2">80</div>
+                <h4 className="text-lg font-semibold text-primary mb-2">Relatórios Gerados</h4>
+                <p className="text-sm text-muted-foreground">Análises estruturadas entregues</p>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-card hover-lift bg-card/90 backdrop-blur-sm">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 bg-success rounded-full flex items-center justify-center mx-auto mb-4 shadow-button">
+                  <Target className="w-8 h-8 text-success-foreground" />
+                </div>
+                <div className="text-3xl font-bold text-primary mb-2">1.372</div>
+                <h4 className="text-lg font-semibold text-primary mb-2">Quesitos Elaborados</h4>
+                <p className="text-sm text-muted-foreground">Pontos técnicos identificados</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* A força da AxiaCare® */}
+      <section className="py-16 px-4">
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold text-primary mb-6">A força da AxiaCare® por trás da Themis™</h3>
+            <Card className="shadow-elegant bg-gradient-accent/20 border-accent/30">
+              <CardContent className="p-8">
+                <p className="text-lg text-muted-foreground leading-relaxed text-center">
+                  A AxiaCare® é referência nacional em <strong className="text-primary">Saúde Baseada em Valor</strong> e inovação em gestão hospitalar. 
+                  Com anos de experiência transformando organizações de saúde, desenvolvemos a Themis™ como parte do ecossistema 
+                  AxControl™ - ambientes inteligentes que combinam <strong className="text-primary">método científico, inteligência artificial 
+                  e capacitação prática</strong> para resolver desafios reais do setor.
+                </p>
+                <div className="mt-6 flex justify-center">
+                  <a 
+                    href="https://www.axcare.com.br" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-primary hover:text-primary-hover transition-smooth font-semibold hover-lift inline-flex items-center gap-2"
+                  >
+                    Conheça mais sobre AxiaCare® 
+                    <ArrowRight className="w-4 h-4" />
+                  </a>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
       <section className="py-16 px-4 bg-card">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
@@ -214,6 +287,46 @@ const Index = () => {
               </CardContent>
             </Card>
           </div>
+        </div>
+      </section>
+
+      {/* AxWise™ - Capacitação */}
+      <section className="py-16 px-4 bg-gradient-accent/20">
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-8">
+            <h3 className="text-3xl font-bold text-primary mb-6">AxWise™ - Aprenda Enquanto Usa</h3>
+          </div>
+          <Card className="shadow-elegant bg-card/90 backdrop-blur-sm">
+            <CardContent className="p-8">
+              <div className="text-center mb-6">
+                <TrendingUp className="w-16 h-16 text-primary mx-auto mb-4" />
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Além da ferramenta, oferecemos capacitação contínua através da <strong className="text-primary">MedValor®</strong> 
+                  - eventos e cursos especializados em saúde baseada em valor.
+                </p>
+              </div>
+              <div className="flex flex-col md:flex-row gap-4 justify-center">
+                <a 
+                  href="https://linktr.ee/gui.thome" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-success text-success-foreground rounded-lg font-medium hover-lift transition-smooth"
+                >
+                  Em Alta - Cursos Disponíveis
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </a>
+                <a 
+                  href="https://www.medvalor.com.br" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-6 py-3 border-2 border-primary text-primary rounded-lg font-medium hover:bg-primary hover:text-primary-foreground transition-smooth"
+                >
+                  MedValor® - Site Oficial
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </a>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </section>
 

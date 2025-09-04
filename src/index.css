@@ -17,9 +17,9 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 210 40% 8%;
 
-    --primary: 220 60% 35%;
+    --primary: 206 54% 28%;
     --primary-foreground: 0 0% 98%;
-    --primary-hover: 220 70% 30%;
+    --primary-hover: 206 54% 24%;
 
     --secondary: 210 40% 96%;
     --secondary-foreground: 210 40% 8%;
@@ -27,71 +27,77 @@ All colors MUST be HSL.
     --muted: 210 40% 95%;
     --muted-foreground: 215 13% 42%;
 
-    --accent: 210 40% 95%;
+    --accent: 150 30% 75%;
     --accent-foreground: 210 40% 8%;
+
+    --success: 90 60% 80%;
+    --success-foreground: 210 40% 8%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
     --border: 210 40% 90%;
     --input: 210 40% 95%;
-    --ring: 220 60% 35%;
+    --ring: 206 54% 28%;
 
     --radius: 14px;
 
-    /* AxiaCare® Professional Design Tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(220 60% 35%), hsl(220 70% 30%));
+    /* AxiaCare® Official Design Tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(206 54% 28%), hsl(206 54% 24%));
     --gradient-secondary: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
-    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--secondary)));
-    --gradient-dark: linear-gradient(135deg, hsl(220 40% 15%), hsl(220 50% 20%));
+    --gradient-accent: linear-gradient(135deg, hsl(150 30% 75%), hsl(90 60% 80%));
+    --gradient-dark: linear-gradient(135deg, hsl(220 20% 18%), hsl(220 25% 21%));
     
-    --shadow-elegant: 0 10px 40px -10px hsl(220 60% 35% / 0.25);
-    --shadow-card: 0 6px 25px -6px hsl(220 60% 35% / 0.15);
-    --shadow-button: 0 6px 20px -3px hsl(220 60% 35% / 0.30);
+    --shadow-elegant: 0 10px 40px -10px hsl(206 54% 28% / 0.25);
+    --shadow-card: 0 6px 25px -6px hsl(206 54% 28% / 0.15);
+    --shadow-button: 0 6px 20px -3px hsl(206 54% 28% / 0.30);
     
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 
   .dark {
-    --background: 220 40% 8%;
+    --background: 220 20% 18%;
     --foreground: 210 20% 95%;
 
-    --card: 220 40% 10%;
+    --card: 220 25% 21%;
     --card-foreground: 210 20% 95%;
 
-    --popover: 220 40% 10%;
+    --popover: 220 25% 21%;
     --popover-foreground: 210 20% 95%;
 
-    --primary: 220 80% 70%;
-    --primary-foreground: 220 40% 8%;
-    --primary-hover: 220 85% 75%;
+    --primary: 206 54% 65%;
+    --primary-foreground: 220 20% 18%;
+    --primary-hover: 206 54% 70%;
 
-    --secondary: 220 40% 15%;
+    --secondary: 220 20% 25%;
     --secondary-foreground: 210 20% 95%;
 
-    --muted: 220 40% 12%;
+    --muted: 220 20% 22%;
     --muted-foreground: 210 20% 65%;
 
-    --accent: 220 40% 15%;
+    --accent: 150 25% 60%;
     --accent-foreground: 210 20% 95%;
+
+    --success: 90 50% 65%;
+    --success-foreground: 220 20% 18%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 220 40% 18%;
-    --input: 220 40% 15%;
-    --ring: 220 80% 70%;
+    --border: 220 20% 30%;
+    --input: 220 20% 25%;
+    --ring: 206 54% 65%;
 
-    /* Dark mode professional gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(220 80% 70%), hsl(220 85% 75%));
-    --gradient-secondary: linear-gradient(180deg, hsl(220 40% 8%), hsl(220 40% 12%));
-    --gradient-accent: linear-gradient(135deg, hsl(220 40% 15%), hsl(220 40% 20%));
-    --gradient-dark: linear-gradient(135deg, hsl(220 50% 5%), hsl(220 60% 10%));
+    /* Dark mode AxiaCare® gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(206 54% 65%), hsl(206 54% 70%));
+    --gradient-secondary: linear-gradient(180deg, hsl(220 20% 18%), hsl(220 20% 22%));
+    --gradient-accent: linear-gradient(135deg, hsl(150 25% 60%), hsl(90 45% 65%));
+    --gradient-dark: linear-gradient(135deg, hsl(220 25% 15%), hsl(220 30% 18%));
     
-    --shadow-elegant: 0 10px 40px -10px hsl(220 80% 70% / 0.4);
-    --shadow-card: 0 6px 25px -6px hsl(220 80% 70% / 0.2);
-    --shadow-button: 0 6px 20px -3px hsl(220 80% 70% / 0.5);
+    --shadow-elegant: 0 10px 40px -10px hsl(206 54% 65% / 0.4);
+    --shadow-card: 0 6px 25px -6px hsl(206 54% 65% / 0.2);
+    --shadow-button: 0 6px 20px -3px hsl(206 54% 65% / 0.5);
   }
 }
 
