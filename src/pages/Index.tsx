@@ -11,9 +11,11 @@ const Index = () => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 gradient-primary rounded-lg flex items-center justify-center">
-                <Scale className="w-6 h-6 text-primary-foreground" />
-              </div>
+              <img 
+                src="/lovable-uploads/d42510ba-dc7b-4281-8c2a-002b976086c3.png"
+                alt="Themis™ Logo" 
+                className="w-10 h-10 rounded-lg object-cover"
+              />
               <h1 className="text-2xl font-bold text-primary">Themis™</h1>
             </div>
             <Link to="/acesso">
@@ -245,9 +247,11 @@ const Index = () => {
       <footer className="bg-primary text-primary-foreground py-8 px-4">
         <div className="container mx-auto">
           <div className="flex items-center justify-center space-x-3 mb-4">
-            <div className="w-8 h-8 bg-primary-foreground/20 rounded-lg flex items-center justify-center">
-              <Scale className="w-5 h-5" />
-            </div>
+            <img 
+              src="/lovable-uploads/d42510ba-dc7b-4281-8c2a-002b976086c3.png"
+              alt="Themis™ Logo" 
+              className="w-8 h-8 rounded-lg object-cover"
+            />
             <h4 className="text-xl font-semibold">Themis™</h4>
           </div>
           <div className="text-center text-primary-foreground/80 space-y-2">
