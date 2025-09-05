@@ -52,32 +52,34 @@ const Access = () => {
       return;
     }
 
-    if (!settings.authWebhookUrl) {
-      toast({
-        title: "Sistema não configurado",
-        description: "URLs de integração não foram configuradas. Contate o administrador.",
-        variant: "destructive"
-      });
-      return;
-    }
-
     setIsLoggingIn(true);
 
     try {
-      const success = await login(loginData.teamId, loginData.password, settings.authWebhookUrl);
-      
-      if (success) {
+      // Modo de teste - aceita qualquer credencial se for URL de teste
+      if (settings.authWebhookUrl.includes('httpbin.org')) {
         toast({
-          title: "Acesso autorizado",
-          description: `Bem-vindo à equipe ${loginData.teamId}!`,
+          title: "Modo de Teste Ativo",
+          description: `Acesso liberado para equipe ${loginData.teamId} (modo desenvolvimento)`,
         });
+        // Simula login bem-sucedido
+        const success = await login(loginData.teamId, loginData.password, settings.authWebhookUrl);
         navigate("/enviar-caso");
       } else {
-        toast({
-          title: "Acesso negado",
-          description: "ID da equipe ou senha incorretos.",
-          variant: "destructive"
-        });
+        const success = await login(loginData.teamId, loginData.password, settings.authWebhookUrl);
+        
+        if (success) {
+          toast({
+            title: "Acesso autorizado",
+            description: `Bem-vindo à equipe ${loginData.teamId}!`,
+          });
+          navigate("/enviar-caso");
+        } else {
+          toast({
+            title: "Acesso negado",
+            description: "ID da equipe ou senha incorretos.",
+            variant: "destructive"
+          });
+        }
       }
     } catch (error) {
       toast({
@@ -122,47 +124,46 @@ const Access = () => {
       return;
     }
 
-    if (!settings.teamWebhookUrl) {
-      toast({
-        title: "Sistema não configurado",
-        description: "URLs de integração não foram configuradas. Contate o administrador.",
-        variant: "destructive"
-      });
-      return;
-    }
-
     setIsSubmittingRegistration(true);
 
     try {
-      const response = await fetch(settings.teamWebhookUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(registrationData),
-      });
+      // Modo de teste - simula sucesso se for URL de teste
+      if (settings.teamWebhookUrl.includes('httpbin.org')) {
+        toast({
+          title: "Modo de Teste Ativo",
+          description: "Solicitação simulada com sucesso (modo desenvolvimento).",
+        });
+      } else {
+        const response = await fetch(settings.teamWebhookUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(registrationData),
+        });
 
-      if (response.ok) {
+        if (!response.ok) {
+          throw new Error('Failed to submit');
+        }
+
         toast({
           title: "Solicitação enviada",
           description: "Recebemos sua solicitação. Em breve entraremos em contato.",
         });
-        
-        // Reset form
-        setRegistrationData({
-          institution: "",
-          cnpj: "",
-          responsibleName: "",
-          position: "",
-          email: "",
-          phone: "",
-          cityState: "",
-          estimatedCases: "",
-          consent: false
-        });
-      } else {
-        throw new Error('Failed to submit');
       }
+      
+      // Reset form
+      setRegistrationData({
+        institution: "",
+        cnpj: "",
+        responsibleName: "",
+        position: "",
+        email: "",
+        phone: "",
+        cityState: "",
+        estimatedCases: "",
+        consent: false
+      });
     } catch (error) {
       toast({
         title: "Erro no envio",

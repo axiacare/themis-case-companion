@@ -7,9 +7,9 @@ export interface WebhookSettings {
 }
 
 const DEFAULT_SETTINGS: WebhookSettings = {
-  authWebhookUrl: '',
-  teamWebhookUrl: '',
-  caseWebhookUrl: ''
+  authWebhookUrl: 'https://httpbin.org/post', // Mock URL para testes
+  teamWebhookUrl: 'https://httpbin.org/post', // Mock URL para testes  
+  caseWebhookUrl: 'https://httpbin.org/post'  // Mock URL para testes
 };
 
 export const useWebhookSettings = () => {

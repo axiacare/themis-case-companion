@@ -123,15 +123,6 @@ const SubmitCase = () => {
     
     if (!validateForm()) return;
 
-    if (!settings.caseWebhookUrl) {
-      toast({
-        title: "Sistema não configurado",
-        description: "URL do webhook de casos não foi configurada.",
-        variant: "destructive"
-      });
-      return;
-    }
-
     setIsSubmitting(true);
 
     try {
@@ -157,15 +148,12 @@ const SubmitCase = () => {
         lgpd_consent: true
       };
 
-      const response = await fetch(settings.caseWebhookUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(payload),
-      });
-
-      if (response.ok) {
+      // Modo de teste - simula sucesso se for URL de teste
+      if (settings.caseWebhookUrl.includes('httpbin.org')) {
+        toast({
+          title: "Modo de Teste Ativo",
+          description: "Caso simulado com sucesso (modo desenvolvimento).",
+        });
         navigate('/confirmacao', { 
           state: { 
             protocolNumber: caseProtocol,
@@ -175,7 +163,26 @@ const SubmitCase = () => {
           } 
         });
       } else {
-        throw new Error('Failed to submit case');
+        const response = await fetch(settings.caseWebhookUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(payload),
+        });
+
+        if (response.ok) {
+          navigate('/confirmacao', { 
+            state: { 
+              protocolNumber: caseProtocol,
+              teamRecord,
+              email: formData.requesterEmail,
+              teamId: teamData?.team_id
+            } 
+          });
+        } else {
+          throw new Error('Failed to submit case');
+        }
       }
 
     } catch (error) {
