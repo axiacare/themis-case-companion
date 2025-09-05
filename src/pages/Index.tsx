@@ -12,7 +12,7 @@ const Index = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <img 
-                src="/lovable-uploads/d42510ba-dc7b-4281-8c2a-002b976086c3.png"
+                src="/lovable-uploads/1d3ef3f4-c925-4cf4-9f21-94a108155b6f.png"
                 alt="Themis™ Logo" 
                 className="w-16 h-16 rounded-xl object-cover hover-glow"
               />
@@ -36,7 +36,7 @@ const Index = () => {
         <div className="container mx-auto px-4 py-2">
           <div className="flex items-center justify-center space-x-2 text-sm text-primary">
             <Shield className="w-4 h-4" />
-            <span className="font-medium">Ambiente interno • Dados tratados por equipe (LGPD)</span>
+            <span className="font-medium">Ambiente seguro • ISO/IEC 27001 e 27701 • LGPD</span>
           </div>
         </div>
       </div>
@@ -346,6 +346,49 @@ const Index = () => {
         </div>
       </section>
 
+      {/* AxWise™ - MedValor® */}
+      <section className="py-12 px-4 bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20">
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center">
+            <div className="flex items-center justify-center space-x-4 mb-6">
+              <img 
+                src="/medvalor-logo.png"
+                alt="MedValor®" 
+                className="h-12 object-contain"
+              />
+              <div className="h-8 w-px bg-orange-300"></div>
+              <div>
+                <h3 className="text-2xl font-bold text-primary mb-1">AxWise™</h3>
+                <p className="text-sm text-orange-600 dark:text-orange-300 font-medium">Capacitação Contínua</p>
+              </div>
+            </div>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+              Aprenda enquanto usa com eventos e cursos especializados da <strong className="text-orange-600 dark:text-orange-300">MedValor®</strong>
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a 
+                href="https://linktr.ee/gui.thome" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white rounded-lg font-medium hover-lift transition-smooth"
+              >
+                Em Alta - Cursos Disponíveis
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </a>
+              <a 
+                href="https://www.medvalor.com.br" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center px-6 py-3 border-2 border-orange-500 text-orange-600 dark:text-orange-300 rounded-lg font-medium hover:bg-orange-500 hover:text-white transition-smooth"
+              >
+                MedValor® - Site Oficial
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Disclosure - Importante */}
       <section className="py-8 px-4 bg-muted/50 border-t">
         <div className="container mx-auto max-w-4xl">
@@ -370,7 +413,7 @@ const Index = () => {
             <div className="text-center md:text-left">
               <div className="flex items-center justify-center md:justify-start space-x-4 mb-4">
                 <img 
-                  src="/lovable-uploads/d42510ba-dc7b-4281-8c2a-002b976086c3.png"
+                  src="/lovable-uploads/1d3ef3f4-c925-4cf4-9f21-94a108155b6f.png"
                   alt="Themis™ Logo" 
                   className="w-12 h-12 rounded-xl object-cover hover-glow"
                 />
