@@ -146,8 +146,8 @@ const Index = () => {
                 <div className="text-3xl font-bold text-primary mb-2">98</div>
                 <h4 className="text-lg font-semibold text-primary mb-2">Casos Lidos</h4>
                 <p className="text-sm text-muted-foreground">
-                  PDFs analisados pela <span className="font-semibold">
-                    <span className="text-blue-600">A</span>x<span className="text-emerald-600">I</span>ntel™
+                  PDFs analisados pela <span className="font-bold text-xl">
+                    <span className="text-lime-400">A</span>x<span className="text-lime-400">I</span>ntel™
                   </span>
                 </p>
               </CardContent>
@@ -187,7 +187,7 @@ const Index = () => {
           <Card className="shadow-elegant bg-gradient-accent border-primary/20">
             <CardContent className="p-8">
               <p className="text-lg text-muted-foreground leading-relaxed text-center">
-                A Themis™ é um AxControl™ desenhado pela AxiaCare® para apoiar equipes em necessidades jurídicas na saúde. Combina método, visuais e inteligência (AxIntel™) para transformar documentos extensos em relatórios objetivos. Na parte de quesitos médicos, utiliza o <span className="font-bold text-primary bg-accent/30 px-2 py-1 rounded">AxSet ACORDO™</span> <em className="text-muted-foreground/80">— Apoio Clínico Orientado para Realização de Defesas e Orientações</em> — uma metodologia prática para construir quesitos técnicos que apoiam o jurídico e organizam a atuação clínica da equipe. A entrega ocorre por relatórios estruturados, produzidos a partir dos PDFs enviados pelo ambiente da equipe e disponibilizados no e-mail institucional.
+                A Themis™ é um AxControl™ desenhado pela AxiaCare® para apoiar equipes em necessidades jurídicas na saúde. Combina método, visuais e inteligência (AxIntel™) para transformar documentos extensos em relatórios objetivos. Na parte de quesitos médicos, utiliza o AxSet <span className="font-bold text-primary bg-accent/30 px-2 py-1 rounded">ACORDO™</span> <em className="text-muted-foreground/80">— Apoio Clínico Orientado para Realização de Defesas e Orientações</em> — uma metodologia prática para construir quesitos técnicos que apoiam o jurídico e organizam a atuação clínica da equipe. A entrega ocorre por relatórios estruturados, produzidos a partir dos PDFs enviados pelo ambiente da equipe e disponibilizados no e-mail institucional.
               </p>
             </CardContent>
           </Card>
@@ -280,7 +280,7 @@ const Index = () => {
                 </div>
                 <h4 className="text-2xl font-bold text-amber-800 dark:text-amber-200 mb-4">⚠️ Importante</h4>
                 <p className="text-base text-amber-700 dark:text-amber-300 leading-relaxed font-medium">
-                  A Themis™ não substitui análise jurídica nem avaliação clínica. É uma ferramenta de apoio para equipes institucionais, que devem revisar e validar tecnicamente as entregas. Em situações urgentes, procure avaliação presencial.
+                  A Themis™ não substitui análise jurídica nem avaliação clínica. É uma ferramenta de apoio para equipes institucionais, que devem revisar e validar tecnicamente as entregas. Sempre procure avaliação de um profissional.
                 </p>
               </div>
             </CardContent>
@@ -297,7 +297,7 @@ const Index = () => {
               <CardContent className="p-8">
                 <div className="flex items-center justify-center mb-6">
                   <img 
-                    src="/axiacare-logo-light.png"
+                    src="/lovable-uploads/0216b248-1c8d-42ce-bb98-a2a704854eb9.png"
                     alt="AxiaCare®" 
                     className="h-16 object-contain filter drop-shadow-lg"
                   />
@@ -410,7 +410,7 @@ const Index = () => {
           <div className="text-center">
             <div className="flex items-center justify-center space-x-6 mb-6">
               <img 
-                src="/medvalor-logo-light.png"
+                src="/lovable-uploads/fd77d49c-e7ca-40aa-9e72-aed6bb733f1e.png"
                 alt="MedValor®" 
                 className="h-16 object-contain filter drop-shadow-lg"
               />
@@ -524,7 +524,7 @@ const Index = () => {
               </p>
               <p className="text-xs text-white/60 max-w-2xl mx-auto leading-relaxed">
                 Serviço de apoio técnico; não substitui avaliação médica ou jurídica. 
-                Em situações urgentes, procure avaliação presencial.
+                Sempre procure avaliação de um profissional.
               </p>
             </div>
           </div>
