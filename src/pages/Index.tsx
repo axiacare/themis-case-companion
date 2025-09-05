@@ -5,7 +5,7 @@ import { FileText, Scale, Shield, Clock, CheckCircle, ArrowRight, Building, Cpu,
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-secondary dark">
+    <div className="min-h-screen dark gradient-dark">
       {/* Header */}
       <header className="border-b bg-card backdrop-blur-sm sticky top-0 z-10">
         <div className="container mx-auto px-4 py-4">
@@ -42,17 +42,17 @@ const Index = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 gradient-dark">
         <div className="container mx-auto text-center max-w-4xl">
           <div className="mb-8">
-            <h2 className="text-5xl font-bold text-primary mb-6">
+            <h2 className="text-5xl font-bold text-primary-foreground mb-6">
               Themis™
-              <span className="block text-muted-foreground text-3xl mt-2">Um ambiente inteligente em necessidades jurídicas na saúde</span>
+              <span className="block text-primary-foreground/80 text-3xl mt-2">Um ambiente inteligente em necessidades jurídicas na saúde</span>
             </h2>
-            <p className="text-xl text-primary/80 max-w-3xl mx-auto leading-relaxed mb-6 font-medium">
+            <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto leading-relaxed mb-6 font-medium">
               Criado por profissionais da saúde. Potencializado por IA.
             </p>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg text-primary-foreground/90 max-w-3xl mx-auto leading-relaxed">
               Gera relatórios e quesitos para diferentes necessidades jurídico-médicas, com automações e motores de IA pensados para equipes.
             </p>
           </div>
@@ -68,6 +68,7 @@ const Index = () => {
 
       {/* Como Funciona - Second fold */}
       <section className="py-16 px-4 bg-card">
+
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold text-primary mb-4">Como Funciona</h3>
@@ -120,6 +121,51 @@ const Index = () => {
                 <p className="text-sm text-muted-foreground">
                   O relatório estruturado chega no e-mail institucional com protocolo do caso e registro da equipe.
                 </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* AxIntel™ Em Ação - Dashboard */}
+      <section className="py-16 px-4 bg-gradient-accent/30">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold text-primary mb-4">AxIntel™ em Ação</h3>
+            <p className="text-lg text-muted-foreground">Veja nossa inteligência artificial trabalhando em tempo real</p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-6">
+            <Card className="shadow-card hover-lift bg-card backdrop-blur-sm">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 gradient-primary rounded-full flex items-center justify-center mx-auto mb-4 shadow-button">
+                  <FileText className="w-8 h-8 text-primary-foreground" />
+                </div>
+                <div className="text-3xl font-bold text-primary mb-2">98</div>
+                <h4 className="text-lg font-semibold text-primary mb-2">Casos Lidos</h4>
+                <p className="text-sm text-muted-foreground">PDFs analisados pela IA hoje</p>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-card hover-lift bg-card backdrop-blur-sm">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 gradient-accent rounded-full flex items-center justify-center mx-auto mb-4 shadow-button">
+                  <BarChart3 className="w-8 h-8 text-accent-foreground" />
+                </div>
+                <div className="text-3xl font-bold text-primary mb-2">80</div>
+                <h4 className="text-lg font-semibold text-primary mb-2">Relatórios Gerados</h4>
+                <p className="text-sm text-muted-foreground">Análises estruturadas entregues</p>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-card hover-lift bg-card backdrop-blur-sm">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 bg-success rounded-full flex items-center justify-center mx-auto mb-4 shadow-button">
+                  <Target className="w-8 h-8 text-success-foreground" />
+                </div>
+                <div className="text-3xl font-bold text-primary mb-2">1.372</div>
+                <h4 className="text-lg font-semibold text-primary mb-2">Quesitos Elaborados</h4>
+                <p className="text-sm text-muted-foreground">Pontos técnicos identificados</p>
               </CardContent>
             </Card>
           </div>
@@ -214,6 +260,22 @@ const Index = () => {
               </CardContent>
             </Card>
           </div>
+        </div>
+      </section>
+
+      {/* Disclosure - Importante */}
+      <section className="py-8 px-4 bg-muted/50 border-t">
+        <div className="container mx-auto max-w-4xl">
+          <Card className="border-accent bg-accent/10">
+            <CardContent className="p-6">
+              <div className="text-center">
+                <h4 className="text-lg font-semibold text-primary mb-3">Importante</h4>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  A Themis™ não substitui análise jurídica nem avaliação clínica. É uma ferramenta de apoio para equipes institucionais, que devem revisar e validar tecnicamente as entregas. Em situações urgentes, procure avaliação presencial.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
@@ -313,66 +375,9 @@ const Index = () => {
         </div>
       </section>
 
-      {/* AxIntel™ Em Ação - Dashboard */}
-      <section className="py-16 px-4 bg-gradient-accent/30">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-primary mb-4">AxIntel™ em Ação</h3>
-            <p className="text-lg text-muted-foreground">Veja nossa inteligência artificial trabalhando em tempo real</p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-6">
-            <Card className="shadow-card hover-lift bg-card backdrop-blur-sm">
-              <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 gradient-primary rounded-full flex items-center justify-center mx-auto mb-4 shadow-button">
-                  <FileText className="w-8 h-8 text-primary-foreground" />
-                </div>
-                <div className="text-3xl font-bold text-primary mb-2">98</div>
-                <h4 className="text-lg font-semibold text-primary mb-2">Casos Lidos</h4>
-                <p className="text-sm text-muted-foreground">PDFs analisados pela IA hoje</p>
-              </CardContent>
-            </Card>
+      
 
-            <Card className="shadow-card hover-lift bg-card backdrop-blur-sm">
-              <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 gradient-accent rounded-full flex items-center justify-center mx-auto mb-4 shadow-button">
-                  <BarChart3 className="w-8 h-8 text-accent-foreground" />
-                </div>
-                <div className="text-3xl font-bold text-primary mb-2">80</div>
-                <h4 className="text-lg font-semibold text-primary mb-2">Relatórios Gerados</h4>
-                <p className="text-sm text-muted-foreground">Análises estruturadas entregues</p>
-              </CardContent>
-            </Card>
-
-            <Card className="shadow-card hover-lift bg-card backdrop-blur-sm">
-              <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 bg-success rounded-full flex items-center justify-center mx-auto mb-4 shadow-button">
-                  <Target className="w-8 h-8 text-success-foreground" />
-                </div>
-                <div className="text-3xl font-bold text-primary mb-2">1.372</div>
-                <h4 className="text-lg font-semibold text-primary mb-2">Quesitos Elaborados</h4>
-                <p className="text-sm text-muted-foreground">Pontos técnicos identificados</p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Disclosure - Importante */}
-      <section className="py-8 px-4 bg-muted/50 border-t">
-        <div className="container mx-auto max-w-4xl">
-          <Card className="border-accent bg-accent/10">
-            <CardContent className="p-6">
-              <div className="text-center">
-                <h4 className="text-lg font-semibold text-primary mb-3">Importante</h4>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  A Themis™ não substitui análise jurídica nem avaliação clínica. É uma ferramenta de apoio para equipes institucionais, que devem revisar e validar tecnicamente as entregas. Em situações urgentes, procure avaliação presencial.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
+      
 
       {/* Footer */}
       <footer className="gradient-dark text-primary-foreground py-12 px-4 border-t border-border/10">
