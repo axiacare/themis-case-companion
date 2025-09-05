@@ -81,17 +81,20 @@ const Settings = () => {
   return (
     <div className="min-h-screen bg-gradient-secondary">
       {/* Header */}
-      <header className="border-b bg-card/80 backdrop-blur-sm">
+      <header className="border-b bg-card backdrop-blur-sm sticky top-0 z-10">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <Link to="/" className="flex items-center space-x-3">
-              <div className="w-10 h-10 gradient-primary rounded-lg flex items-center justify-center">
-                <Scale className="w-6 h-6 text-primary-foreground" />
+            <div className="flex items-center space-x-4">
+              <img 
+                src="/lovable-uploads/1d3ef3f4-c925-4cf4-9f21-94a108155b6f.png"
+                alt="Themis™ Logo" 
+                className="w-16 h-16 rounded-xl object-cover hover-glow"
+              />
+              <div className="flex flex-col">
+                <h1 className="text-2xl font-bold text-white">Themis™</h1>
+                <span className="text-sm text-white/80 font-medium">AxControl™</span>
               </div>
-              <h1 className="text-2xl font-bold text-primary">
-                Themis™
-              </h1>
-            </Link>
+            </div>
             <Link to="/">
               <Button variant="outline" className="transition-smooth">
                 <ArrowLeft className="w-4 h-4 mr-2" />
