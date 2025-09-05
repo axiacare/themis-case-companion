@@ -111,35 +111,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* A força da AxiaCare® */}
-      <section className="py-16 px-4">
-        <div className="container mx-auto max-w-4xl">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-primary mb-6">A força da AxiaCare® por trás da Themis™</h3>
-            <Card className="shadow-elegant bg-gradient-accent/20 border-accent/30">
-              <CardContent className="p-8">
-                <p className="text-lg text-muted-foreground leading-relaxed text-center">
-                  A AxiaCare® é referência nacional em <strong className="text-primary">Saúde Baseada em Valor</strong> e inovação em gestão hospitalar. 
-                  Com anos de experiência transformando organizações de saúde, desenvolvemos a Themis™ como parte do ecossistema 
-                  AxControl™ - ambientes inteligentes que combinam <strong className="text-primary">método científico, inteligência artificial 
-                  e capacitação prática</strong> para resolver desafios reais do setor.
-                </p>
-                <div className="mt-6 flex justify-center">
-                  <a 
-                    href="https://www.axcare.com.br" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-primary hover:text-primary-hover transition-smooth font-semibold hover-lift inline-flex items-center gap-2"
-                  >
-                    Conheça mais sobre AxiaCare® 
-                    <ArrowRight className="w-4 h-4" />
-                  </a>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
+      {/* Como Funciona - Second fold */}
       <section className="py-16 px-4 bg-card">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
@@ -179,7 +151,7 @@ const Index = () => {
                 </div>
                 <h4 className="text-lg font-semibold text-primary mb-3">3. Análise IA</h4>
                 <p className="text-sm text-muted-foreground">
-                  A Themis organiza o material e estrutura pontos clínicos e técnico-jurídicos usando prompts privados versionados.
+                  A Themis™ organiza o material e estrutura pontos clínicos e técnico-jurídicos usando prompts privados versionados.
                 </p>
               </CardContent>
             </Card>
@@ -199,11 +171,11 @@ const Index = () => {
         </div>
       </section>
 
-      {/* O que é a Themis */}
+      {/* O que é a Themis™ */}
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-8">
-            <h3 className="text-3xl font-bold text-primary mb-6">O que é a Themis</h3>
+            <h3 className="text-3xl font-bold text-primary mb-6">O que é a Themis™</h3>
           </div>
           <Card className="shadow-elegant bg-gradient-accent border-primary/20">
             <CardContent className="p-8">
@@ -215,11 +187,11 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Features */}
+      {/* Por que escolher a Themis™ */}
       <section className="py-16 px-4 bg-card">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-primary mb-4">Por que escolher a Themis</h3>
+            <h3 className="text-3xl font-bold text-primary mb-4">Por que escolher a Themis™</h3>
           </div>
           
           <div className="grid md:grid-cols-2 gap-8">
@@ -290,43 +262,40 @@ const Index = () => {
         </div>
       </section>
 
-      {/* AxWise™ - Capacitação */}
-      <section className="py-16 px-4 bg-gradient-accent/20">
+      {/* A força da AxiaCare® */}
+      <section className="py-16 px-4">
         <div className="container mx-auto max-w-4xl">
-          <div className="text-center mb-8">
-            <h3 className="text-3xl font-bold text-primary mb-6">AxWise™ - Aprenda Enquanto Usa</h3>
-          </div>
-          <Card className="shadow-elegant bg-card/90 backdrop-blur-sm">
-            <CardContent className="p-8">
-              <div className="text-center mb-6">
-                <TrendingUp className="w-16 h-16 text-primary mx-auto mb-4" />
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  Além da ferramenta, oferecemos capacitação contínua através da <strong className="text-primary">MedValor®</strong> 
-                  - eventos e cursos especializados em saúde baseada em valor.
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold text-primary mb-6">A força da AxiaCare® por trás da Themis™</h3>
+            <Card className="shadow-elegant bg-gradient-accent border-primary/20">
+              <CardContent className="p-8">
+                <div className="flex items-center justify-center mb-6">
+                  <img 
+                    src="/axiacare-logo.png"
+                    alt="AxiaCare®" 
+                    className="h-12 object-contain"
+                  />
+                </div>
+                <p className="text-lg text-muted-foreground leading-relaxed text-center mb-6">
+                  A AxiaCare cria e conduz soluções completas para ecossistemas de saúde, integrando empresas, instituições, prestadores e líderes do setor. Nosso trabalho segue os <strong className="text-primary">princípios do cuidado baseado em valor (Value-Based Health Care)</strong>: é centrado no paciente, guiado por dados e orientado a resultados concretos.
                 </p>
-              </div>
-              <div className="flex flex-col md:flex-row gap-4 justify-center">
-                <a 
-                  href="https://linktr.ee/gui.thome" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-6 py-3 bg-success text-success-foreground rounded-lg font-medium hover-lift transition-smooth"
-                >
-                  Em Alta - Cursos Disponíveis
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </a>
-                <a 
-                  href="https://www.medvalor.com.br" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-6 py-3 border-2 border-primary text-primary rounded-lg font-medium hover:bg-primary hover:text-primary-foreground transition-smooth"
-                >
-                  MedValor® - Site Oficial
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </a>
-              </div>
-            </CardContent>
-          </Card>
+                <p className="text-base text-muted-foreground leading-relaxed text-center">
+                  Muito além de uma consultoria, atuamos em todas as etapas – do diagnóstico inicial à sustentação contínua. Identificamos a necessidade, mapeamos e engajamos os parceiros certos, co-desenhamos a jornada de valor e implementamos a solução com apoio institucional sólido e governança clínica efetiva.
+                </p>
+                <div className="mt-6 flex justify-center">
+                  <a 
+                    href="https://www.axcare.com.br" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-primary hover:text-primary-hover transition-smooth font-semibold hover-lift inline-flex items-center gap-2"
+                  >
+                    Conheça mais sobre AxiaCare® 
+                    <ArrowRight className="w-4 h-4" />
+                  </a>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 
