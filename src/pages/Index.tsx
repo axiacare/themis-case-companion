@@ -17,8 +17,8 @@ const Index = () => {
                 className="w-16 h-16 rounded-xl object-cover hover-glow"
               />
               <div className="flex flex-col">
-                <h1 className="text-2xl font-bold text-primary">Themis™</h1>
-                <span className="text-sm text-muted-foreground font-medium">AxControl™</span>
+                <h1 className="text-2xl font-bold text-white">Themis™</h1>
+                <span className="text-sm text-white/80 font-medium">AxControl™</span>
               </div>
             </div>
             <Link to="/acesso">
@@ -34,7 +34,7 @@ const Index = () => {
       {/* LGPD Badge */}
       <div className="bg-primary/10 border-b border-primary/20">
         <div className="container mx-auto px-4 py-2">
-          <div className="flex items-center justify-center space-x-2 text-sm text-primary">
+          <div className="flex items-center justify-center space-x-2 text-sm text-white">
             <Shield className="w-4 h-4" />
             <span className="font-medium">Ambiente seguro • ISO/IEC 27001 e 27701 • LGPD</span>
           </div>
@@ -45,14 +45,14 @@ const Index = () => {
       <section className="py-20 px-4 gradient-dark">
         <div className="container mx-auto text-center max-w-4xl">
           <div className="mb-8">
-            <h2 className="text-5xl font-bold text-primary-foreground mb-6">
+            <h2 className="text-5xl font-bold text-white mb-6">
               Themis™
-              <span className="block text-primary-foreground/80 text-3xl mt-2">Um ambiente inteligente em necessidades jurídicas na saúde</span>
+              <span className="block text-white/90 text-3xl mt-2">Um ambiente inteligente em necessidades jurídicas na saúde</span>
             </h2>
-            <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto leading-relaxed mb-6 font-medium">
+            <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-6 font-medium">
               Criado por profissionais da saúde. Potencializado por IA.
             </p>
-            <p className="text-lg text-primary-foreground/90 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg text-white/90 max-w-3xl mx-auto leading-relaxed">
               Gera relatórios e quesitos para diferentes necessidades jurídico-médicas, com automações e motores de IA pensados para equipes.
             </p>
           </div>
