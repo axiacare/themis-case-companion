@@ -288,9 +288,9 @@ const Index = () => {
               <CardContent className="p-8">
                 <div className="flex items-center justify-center mb-6">
                   <img 
-                    src="/axiacare-logo.png"
+                    src="/axiacare-logo-light.png"
                     alt="AxiaCare®" 
-                    className="h-12 object-contain"
+                    className="h-16 object-contain filter drop-shadow-lg"
                   />
                 </div>
                 <p className="text-lg text-muted-foreground leading-relaxed text-center mb-6">
@@ -336,14 +336,14 @@ const Index = () => {
       <section className="py-12 px-4 bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center">
-            <div className="flex items-center justify-center space-x-4 mb-6">
+            <div className="flex items-center justify-center space-x-6 mb-6">
               <img 
-                src="/medvalor-logo.png"
+                src="/medvalor-logo-light.png"
                 alt="MedValor®" 
-                className="h-12 object-contain"
+                className="h-16 object-contain filter drop-shadow-lg"
               />
-              <div className="h-8 w-px bg-orange-300"></div>
-              <div>
+              <div className="h-12 w-px bg-orange-300/50"></div>
+              <div className="text-center">
                 <h3 className="text-2xl font-bold text-primary mb-1">AxWise™</h3>
                 <p className="text-sm text-orange-600 dark:text-orange-300 font-medium">Capacitação Contínua</p>
               </div>
@@ -380,7 +380,7 @@ const Index = () => {
       
 
       {/* Footer */}
-      <footer className="gradient-dark text-primary-foreground py-12 px-4 border-t border-border/10">
+      <footer className="gradient-dark text-white py-16 px-4 border-t border-white/10">
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             {/* Brand Section */}
@@ -392,22 +392,22 @@ const Index = () => {
                   className="w-12 h-12 rounded-xl object-cover hover-glow"
                 />
                 <div className="flex flex-col">
-                  <h4 className="text-xl font-bold">Themis™</h4>
-                  <span className="text-sm text-primary-foreground/70">AxControl™</span>
+                  <h4 className="text-xl font-bold text-white">Themis™</h4>
+                  <span className="text-sm text-white/70">AxControl™</span>
                 </div>
               </div>
-              <p className="text-sm text-primary-foreground/80 max-w-xs mx-auto md:mx-0">
+              <p className="text-sm text-white/80 max-w-xs mx-auto md:mx-0">
                 Um ambiente inteligente em necessidades jurídicas na saúde
               </p>
             </div>
 
             {/* Links Section */}
             <div className="text-center">
-              <h5 className="font-semibold text-primary-foreground mb-4">Links Úteis</h5>
+              <h5 className="font-semibold text-white mb-4">Links Úteis</h5>
               <div className="space-y-3">
                 <Link 
                   to="/politica-privacidade" 
-                  className="block text-primary-foreground/70 hover:text-primary transition-smooth text-sm hover-lift"
+                  className="block text-white/70 hover:text-white transition-smooth text-sm hover-lift"
                 >
                   Política de Privacidade
                 </Link>
@@ -415,7 +415,7 @@ const Index = () => {
                   href="https://www.axcare.com.br" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="block text-primary-foreground/70 hover:text-primary transition-smooth text-sm hover-lift"
+                  className="block text-white/70 hover:text-white transition-smooth text-sm hover-lift"
                 >
                   AxiaCare® - www.axcare.com.br
                 </a>
@@ -423,7 +423,7 @@ const Index = () => {
                   href="https://guithome.com.br" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="block text-primary-foreground/70 hover:text-primary transition-smooth text-sm hover-lift"
+                  className="block text-white/70 hover:text-white transition-smooth text-sm hover-lift"
                 >
                   GuiTHome - guithome.com.br
                 </a>
@@ -432,8 +432,8 @@ const Index = () => {
 
             {/* Information Section */}
             <div className="text-center md:text-right">
-              <h5 className="font-semibold text-primary-foreground mb-4">Informações</h5>
-              <div className="space-y-2 text-sm text-primary-foreground/80">
+              <h5 className="font-semibold text-white mb-4">Informações</h5>
+              <div className="space-y-2 text-sm text-white/80">
                 <p>Powered by AxiaCare®</p>
                 <p>Ambiente interno por equipe</p>
                 <p className="text-xs">LGPD Compliant</p>
@@ -442,15 +442,15 @@ const Index = () => {
           </div>
 
           {/* Bottom Section */}
-          <div className="border-t border-primary-foreground/20 pt-6">
+          <div className="border-t border-white/20 pt-6">
             <div className="text-center space-y-2">
-              <p className="text-sm text-primary-foreground/90 font-medium">
+              <p className="text-sm text-white/90 font-medium">
                 Themis™ é um AxControl™ da AxiaCare®
               </p>
-              <p className="text-sm text-primary-foreground/80">
+              <p className="text-sm text-white/80">
                 © 2025 AxiaCare® • Todos os direitos reservados.
               </p>
-              <p className="text-xs text-primary-foreground/60 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-xs text-white/60 max-w-2xl mx-auto leading-relaxed">
                 Serviço de apoio técnico; não substitui avaliação médica ou jurídica. 
                 Em situações urgentes, procure avaliação presencial.
               </p>
