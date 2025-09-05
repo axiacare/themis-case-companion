@@ -17,8 +17,8 @@ const Index = () => {
                 className="w-16 h-16 rounded-xl object-cover hover-glow"
               />
               <div className="flex flex-col">
-                <h1 className="text-2xl font-bold text-foreground">Themis™</h1>
-                <span className="text-sm text-foreground/70 font-medium">AxControl™</span>
+                <h1 className="text-2xl font-bold text-primary">Themis™</h1>
+                <span className="text-sm text-muted-foreground font-medium">AxControl™</span>
               </div>
             </div>
             <Link to="/acesso">
@@ -45,14 +45,14 @@ const Index = () => {
       <section className="py-20 px-4">
         <div className="container mx-auto text-center max-w-4xl">
           <div className="mb-8">
-            <h2 className="text-5xl font-bold text-foreground mb-6">
+            <h2 className="text-5xl font-bold text-primary mb-6">
               Themis™
-              <span className="block text-foreground/70 text-3xl mt-2">Um ambiente inteligente em necessidades jurídicas na saúde</span>
+              <span className="block text-muted-foreground text-3xl mt-2">Um ambiente inteligente em necessidades jurídicas na saúde</span>
             </h2>
-            <p className="text-xl text-foreground max-w-3xl mx-auto leading-relaxed mb-6 font-medium">
+            <p className="text-xl text-primary/80 max-w-3xl mx-auto leading-relaxed mb-6 font-medium">
               Criado por profissionais da saúde. Potencializado por IA.
             </p>
-            <p className="text-lg text-foreground/80 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Gera relatórios e quesitos para diferentes necessidades jurídico-médicas, com automações e motores de IA pensados para equipes.
             </p>
           </div>
@@ -70,8 +70,8 @@ const Index = () => {
       <section className="py-16 px-4 bg-card">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-foreground mb-4">Como Funciona</h3>
-            <p className="text-lg text-foreground/70">Processo seguro e eficiente em 4 etapas</p>
+            <h3 className="text-3xl font-bold text-primary mb-4">Como Funciona</h3>
+            <p className="text-lg text-muted-foreground">Processo seguro e eficiente em 4 etapas</p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -80,8 +80,8 @@ const Index = () => {
                 <div className="w-16 h-16 gradient-primary rounded-full flex items-center justify-center mx-auto mb-4 shadow-button">
                   <Users className="w-8 h-8 text-primary-foreground" />
                 </div>
-                <h4 className="text-lg font-semibold text-foreground mb-3">1. Acesso da equipe</h4>
-                <p className="text-sm text-foreground/70">
+                <h4 className="text-lg font-semibold text-primary mb-3">1. Acesso da equipe</h4>
+                <p className="text-sm text-muted-foreground">
                   A equipe entra com login institucional (ID da equipe + senha).
                 </p>
               </CardContent>
@@ -92,8 +92,8 @@ const Index = () => {
                 <div className="w-16 h-16 gradient-primary rounded-full flex items-center justify-center mx-auto mb-4 shadow-button">
                   <FileText className="w-8 h-8 text-primary-foreground" />
                 </div>
-                <h4 className="text-lg font-semibold text-foreground mb-3">2. Envio de caso</h4>
-                <p className="text-sm text-foreground/70">
+                <h4 className="text-lg font-semibold text-primary mb-3">2. Envio de caso</h4>
+                <p className="text-sm text-muted-foreground">
                   Envie PDFs e os dados do caso por formulário seguro.
                 </p>
               </CardContent>
@@ -104,8 +104,8 @@ const Index = () => {
                 <div className="w-16 h-16 gradient-primary rounded-full flex items-center justify-center mx-auto mb-4 shadow-button">
                   <Cpu className="w-8 h-8 text-primary-foreground" />
                 </div>
-                <h4 className="text-lg font-semibold text-foreground mb-3">3. Análise IA</h4>
-                <p className="text-sm text-foreground/70">
+                <h4 className="text-lg font-semibold text-primary mb-3">3. Análise IA</h4>
+                <p className="text-sm text-muted-foreground">
                   A Themis™ organiza o material e estrutura pontos clínicos e técnico-jurídicos usando prompts privados versionados.
                 </p>
               </CardContent>
@@ -116,8 +116,8 @@ const Index = () => {
                 <div className="w-16 h-16 gradient-primary rounded-full flex items-center justify-center mx-auto mb-4 shadow-button">
                   <Mail className="w-8 h-8 text-primary-foreground" />
                 </div>
-                <h4 className="text-lg font-semibold text-foreground mb-3">4. Entrega</h4>
-                <p className="text-sm text-foreground/70">
+                <h4 className="text-lg font-semibold text-primary mb-3">4. Entrega</h4>
+                <p className="text-sm text-muted-foreground">
                   O relatório estruturado chega no e-mail institucional com protocolo do caso e registro da equipe.
                 </p>
               </CardContent>
@@ -130,11 +130,11 @@ const Index = () => {
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-8">
-            <h3 className="text-3xl font-bold text-foreground mb-6">O que é a Themis™</h3>
+            <h3 className="text-3xl font-bold text-primary mb-6">O que é a Themis™</h3>
           </div>
           <Card className="shadow-elegant bg-gradient-accent border-primary/20">
             <CardContent className="p-8">
-              <p className="text-lg text-foreground leading-relaxed text-center">
+              <p className="text-lg text-muted-foreground leading-relaxed text-center">
                 A Themis™ é um AxControl™ desenhado pela AxiaCare® para apoiar equipes em necessidades jurídicas na saúde. Combina método, visuais e inteligência (AxIntel™) para transformar documentos extensos em relatórios objetivos. Na parte de quesitos médicos, utiliza o AxSet ACORDO™ — uma metodologia prática para construir quesitos técnicos que apoiam o jurídico e organizam a atuação clínica da equipe. A entrega ocorre por relatórios estruturados, produzidos a partir dos PDFs enviados pelo ambiente da equipe e disponibilizados no e-mail institucional.
               </p>
             </CardContent>
@@ -146,7 +146,7 @@ const Index = () => {
       <section className="py-16 px-4 bg-card">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-foreground mb-4">Por que escolher a Themis™</h3>
+            <h3 className="text-3xl font-bold text-primary mb-4">Por que escolher a Themis™</h3>
           </div>
           
           <div className="grid md:grid-cols-2 gap-8">
@@ -157,8 +157,8 @@ const Index = () => {
                     <FileText className="w-6 h-6 text-primary-foreground" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-semibold text-foreground mb-3">Relatórios estruturados</h4>
-                    <p className="text-foreground/80">
+                    <h4 className="text-xl font-semibold text-primary mb-3">Relatórios estruturados</h4>
+                    <p className="text-muted-foreground">
                       Receba em poucos minutos no seu e-mail institucional, acelerando seus processos jurídicos.
                     </p>
                   </div>
@@ -173,8 +173,8 @@ const Index = () => {
                     <Building className="w-6 h-6 text-primary-foreground" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-semibold text-foreground mb-3">Multi-tenant por equipe</h4>
-                    <p className="text-foreground/80">
+                    <h4 className="text-xl font-semibold text-primary mb-3">Multi-tenant por equipe</h4>
+                    <p className="text-muted-foreground">
                       Dados segregados por equipe, com trilha auditável e governança institucional.
                     </p>
                   </div>
@@ -189,8 +189,8 @@ const Index = () => {
                     <Cpu className="w-6 h-6 text-primary-foreground" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-semibold text-foreground mb-3">IA especializada</h4>
-                    <p className="text-foreground/80">
+                    <h4 className="text-xl font-semibold text-primary mb-3">IA especializada</h4>
+                    <p className="text-muted-foreground">
                       Linguagem clara e metodologia de quesitos, alinhadas ao trabalho do jurídico.
                     </p>
                   </div>
@@ -205,8 +205,8 @@ const Index = () => {
                     <Shield className="w-6 h-6 text-primary-foreground" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-semibold text-foreground mb-3">Ambiente institucional</h4>
-                    <p className="text-foreground/80">
+                    <h4 className="text-xl font-semibold text-primary mb-3">Ambiente institucional</h4>
+                    <p className="text-muted-foreground">
                       Fluxo padronizado, política de retenção e acessos definidos pela sua equipe.
                     </p>
                   </div>
@@ -221,7 +221,7 @@ const Index = () => {
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-foreground mb-6">A força da AxiaCare® por trás da Themis™</h3>
+            <h3 className="text-3xl font-bold text-primary mb-6">A força da AxiaCare® por trás da Themis™</h3>
             <Card className="shadow-elegant bg-gradient-accent border-primary/20">
               <CardContent className="p-8">
                 <div className="flex items-center justify-center mb-6">
@@ -231,10 +231,10 @@ const Index = () => {
                     className="h-12 object-contain"
                   />
                 </div>
-                <p className="text-lg text-foreground leading-relaxed text-center mb-6">
+                <p className="text-lg text-muted-foreground leading-relaxed text-center mb-6">
                   A AxiaCare cria e conduz soluções completas para ecossistemas de saúde, integrando empresas, instituições, prestadores e líderes do setor. Nosso trabalho segue os <strong className="text-primary">princípios do cuidado baseado em valor (Value-Based Health Care)</strong>: é centrado no paciente, guiado por dados e orientado a resultados concretos.
                 </p>
-                <p className="text-base text-foreground/80 leading-relaxed text-center">
+                <p className="text-base text-muted-foreground leading-relaxed text-center">
                   Muito além de uma consultoria, atuamos em todas as etapas – do diagnóstico inicial à sustentação contínua. Identificamos a necessidade, mapeamos e engajamos os parceiros certos, co-desenhamos a jornada de valor e implementamos a solução com apoio institucional sólido e governança clínica efetiva.
                 </p>
                 <div className="mt-6 flex justify-center">
@@ -286,7 +286,7 @@ const Index = () => {
                 <p className="text-sm text-orange-600 dark:text-orange-300 font-medium">Capacitação Contínua</p>
               </div>
             </div>
-            <p className="text-lg text-foreground/80 leading-relaxed mb-6">
+            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               Aprenda enquanto usa com eventos e cursos especializados da <strong className="text-orange-600 dark:text-orange-300">MedValor®</strong>
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -317,8 +317,8 @@ const Index = () => {
       <section className="py-16 px-4 bg-gradient-accent/30">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-foreground mb-4">AxIntel™ em Ação</h3>
-            <p className="text-lg text-foreground/70">Veja nossa inteligência artificial trabalhando em tempo real</p>
+            <h3 className="text-3xl font-bold text-primary mb-4">AxIntel™ em Ação</h3>
+            <p className="text-lg text-muted-foreground">Veja nossa inteligência artificial trabalhando em tempo real</p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-6">
@@ -327,9 +327,9 @@ const Index = () => {
                 <div className="w-16 h-16 gradient-primary rounded-full flex items-center justify-center mx-auto mb-4 shadow-button">
                   <FileText className="w-8 h-8 text-primary-foreground" />
                 </div>
-                <div className="text-3xl font-bold text-foreground mb-2">98</div>
-                <h4 className="text-lg font-semibold text-foreground mb-2">Casos Lidos</h4>
-                <p className="text-sm text-foreground/70">PDFs analisados pela IA hoje</p>
+                <div className="text-3xl font-bold text-primary mb-2">98</div>
+                <h4 className="text-lg font-semibold text-primary mb-2">Casos Lidos</h4>
+                <p className="text-sm text-muted-foreground">PDFs analisados pela IA hoje</p>
               </CardContent>
             </Card>
 
@@ -338,9 +338,9 @@ const Index = () => {
                 <div className="w-16 h-16 gradient-accent rounded-full flex items-center justify-center mx-auto mb-4 shadow-button">
                   <BarChart3 className="w-8 h-8 text-accent-foreground" />
                 </div>
-                <div className="text-3xl font-bold text-foreground mb-2">80</div>
-                <h4 className="text-lg font-semibold text-foreground mb-2">Relatórios Gerados</h4>
-                <p className="text-sm text-foreground/70">Análises estruturadas entregues</p>
+                <div className="text-3xl font-bold text-primary mb-2">80</div>
+                <h4 className="text-lg font-semibold text-primary mb-2">Relatórios Gerados</h4>
+                <p className="text-sm text-muted-foreground">Análises estruturadas entregues</p>
               </CardContent>
             </Card>
 
@@ -349,9 +349,9 @@ const Index = () => {
                 <div className="w-16 h-16 bg-success rounded-full flex items-center justify-center mx-auto mb-4 shadow-button">
                   <Target className="w-8 h-8 text-success-foreground" />
                 </div>
-                <div className="text-3xl font-bold text-foreground mb-2">1.372</div>
-                <h4 className="text-lg font-semibold text-foreground mb-2">Quesitos Elaborados</h4>
-                <p className="text-sm text-foreground/70">Pontos técnicos identificados</p>
+                <div className="text-3xl font-bold text-primary mb-2">1.372</div>
+                <h4 className="text-lg font-semibold text-primary mb-2">Quesitos Elaborados</h4>
+                <p className="text-sm text-muted-foreground">Pontos técnicos identificados</p>
               </CardContent>
             </Card>
           </div>
@@ -364,8 +364,8 @@ const Index = () => {
           <Card className="border-accent bg-accent/10">
             <CardContent className="p-6">
               <div className="text-center">
-                <h4 className="text-lg font-semibold text-foreground mb-3">Importante</h4>
-                <p className="text-sm text-foreground/70 leading-relaxed">
+                <h4 className="text-lg font-semibold text-primary mb-3">Importante</h4>
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   A Themis™ não substitui análise jurídica nem avaliação clínica. É uma ferramenta de apoio para equipes institucionais, que devem revisar e validar tecnicamente as entregas. Em situações urgentes, procure avaliação presencial.
                 </p>
               </div>
