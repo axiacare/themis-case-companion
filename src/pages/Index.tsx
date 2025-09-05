@@ -50,7 +50,9 @@ const Index = () => {
               <span className="block text-white/90 text-3xl mt-2">Um ambiente inteligente em necessidades jurídicas na saúde</span>
             </h2>
             <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-6 font-medium">
-              Criado por profissionais da saúde. Potencializado por IA.
+              Criado por profissionais da saúde. Potencializado por <span className="text-cyan-300 font-bold">
+                <span className="text-blue-400">A</span><span className="text-emerald-400">I</span>
+              </span>.
             </p>
             <p className="text-lg text-white/90 max-w-3xl mx-auto leading-relaxed">
               Gera relatórios e quesitos para diferentes necessidades jurídico-médicas, com automações e motores de IA pensados para equipes.
@@ -143,7 +145,11 @@ const Index = () => {
                 </div>
                 <div className="text-3xl font-bold text-primary mb-2">98</div>
                 <h4 className="text-lg font-semibold text-primary mb-2">Casos Lidos</h4>
-                <p className="text-sm text-muted-foreground">PDFs analisados pela IA hoje</p>
+                <p className="text-sm text-muted-foreground">
+                  PDFs analisados pela <span className="font-semibold">
+                    <span className="text-blue-600">A</span>x<span className="text-emerald-600">I</span>ntel™
+                  </span>
+                </p>
               </CardContent>
             </Card>
 
@@ -181,7 +187,7 @@ const Index = () => {
           <Card className="shadow-elegant bg-gradient-accent border-primary/20">
             <CardContent className="p-8">
               <p className="text-lg text-muted-foreground leading-relaxed text-center">
-                A Themis™ é um AxControl™ desenhado pela AxiaCare® para apoiar equipes em necessidades jurídicas na saúde. Combina método, visuais e inteligência (AxIntel™) para transformar documentos extensos em relatórios objetivos. Na parte de quesitos médicos, utiliza o AxSet ACORDO™ — uma metodologia prática para construir quesitos técnicos que apoiam o jurídico e organizam a atuação clínica da equipe. A entrega ocorre por relatórios estruturados, produzidos a partir dos PDFs enviados pelo ambiente da equipe e disponibilizados no e-mail institucional.
+                A Themis™ é um AxControl™ desenhado pela AxiaCare® para apoiar equipes em necessidades jurídicas na saúde. Combina método, visuais e inteligência (AxIntel™) para transformar documentos extensos em relatórios objetivos. Na parte de quesitos médicos, utiliza o <span className="font-bold text-primary bg-accent/30 px-2 py-1 rounded">AxSet ACORDO™</span> <em className="text-muted-foreground/80">— Apoio Clínico Orientado para Realização de Defesas e Orientações</em> — uma metodologia prática para construir quesitos técnicos que apoiam o jurídico e organizam a atuação clínica da equipe. A entrega ocorre por relatórios estruturados, produzidos a partir dos PDFs enviados pelo ambiente da equipe e disponibilizados no e-mail institucional.
               </p>
             </CardContent>
           </Card>
@@ -264,13 +270,16 @@ const Index = () => {
       </section>
 
       {/* Disclosure - Importante */}
-      <section className="py-8 px-4 bg-muted/50 border-t">
+      <section className="py-12 px-4 bg-gradient-to-br from-amber-50 to-orange-100 dark:from-amber-900/30 dark:to-orange-900/30 border-t border-amber-200 dark:border-amber-700">
         <div className="container mx-auto max-w-4xl">
-          <Card className="border-accent bg-accent/10">
-            <CardContent className="p-6">
+          <Card className="border-amber-300 bg-gradient-to-br from-amber-100 to-orange-100 dark:from-amber-900/50 dark:to-orange-900/50 shadow-xl">
+            <CardContent className="p-8">
               <div className="text-center">
-                <h4 className="text-lg font-semibold text-primary mb-3">Importante</h4>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <div className="w-16 h-16 bg-amber-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <Shield className="w-8 h-8 text-white" />
+                </div>
+                <h4 className="text-2xl font-bold text-amber-800 dark:text-amber-200 mb-4">⚠️ Importante</h4>
+                <p className="text-base text-amber-700 dark:text-amber-300 leading-relaxed font-medium">
                   A Themis™ não substitui análise jurídica nem avaliação clínica. É uma ferramenta de apoio para equipes institucionais, que devem revisar e validar tecnicamente as entregas. Em situações urgentes, procure avaliação presencial.
                 </p>
               </div>
@@ -293,12 +302,75 @@ const Index = () => {
                     className="h-16 object-contain filter drop-shadow-lg"
                   />
                 </div>
-                <p className="text-lg text-muted-foreground leading-relaxed text-center mb-6">
+                <p className="text-lg text-muted-foreground leading-relaxed text-center mb-8">
                   A AxiaCare cria e conduz soluções completas para ecossistemas de saúde, integrando empresas, instituições, prestadores e líderes do setor. Nosso trabalho segue os <strong className="text-primary">princípios do cuidado baseado em valor (Value-Based Health Care)</strong>: é centrado no paciente, guiado por dados e orientado a resultados concretos.
                 </p>
-                <p className="text-base text-muted-foreground leading-relaxed text-center">
-                  Muito além de uma consultoria, atuamos em todas as etapas – do diagnóstico inicial à sustentação contínua. Identificamos a necessidade, mapeamos e engajamos os parceiros certos, co-desenhamos a jornada de valor e implementamos a solução com apoio institucional sólido e governança clínica efetiva.
-                </p>
+                
+                {/* AxControls™ Mind Map */}
+                <div className="bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-2xl p-8 mb-8">
+                  <div className="text-center mb-8">
+                    <h4 className="text-2xl font-bold text-primary mb-3">AxControls™</h4>
+                    <p className="text-lg text-muted-foreground italic">Ambientes Inteligentes para o Melhor Cuidado</p>
+                  </div>
+                  
+                  <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                    <Card className="shadow-card hover-lift bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm">
+                      <CardContent className="p-6 text-center">
+                        <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                          <FileText className="w-6 h-6 text-white" />
+                        </div>
+                        <h5 className="font-bold text-blue-600 mb-2">AxWay™</h5>
+                        <p className="text-sm text-muted-foreground">Método estruturado</p>
+                      </CardContent>
+                    </Card>
+                    
+                    <Card className="shadow-card hover-lift bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm">
+                      <CardContent className="p-6 text-center">
+                        <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                          <Target className="w-6 h-6 text-white" />
+                        </div>
+                        <h5 className="font-bold text-green-600 mb-2">AxView™</h5>
+                        <p className="text-sm text-muted-foreground">Modelo visual aplicado</p>
+                      </CardContent>
+                    </Card>
+                    
+                    <Card className="shadow-card hover-lift bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm">
+                      <CardContent className="p-6 text-center">
+                        <div className="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                          <Cpu className="w-6 h-6 text-white" />
+                        </div>
+                        <h5 className="font-bold text-purple-600 mb-2">AxIntel™</h5>
+                        <p className="text-sm text-muted-foreground">Inteligência artificial especializada</p>
+                      </CardContent>
+                    </Card>
+                    
+                    <Card className="shadow-card hover-lift bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm">
+                      <CardContent className="p-6 text-center">
+                        <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                          <TrendingUp className="w-6 h-6 text-white" />
+                        </div>
+                        <h5 className="font-bold text-orange-600 mb-2">AxWise™</h5>
+                        <p className="text-sm text-muted-foreground">Ensino profundo e prático</p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                  
+                  <div className="bg-white/60 dark:bg-gray-800/60 rounded-xl p-6 backdrop-blur-sm">
+                    <h5 className="text-lg font-bold text-primary text-center mb-4">Fórmulas Centrais</h5>
+                    <div className="space-y-3 text-center">
+                      <div className="bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 rounded-lg p-3">
+                        <p className="font-mono text-sm font-bold text-gray-700 dark:text-gray-300">
+                          AxSets™ = (AxWay™ + AxView™) × AxIntel™
+                        </p>
+                      </div>
+                      <div className="bg-gradient-to-r from-purple-100 to-orange-100 dark:from-purple-900/30 dark:to-orange-900/30 rounded-lg p-3">
+                        <p className="font-mono text-sm font-bold text-gray-700 dark:text-gray-300">
+                          AxControl™ = AxSets™ + AxWise™
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <div className="mt-6 flex justify-center">
                   <a 
                     href="https://www.axcare.com.br" 
