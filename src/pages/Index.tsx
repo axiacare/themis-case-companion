@@ -478,7 +478,7 @@ const Index = () => {
               <h5 className="font-semibold text-white mb-4">Links Úteis</h5>
               <div className="space-y-3">
                 <a 
-                  href="https://github.com/axiacare/control/privacidade.html"
+                  href="https://hub.guithome.com.br/axia/privacidade.html"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block text-white/70 hover:text-white transition-smooth text-sm hover-lift"
