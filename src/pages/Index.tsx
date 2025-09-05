@@ -34,9 +34,19 @@ const Index = () => {
       {/* LGPD Badge */}
       <div className="bg-primary/10 border-b border-primary/20">
         <div className="container mx-auto px-4 py-2">
-          <div className="flex items-center justify-center space-x-2 text-sm text-white">
-            <Shield className="w-4 h-4" />
-            <span className="font-medium">Ambiente seguro • ISO/IEC 27001 e 27701 • LGPD</span>
+          <div className="flex items-center justify-center space-x-4 text-sm text-white">
+            <div className="flex items-center space-x-2">
+              <Shield className="w-4 h-4" />
+              <span className="font-medium">Ambiente seguro • ISO/IEC 27001 e 27701 • LGPD</span>
+            </div>
+            <a 
+              href="https://hub.guithome.com.br/axia/privacidade.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-primary/20 hover:bg-primary/30 px-3 py-1 rounded-full text-xs font-medium text-white/90 hover:text-white transition-smooth border border-primary/30 hover:border-primary/50 shadow-sm hover:shadow-md"
+            >
+              Política de Privacidade
+            </a>
           </div>
         </div>
       </div>
