@@ -420,12 +420,12 @@ const Index = () => {
                   AxiaCare® - www.axcare.com.br
                 </a>
                 <a 
-                  href="https://guithome.com.br" 
+                  href="https://www.guithome.com.br" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="block text-white/70 hover:text-white transition-smooth text-sm hover-lift"
                 >
-                  GuiTHome - guithome.com.br
+                  GT Corporation - www.guithome.com.br
                 </a>
               </div>
             </div>
