@@ -50,8 +50,8 @@ const Index = () => {
               <span className="block text-white/90 text-3xl mt-2">Um ambiente inteligente em necessidades jurídicas na saúde</span>
             </h2>
             <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-6 font-medium">
-              Criado por profissionais da saúde. Potencializado por <span className="text-cyan-300 font-bold">
-                <span className="text-blue-400">A</span><span className="text-emerald-400">I</span>
+              Criado por profissionais da saúde. Potencializado por <span className="font-bold">
+                <span className="text-lime-400">A</span><span className="text-lime-400">I</span>
               </span>.
             </p>
             <p className="text-lg text-white/90 max-w-3xl mx-auto leading-relaxed">
@@ -297,7 +297,7 @@ const Index = () => {
               <CardContent className="p-8">
                 <div className="flex items-center justify-center mb-6">
                   <img 
-                    src="/lovable-uploads/0216b248-1c8d-42ce-bb98-a2a704854eb9.png"
+                    src="/lovable-uploads/fd77d49c-e7ca-40aa-9e72-aed6bb733f1e.png"
                     alt="AxiaCare®" 
                     className="h-16 object-contain filter drop-shadow-lg"
                   />
@@ -410,7 +410,7 @@ const Index = () => {
           <div className="text-center">
             <div className="flex items-center justify-center space-x-6 mb-6">
               <img 
-                src="/lovable-uploads/fd77d49c-e7ca-40aa-9e72-aed6bb733f1e.png"
+                src="/lovable-uploads/3a609217-c544-4fd5-a948-687a2319d780.png"
                 alt="MedValor®" 
                 className="h-16 object-contain filter drop-shadow-lg"
               />
@@ -477,12 +477,14 @@ const Index = () => {
             <div className="text-center">
               <h5 className="font-semibold text-white mb-4">Links Úteis</h5>
               <div className="space-y-3">
-                <Link 
-                  to="/politica-privacidade" 
+                <a 
+                  href="https://github.com/axiacare/control/privacidade.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block text-white/70 hover:text-white transition-smooth text-sm hover-lift"
                 >
                   Política de Privacidade
-                </Link>
+                </a>
                 <a 
                   href="https://www.axcare.com.br" 
                   target="_blank" 
