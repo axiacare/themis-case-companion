@@ -8,96 +8,116 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 98%;
-    --foreground: 210 40% 8%;
+    /* AxControl™ Design System - Cores Oficiais */
+    --color-primary: 206 67% 35%;        /* #196396 - Cabeçalhos, títulos */
+    --color-secondary-1: 150 35% 75%;    /* #a6d8c0 - Fundos, cartões */
+    --color-secondary-2: 90 95% 78%;     /* #a6fb90 - Gráficos, detalhes */
+    --color-dark: 222 21% 22%;           /* #2d3445 - Texto, ícones */
+    --color-light: 40 25% 96%;           /* f8f5f0 - Fundo geral */
+    --color-white: 0 0% 100%;            /* #ffffff - Áreas neutras */
+    --color-accent: 150 62% 47%;         /* #2dbf7f - AxiaCare/Unihealth */
+    --color-accent-medvalor: 34 100% 50%; /* #ff8f00 - MedValor */
 
-    --card: 0 0% 100%;
-    --card-foreground: 210 40% 8%;
+    /* Mapeamento Shadcn/UI com tokens AxControl™ */
+    --background: var(--color-light);
+    --foreground: var(--color-dark);
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 210 40% 8%;
+    --card: var(--color-white);
+    --card-foreground: var(--color-dark);
 
-    --primary: 206 54% 28%;
-    --primary-foreground: 0 0% 98%;
-    --primary-hover: 206 54% 24%;
+    --popover: var(--color-white);
+    --popover-foreground: var(--color-dark);
 
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 210 40% 8%;
+    --primary: var(--color-primary);
+    --primary-foreground: var(--color-white);
+    --primary-hover: 206 67% 30%;
 
-    --muted: 210 40% 95%;
-    --muted-foreground: 215 16% 47%;
+    --secondary: var(--color-secondary-1);
+    --secondary-foreground: var(--color-dark);
 
-    --accent: 150 30% 75%;
-    --accent-foreground: 210 40% 8%;
+    --muted: 150 20% 92%;
+    --muted-foreground: 222 15% 55%;
 
-    --success: 90 60% 80%;
-    --success-foreground: 210 40% 8%;
+    --accent: var(--color-accent);
+    --accent-foreground: var(--color-white);
+
+    --success: var(--color-secondary-2);
+    --success-foreground: var(--color-dark);
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: var(--color-white);
 
-    --border: 210 40% 90%;
-    --input: 210 40% 95%;
-    --ring: 206 54% 28%;
+    --border: 150 20% 85%;
+    --input: 150 15% 94%;
+    --ring: var(--color-primary);
 
-    --radius: 14px;
+    --radius: 12px;
 
-    /* AxiaCare® Official Design Tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(206 54% 28%), hsl(206 54% 24%));
-    --gradient-secondary: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
-    --gradient-accent: linear-gradient(135deg, hsl(150 30% 75%), hsl(90 60% 80%));
-    --gradient-dark: linear-gradient(135deg, hsl(220 20% 18%), hsl(220 25% 21%));
+    /* AxControl™ Gradientes Institucionais */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--color-primary)), hsl(206 67% 30%));
+    --gradient-secondary: linear-gradient(180deg, hsl(var(--color-light)), hsl(var(--muted)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--color-accent)), hsl(var(--color-secondary-2)));
+    --gradient-dark: linear-gradient(135deg, hsl(var(--color-dark)), hsl(222 25% 28%));
+    --gradient-institutional: linear-gradient(135deg, hsl(var(--color-primary)), hsl(var(--color-accent)));
     
-    --shadow-elegant: 0 10px 40px -10px hsl(206 54% 28% / 0.25);
-    --shadow-card: 0 6px 25px -6px hsl(206 54% 28% / 0.15);
-    --shadow-button: 0 6px 20px -3px hsl(206 54% 28% / 0.30);
+    /* AxControl™ Sombras Profissionais */
+    --shadow-elegant: 0 10px 40px -10px hsl(var(--color-primary) / 0.25);
+    --shadow-card: 0 6px 25px -6px hsl(var(--color-primary) / 0.15);
+    --shadow-button: 0 6px 20px -3px hsl(var(--color-primary) / 0.30);
+    --shadow-institutional: 0 20px 60px -15px hsl(var(--color-primary) / 0.4);
     
+    /* AxControl™ Transições Suaves */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-institutional: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
   .dark {
-    --background: 220 20% 18%;
-    --foreground: 210 20% 95%;
+    /* AxControl™ Dark Mode - Ajustado para tokens institucionais */
+    --background: var(--color-dark);
+    --foreground: var(--color-light);
 
-    --card: 220 25% 21%;
-    --card-foreground: 210 20% 95%;
+    --card: 222 25% 28%;
+    --card-foreground: var(--color-light);
 
-    --popover: 220 25% 21%;
-    --popover-foreground: 210 20% 95%;
+    --popover: 222 25% 28%;
+    --popover-foreground: var(--color-light);
 
-    --primary: 206 54% 65%;
-    --primary-foreground: 220 20% 18%;
-    --primary-hover: 206 54% 70%;
+    --primary: 206 67% 55%;          /* Primary mais claro no dark */
+    --primary-foreground: var(--color-dark);
+    --primary-hover: 206 67% 60%;
 
-    --secondary: 220 20% 25%;
-    --secondary-foreground: 210 20% 95%;
+    --secondary: 150 25% 45%;        /* Secondary ajustado */
+    --secondary-foreground: var(--color-light);
 
-    --muted: 220 20% 22%;
-    --muted-foreground: 210 20% 75%;
+    --muted: 222 20% 25%;
+    --muted-foreground: 40 15% 75%;
 
-    --accent: 150 25% 60%;
-    --accent-foreground: 210 20% 95%;
+    --accent: 150 62% 57%;           /* Accent ajustado */
+    --accent-foreground: var(--color-dark);
 
-    --success: 90 50% 65%;
-    --success-foreground: 220 20% 18%;
+    --success: 90 75% 60%;
+    --success-foreground: var(--color-dark);
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: var(--color-white);
 
-    --border: 220 20% 30%;
-    --input: 220 20% 25%;
-    --ring: 206 54% 65%;
+    --border: 222 20% 35%;
+    --input: 222 20% 30%;
+    --ring: 206 67% 55%;
 
-    /* Dark mode AxiaCare® gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(206 54% 65%), hsl(206 54% 70%));
-    --gradient-secondary: linear-gradient(180deg, hsl(220 20% 18%), hsl(220 20% 22%));
-    --gradient-accent: linear-gradient(135deg, hsl(150 25% 60%), hsl(90 45% 65%));
-    --gradient-dark: linear-gradient(135deg, hsl(220 25% 15%), hsl(220 30% 18%));
+    /* AxControl™ Dark Mode Gradientes */
+    --gradient-primary: linear-gradient(135deg, hsl(206 67% 55%), hsl(206 67% 60%));
+    --gradient-secondary: linear-gradient(180deg, hsl(var(--color-dark)), hsl(222 20% 25%));
+    --gradient-accent: linear-gradient(135deg, hsl(150 62% 57%), hsl(90 75% 60%));
+    --gradient-dark: linear-gradient(135deg, hsl(222 25% 15%), hsl(222 30% 20%));
+    --gradient-institutional: linear-gradient(135deg, hsl(206 67% 55%), hsl(150 62% 57%));
     
-    --shadow-elegant: 0 10px 40px -10px hsl(206 54% 65% / 0.4);
-    --shadow-card: 0 6px 25px -6px hsl(206 54% 65% / 0.2);
-    --shadow-button: 0 6px 20px -3px hsl(206 54% 65% / 0.5);
+    /* AxControl™ Dark Mode Sombras */
+    --shadow-elegant: 0 10px 40px -10px hsl(206 67% 55% / 0.4);
+    --shadow-card: 0 6px 25px -6px hsl(206 67% 55% / 0.25);
+    --shadow-button: 0 6px 20px -3px hsl(206 67% 55% / 0.5);
+    --shadow-institutional: 0 20px 60px -15px hsl(206 67% 55% / 0.6);
   }
 }
 
@@ -107,17 +127,36 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
     transition: var(--transition-smooth);
   }
 
-  /* Professional Typography & Effects */
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-semibold;
+  /* AxControl™ Typography System */
+  h1, h2, h3 {
+    font-family: 'Inter', system-ui, sans-serif;
+    @apply font-bold text-foreground;
     letter-spacing: -0.025em;
   }
+  
+  h4, h5, h6 {
+    font-family: 'Inter', system-ui, sans-serif;
+    @apply font-semibold text-foreground;
+    letter-spacing: -0.015em;
+  }
 
-  /* Custom Components */
+  /* AxControl™ Responsive Typography - Mobile First */
+  h1 { font-size: clamp(2.25rem, 4vw, 3rem); }      /* 36-48px */
+  h2 { font-size: clamp(1.875rem, 3.5vw, 2.5rem); } /* 30-40px */
+  h3 { font-size: clamp(1.5rem, 3vw, 2rem); }       /* 24-32px */
+  h4 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }  /* 20-24px */
+  
+  p, body { 
+    font-size: clamp(1rem, 2vw, 1.125rem);          /* 16-18px */
+    line-height: 1.6;
+  }
+
+  /* AxControl™ Custom Components */
   .gradient-primary {
     background: var(--gradient-primary);
   }
@@ -134,6 +173,25 @@ All colors MUST be HSL.
     background: var(--gradient-dark);
   }
 
+  .gradient-institutional {
+    background: var(--gradient-institutional);
+  }
+
+  /* AxControl™ Header Sticky - Layout Institucional */
+  .header-sticky {
+    @apply sticky top-0 z-50 bg-card/95 backdrop-blur-md border-b border-border/20;
+    box-shadow: var(--shadow-card);
+  }
+
+  /* AxControl™ Chip Components */
+  .chip-compliance {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-success text-success-foreground;
+  }
+
+  .chip-status {
+    @apply inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium bg-muted text-muted-foreground;
+  }
+
   .shadow-elegant {
     box-shadow: var(--shadow-elegant);
   }
@@ -146,12 +204,20 @@ All colors MUST be HSL.
     box-shadow: var(--shadow-button);
   }
 
+  .shadow-institutional {
+    box-shadow: var(--shadow-institutional);
+  }
+
   .transition-smooth {
     transition: var(--transition-smooth);
   }
 
   .transition-bounce {
     transition: var(--transition-bounce);
+  }
+
+  .transition-institutional {
+    transition: var(--transition-institutional);
   }
 
   /* Professional Hover Effects */
@@ -163,8 +229,40 @@ All colors MUST be HSL.
     @apply transition-all duration-300 hover:shadow-button;
   }
 
-  /* Glass Effect */
+  /* AxControl™ Glass & Special Effects */
   .glass {
     @apply bg-card/80 backdrop-blur-md border border-border/20;
+  }
+
+  .glass-institutional {
+    @apply bg-card/90 backdrop-blur-lg border border-primary/20;
+    box-shadow: var(--shadow-institutional);
+  }
+
+  /* AxControl™ Interactive States */
+  .interactive-card {
+    @apply transition-institutional hover:shadow-institutional hover:scale-102 cursor-pointer;
+    transform-origin: center;
+  }
+
+  .scale-102 {
+    transform: scale(1.02);
+  }
+
+  /* AxControl™ Table Responsive Wrapper */
+  .table-wrapper {
+    @apply overflow-x-auto rounded-lg border border-border;
+  }
+
+  .table-wrapper::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .table-wrapper::-webkit-scrollbar-track {
+    @apply bg-muted rounded;
+  }
+
+  .table-wrapper::-webkit-scrollbar-thumb {
+    @apply bg-primary/60 rounded hover:bg-primary/80;
   }
 }

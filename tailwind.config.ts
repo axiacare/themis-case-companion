@@ -27,8 +27,7 @@ export default {
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))',
-					light: 'hsl(var(--primary-light))',
-					glow: 'hsl(var(--primary-glow))'
+					hover: 'hsl(var(--primary-hover))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -45,7 +44,7 @@ export default {
 				accent: {
 					DEFAULT: 'hsl(var(--accent))',
 					foreground: 'hsl(var(--accent-foreground))',
-					primary: 'hsl(var(--accent-primary))'
+					medvalor: 'hsl(var(--color-accent-medvalor))'
 				},
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',
@@ -54,7 +53,25 @@ export default {
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
-				}
+				},
+				success: {
+					DEFAULT: 'hsl(var(--success))',
+					foreground: 'hsl(var(--success-foreground))'
+				},
+				// AxControl™ Tokens Específicos
+				'axcontrol-primary': 'hsl(var(--color-primary))',
+				'axcontrol-secondary-1': 'hsl(var(--color-secondary-1))',
+				'axcontrol-secondary-2': 'hsl(var(--color-secondary-2))',
+				'axcontrol-dark': 'hsl(var(--color-dark))',
+				'axcontrol-light': 'hsl(var(--color-light))',
+				'axcontrol-white': 'hsl(var(--color-white))',
+				'axcontrol-accent': 'hsl(var(--color-accent))',
+				'axcontrol-medvalor': 'hsl(var(--color-accent-medvalor))'
+			},
+			fontFamily: {
+				'grifter': ['Grifter', 'Inter', 'system-ui', 'sans-serif'],
+				'inter': ['Inter', 'system-ui', 'sans-serif'],
+				'sans': ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Helvetica Neue', 'Arial', 'sans-serif']
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
