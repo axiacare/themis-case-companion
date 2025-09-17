@@ -37,9 +37,9 @@ const Confirmation = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <img 
-                src="/lovable-uploads/1d3ef3f4-c925-4cf4-9f21-94a108155b6f.png"
+                src="/logo-axia-principal.png"
                 alt="Themis™ Logo" 
-                className="w-16 h-16 rounded-xl object-cover hover-glow"
+                className="w-16 h-16 object-contain"
               />
               <div className="flex flex-col">
                 <h1 className="text-2xl font-bold text-white">Themis™</h1>
