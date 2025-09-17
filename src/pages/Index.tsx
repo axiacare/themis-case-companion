@@ -18,7 +18,7 @@ const Index = () => {
               />
               <div className="flex flex-col">
                 <h1 className="text-2xl font-bold text-axcontrol-dark">Themis™</h1>
-                <span className="text-sm text-axcontrol-primary font-medium">AxControl™</span>
+                <span className="text-sm text-axcontrol-primary font-medium">Ambiente Inteligente de Necessidades Jurídicas na Saúde</span>
               </div>
             </div>
             <div className="flex items-center space-x-3">
@@ -69,9 +69,7 @@ const Index = () => {
               <span className="block text-axcontrol-dark/80 text-3xl mt-2">Um ambiente inteligente em necessidades jurídicas na saúde</span>
             </h2>
             <p className="text-xl text-axcontrol-dark/80 max-w-3xl mx-auto leading-relaxed mb-6 font-medium">
-              Criado por profissionais da saúde. Potencializado por <span className="font-bold">
-                <span className="text-axcontrol-secondary-2">A</span><span className="text-axcontrol-secondary-2">I</span>
-              </span>.
+              Criado por profissionais da saúde. Potencializado por <span className="font-bold text-axcontrol-primary">AI</span>.
             </p>
             <p className="text-lg text-axcontrol-dark/70 max-w-3xl mx-auto leading-relaxed">
               Gera relatórios e quesitos para diferentes necessidades jurídico-médicas, com automações e motores de IA pensados para equipes.
@@ -164,9 +162,7 @@ const Index = () => {
                 <div className="text-3xl font-bold text-axcontrol-primary mb-2">98</div>
                 <h4 className="text-lg font-semibold text-axcontrol-primary mb-2">Casos Lidos</h4>
                 <p className="text-sm text-axcontrol-dark/70">
-                  PDFs analisados pela <span className="font-bold text-xl">
-                    <span className="text-axcontrol-secondary-2">A</span>x<span className="text-axcontrol-secondary-2">I</span>ntel™
-                  </span>
+                  PDFs analisados pela <span className="font-bold text-axcontrol-primary">AxIntel™</span>
                 </p>
               </CardContent>
             </Card>
@@ -394,9 +390,11 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div>
               <div className="flex items-center space-x-3 mb-6">
-                <div className="w-8 h-8 bg-axcontrol-accent rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">M</span>
-                </div>
+                <img 
+                  src="/medvalor-logo.png"
+                  alt="MedValor Logo" 
+                  className="w-8 h-8 object-contain"
+                />
                 <h3 className="text-3xl font-bold text-axcontrol-primary">AxWise™ - MedValor®</h3>
               </div>
               
@@ -417,7 +415,7 @@ const Index = () => {
                 
                 <div className="block">
                   <a 
-                    href="https://medvalor.com.br" 
+                    href="https://medvalor.med.br" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="inline-flex items-center text-axcontrol-accent hover:text-axcontrol-primary transition-smooth font-medium"
