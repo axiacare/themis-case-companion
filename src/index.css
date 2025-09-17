@@ -8,14 +8,14 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* AxControl™ Design System - Cores Oficiais */
-    --color-primary: 206 67% 35%;        /* #196396 - Cabeçalhos, títulos */
-    --color-secondary-1: 150 35% 75%;    /* #a6d8c0 - Fundos, cartões */
-    --color-secondary-2: 90 95% 78%;     /* #a6fb90 - Gráficos, detalhes */
+    /* AxControl™ Design System - Cores Oficiais Exatas */
+    --color-primary: 205 67% 35%;        /* #196396 - Cabeçalhos, títulos */
+    --color-secondary-1: 154 35% 76%;    /* #a6d8c0 - Fundos, cartões */
+    --color-secondary-2: 85 95% 78%;     /* #a6fb90 - Gráficos, detalhes */
     --color-dark: 222 21% 22%;           /* #2d3445 - Texto, ícones */
-    --color-light: 40 25% 96%;           /* f8f5f0 - Fundo geral */
+    --color-light: 40 25% 96%;           /* #f8f5f0 - Fundo geral */
     --color-white: 0 0% 100%;            /* #ffffff - Áreas neutras */
-    --color-accent: 150 62% 47%;         /* #2dbf7f - AxiaCare/Unihealth */
+    --color-accent: 158 55% 44%;         /* #2dbf7f - AxiaCare/Unihealth */
     --color-accent-medvalor: 34 100% 50%; /* #ff8f00 - MedValor */
 
     /* Mapeamento Shadcn/UI com tokens AxControl™ */
