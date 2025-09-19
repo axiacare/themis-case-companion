@@ -391,7 +391,7 @@ const Index = () => {
             <div>
               <div className="flex items-center space-x-3 mb-6">
                 <img 
-                  src="/medvalor-logo.png"
+                  src="/medvalor-logo-new.png"
                   alt="MedValor Logo" 
                   className="w-8 h-8 object-contain"
                 />
