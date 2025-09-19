@@ -393,7 +393,7 @@ const Index = () => {
                 <img 
                   src="/medvalor-logo-new.png"
                   alt="MedValor Logo" 
-                  className="w-12 h-12 object-contain"
+                  className="w-16 h-16 object-contain"
                 />
                 <h3 className="text-3xl font-bold text-axcontrol-primary">AxWise™ - MedValor®</h3>
               </div>
