@@ -289,9 +289,9 @@ const Index = () => {
             <div>
               <div className="flex items-center space-x-3 mb-6">
                 <img 
-                  src="/axiacare-logo-oficial.png" 
+                  src="/axia-logo.png" 
                   alt="AxiaCare®" 
-                  className="w-12 h-12 object-contain shadow-button"
+                  className="w-16 h-16 object-contain shadow-button"
                 />
                 <h3 className="text-3xl font-bold text-axcontrol-primary">A força da AxiaCare®</h3>
               </div>
