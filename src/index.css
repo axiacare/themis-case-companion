@@ -48,154 +48,152 @@ All colors MUST be HSL.
     --destructive-foreground: var(--color-white);
 
     --border: 150 20% 85%;
-    --input: 150 15% 94%;
+    --input: 150 20% 85%;
     --ring: var(--color-primary);
 
-    --radius: 12px;
+    --radius: 0.75rem;
 
-    /* AxControl™ Gradientes Institucionais */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--color-primary)), hsl(206 67% 30%));
-    --gradient-secondary: linear-gradient(180deg, hsl(var(--color-light)), hsl(var(--muted)));
+    /* AxControl™ Gradients - Beautiful and elegant */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--color-primary)), hsl(var(--color-accent)));
     --gradient-accent: linear-gradient(135deg, hsl(var(--color-accent)), hsl(var(--color-secondary-2)));
-    --gradient-dark: linear-gradient(135deg, hsl(var(--color-dark)), hsl(222 25% 28%));
-    --gradient-institutional: linear-gradient(135deg, hsl(var(--color-primary)), hsl(var(--color-accent)));
-    
-    /* AxControl™ Sombras Profissionais */
-    --shadow-elegant: 0 10px 40px -10px hsl(var(--color-primary) / 0.25);
-    --shadow-card: 0 6px 25px -6px hsl(var(--color-primary) / 0.15);
-    --shadow-button: 0 6px 20px -3px hsl(var(--color-primary) / 0.30);
-    --shadow-institutional: 0 20px 60px -15px hsl(var(--color-primary) / 0.4);
-    
-    /* AxControl™ Transições Suaves */
-    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    --transition-institutional: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --gradient-elegant: linear-gradient(135deg, hsl(var(--color-primary)), hsl(var(--color-dark)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--color-light)), hsl(var(--color-white)));
+    --gradient-institutional: linear-gradient(135deg, hsl(var(--color-primary)), hsl(154 35% 60%));
+
+    /* AxControl™ Shadows - Professional elevation */
+    --shadow-card: 0 2px 15px -5px hsl(var(--color-primary) / 0.1);
+    --shadow-button: 0 6px 25px -8px hsl(var(--color-primary) / 0.3);
+    --shadow-institutional: 0 10px 40px -10px hsl(var(--color-primary) / 0.2);
+    --shadow-elegant: 0 8px 30px -8px hsl(var(--color-accent) / 0.25);
+
+    /* AxControl™ Transitions - Smooth interactions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-institutional: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
   }
 
   .dark {
-    /* AxControl™ Dark Mode - Ajustado para tokens institucionais */
-    --background: var(--color-dark);
+    /* Dark mode adjustments maintaining AxControl™ identity */
+    --background: 222 21% 12%;           /* Darker than base dark */
     --foreground: var(--color-light);
 
-    --card: 222 25% 28%;
+    --card: 222 21% 16%;
     --card-foreground: var(--color-light);
 
-    --popover: 222 25% 28%;
+    --popover: 222 21% 16%;
     --popover-foreground: var(--color-light);
 
-    --primary: 206 67% 55%;          /* Primary mais claro no dark */
-    --primary-foreground: var(--color-dark);
-    --primary-hover: 206 67% 60%;
+    --primary: var(--color-primary);
+    --primary-foreground: var(--color-white);
 
-    --secondary: 150 25% 45%;        /* Secondary ajustado */
+    --secondary: 222 21% 20%;
     --secondary-foreground: var(--color-light);
 
-    --muted: 222 20% 25%;
-    --muted-foreground: 40 15% 75%;
+    --muted: 222 21% 20%;
+    --muted-foreground: 222 15% 65%;
 
-    --accent: 150 62% 57%;           /* Accent ajustado */
-    --accent-foreground: var(--color-dark);
+    --accent: var(--color-accent);
+    --accent-foreground: var(--color-white);
 
-    --success: 90 75% 60%;
-    --success-foreground: var(--color-dark);
-
-    --destructive: 0 84% 60%;
+    --destructive: 0 84% 65%;
     --destructive-foreground: var(--color-white);
 
-    --border: 222 20% 35%;
-    --input: 222 20% 30%;
-    --ring: 206 67% 55%;
-
-    /* AxControl™ Dark Mode Gradientes */
-    --gradient-primary: linear-gradient(135deg, hsl(206 67% 55%), hsl(206 67% 60%));
-    --gradient-secondary: linear-gradient(180deg, hsl(var(--color-dark)), hsl(222 20% 25%));
-    --gradient-accent: linear-gradient(135deg, hsl(150 62% 57%), hsl(90 75% 60%));
-    --gradient-dark: linear-gradient(135deg, hsl(222 25% 15%), hsl(222 30% 20%));
-    --gradient-institutional: linear-gradient(135deg, hsl(206 67% 55%), hsl(150 62% 57%));
-    
-    /* AxControl™ Dark Mode Sombras */
-    --shadow-elegant: 0 10px 40px -10px hsl(206 67% 55% / 0.4);
-    --shadow-card: 0 6px 25px -6px hsl(206 67% 55% / 0.25);
-    --shadow-button: 0 6px 20px -3px hsl(206 67% 55% / 0.5);
-    --shadow-institutional: 0 20px 60px -15px hsl(206 67% 55% / 0.6);
+    --border: 222 21% 25%;
+    --input: 222 21% 25%;
+    --ring: var(--color-accent);
   }
-}
 
-@layer base {
+  /* Base Styling - Clean and professional */
   * {
     @apply border-border;
   }
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-    transition: var(--transition-smooth);
+    font-feature-settings: "rlig" 1, "calt" 1;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.5;
   }
 
-  /* AxControl™ Typography System */
-  h1, h2, h3 {
-    font-family: 'Inter', system-ui, sans-serif;
-    @apply font-bold text-foreground;
-    letter-spacing: -0.025em;
-  }
-  
-  h4, h5, h6 {
-    font-family: 'Inter', system-ui, sans-serif;
-    @apply font-semibold text-foreground;
-    letter-spacing: -0.015em;
+  /* AxControl™ Typography */
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-foreground;
+    font-weight: 600;
+    line-height: 1.2;
   }
 
-  /* AxControl™ Responsive Typography - Mobile First */
-  h1 { font-size: clamp(2.25rem, 4vw, 3rem); }      /* 36-48px */
-  h2 { font-size: clamp(1.875rem, 3.5vw, 2.5rem); } /* 30-40px */
-  h3 { font-size: clamp(1.5rem, 3vw, 2rem); }       /* 24-32px */
-  h4 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }  /* 20-24px */
-  
-  p, body { 
-    font-size: clamp(1rem, 2vw, 1.125rem);          /* 16-18px */
-    line-height: 1.6;
-  }
+  h1 { @apply text-3xl md:text-4xl; }
+  h2 { @apply text-2xl md:text-3xl; }
+  h3 { @apply text-xl md:text-2xl; }
+  h4 { @apply text-lg md:text-xl; }
 
-  /* AxControl™ Custom Components */
+  p {
+    @apply text-foreground/80 leading-relaxed;
+  }
+}
+
+@layer utilities {
+  /* AxControl™ Color Classes */
+  .text-axcontrol-primary { color: hsl(var(--color-primary)); }
+  .text-axcontrol-secondary-1 { color: hsl(var(--color-secondary-1)); }
+  .text-axcontrol-secondary-2 { color: hsl(var(--color-secondary-2)); }
+  .text-axcontrol-dark { color: hsl(var(--color-dark)); }
+  .text-axcontrol-light { color: hsl(var(--color-light)); }
+  .text-axcontrol-accent { color: hsl(var(--color-accent)); }
+
+  .bg-axcontrol-primary { background-color: hsl(var(--color-primary)); }
+  .bg-axcontrol-secondary-1 { background-color: hsl(var(--color-secondary-1)); }
+  .bg-axcontrol-secondary-2 { background-color: hsl(var(--color-secondary-2)); }
+  .bg-axcontrol-dark { background-color: hsl(var(--color-dark)); }
+  .bg-axcontrol-light { background-color: hsl(var(--color-light)); }
+  .bg-axcontrol-accent { background-color: hsl(var(--color-accent)); }
+
+  .border-axcontrol-primary { border-color: hsl(var(--color-primary)); }
+  .border-axcontrol-secondary-1 { border-color: hsl(var(--color-secondary-1)); }
+  .border-axcontrol-secondary-2 { border-color: hsl(var(--color-secondary-2)); }
+  .border-axcontrol-accent { border-color: hsl(var(--color-accent)); }
+
+  /* AxControl™ Gradients */
   .gradient-primary {
     background: var(--gradient-primary);
-  }
-
-  .gradient-secondary {
-    background: var(--gradient-secondary);
   }
 
   .gradient-accent {
     background: var(--gradient-accent);
   }
 
-  .gradient-dark {
-    background: var(--gradient-dark);
+  .gradient-elegant {
+    background: var(--gradient-elegant);
+  }
+
+  .gradient-subtle {
+    background: var(--gradient-subtle);
   }
 
   .gradient-institutional {
     background: var(--gradient-institutional);
   }
 
-  /* AxControl™ Header Sticky - Layout Institucional */
+  /* AxControl™ Layout Helpers */
   .header-sticky {
-    @apply sticky top-0 z-50 bg-card/95 backdrop-blur-md border-b border-border/20;
-    box-shadow: var(--shadow-card);
+    @apply sticky top-0 z-50 backdrop-blur-md;
+    border-bottom: 1px solid hsl(var(--border));
   }
 
-  /* AxControl™ Chip Components */
+  /* AxControl™ Component Classes */
   .chip-compliance {
-    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-success text-success-foreground;
+    @apply inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-success/20 text-success-foreground border border-success/30;
+  }
+
+  .chip-team {
+    @apply inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-primary/20 text-primary border border-primary/30;
   }
 
   .chip-status {
-    @apply inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium bg-muted text-muted-foreground;
+    @apply inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-accent/20 text-accent-foreground border border-accent/30;
   }
 
-  .shadow-elegant {
-    box-shadow: var(--shadow-elegant);
-  }
-
+  /* AxControl™ Shadows */
   .shadow-card {
     box-shadow: var(--shadow-card);
   }
@@ -220,13 +218,25 @@ All colors MUST be HSL.
     transition: var(--transition-institutional);
   }
 
-  /* Professional Hover Effects */
+  /* Professional Hover Effects - Optimized for performance */
   .hover-lift {
-    @apply transition-all duration-300 hover:scale-105 hover:shadow-elegant;
+    will-change: transform;
+    transform: translateZ(0);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .hover-lift:hover {
+    transform: translateZ(0) scale(1.05);
+    box-shadow: var(--shadow-elegant);
   }
 
   .hover-glow {
-    @apply transition-all duration-300 hover:shadow-button;
+    will-change: transform;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .hover-glow:hover {
+    box-shadow: var(--shadow-button);
   }
 
   /* AxControl™ Glass & Special Effects */
@@ -239,14 +249,43 @@ All colors MUST be HSL.
     box-shadow: var(--shadow-institutional);
   }
 
-  /* AxControl™ Interactive States */
+  /* AxControl™ Interactive States - Performance optimized */
   .interactive-card {
-    @apply transition-institutional hover:shadow-institutional hover:scale-102 cursor-pointer;
+    cursor: pointer;
     transform-origin: center;
+    will-change: transform;
+    transform: translateZ(0);
+    transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+  
+  .interactive-card:hover {
+    transform: translateZ(0) scale(1.02);
+    box-shadow: var(--shadow-institutional);
   }
 
   .scale-102 {
     transform: scale(1.02);
+  }
+
+  /* Performance optimized hover effects */
+  .hover-scale-sm {
+    will-change: transform;
+    transform: translateZ(0);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .hover-scale-sm:hover {
+    transform: translateZ(0) scale(1.02);
+  }
+
+  .hover-scale-md {
+    will-change: transform;
+    transform: translateZ(0);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .hover-scale-md:hover {
+    transform: translateZ(0) scale(1.05);
   }
 
   /* AxControl™ Table Responsive Wrapper */
