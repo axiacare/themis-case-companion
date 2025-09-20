@@ -35,16 +35,28 @@ const Index = () => {
                   className="h-8 object-contain"
                 />
               </div>
-              <Link to="/acesso">
-                <Button 
-                  size="sm"
-                  className="bg-axcontrol-primary hover:bg-axcontrol-primary/90 text-white shadow-button px-3 md:px-6 py-2 md:py-2.5 text-sm md:text-base font-medium whitespace-nowrap"
-                >
-                  <span className="hidden sm:inline">Entrar no ambiente</span>
-                  <span className="sm:hidden">Entrar</span>
-                  <ArrowRight className="w-3 h-3 md:w-4 md:h-4 ml-1 md:ml-2" />
-                </Button>
-              </Link>
+              <div className="flex items-center space-x-2">
+                <Link to="/admin">
+                  <Button 
+                    variant="outline"
+                    size="sm"
+                    className="text-axcontrol-primary border-axcontrol-primary hover:bg-axcontrol-primary hover:text-white transition-smooth px-2 md:px-3"
+                  >
+                    <Shield className="w-3 h-3 md:w-4 md:h-4" />
+                    <span className="hidden md:inline ml-1">Admin</span>
+                  </Button>
+                </Link>
+                <Link to="/acesso">
+                  <Button 
+                    size="sm"
+                    className="bg-axcontrol-primary hover:bg-axcontrol-primary/90 text-white shadow-button px-3 md:px-6 py-2 md:py-2.5 text-sm md:text-base font-medium whitespace-nowrap"
+                  >
+                    <span className="hidden sm:inline">Entrar no ambiente</span>
+                    <span className="sm:hidden">Entrar</span>
+                    <ArrowRight className="w-3 h-3 md:w-4 md:h-4 ml-1 md:ml-2" />
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
