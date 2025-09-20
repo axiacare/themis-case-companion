@@ -5,19 +5,21 @@
     <link rel="icon" href="/logo-axia-principal-optimized.png" type="image/png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <!-- AxControl™ Fonts - Non-blocking Inter font loading -->
+    <!-- AxControl™ Fonts - Completely non-blocking font loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- Critical font preloads -->
     <link rel="preload" href="https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7W0Q5nw.woff2" as="font" type="font/woff2" crossorigin>
-    <!-- Non-blocking font CSS -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+    <!-- Non-blocking font CSS using print media trick -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
-    <!-- Inline font-display optimization -->
+    <!-- Inline critical font-face definitions for instant rendering -->
     <style>
       @font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2) format('woff2')}
       @font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7W0Q5nw.woff2) format('woff2')}
+      @font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa3pL7W0Q5nw.woff2) format('woff2')}
+      @font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0pL7W0Q5nw.woff2) format('woff2')}
     </style>
     <title>Themis™ - Um ambiente inteligente em necessidades jurídicas na saúde | AxiaCare®</title>
     <meta name="description" content="Ambiente inteligente pensado para equipes. Gera relatórios e quesitos para diferentes necessidades jurídico-médicas, com automações e motores de IA. Criado por profissionais da saúde. Potencializado por IA." />
