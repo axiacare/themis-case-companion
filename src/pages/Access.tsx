@@ -55,31 +55,20 @@ const Access = () => {
     setIsLoggingIn(true);
 
     try {
-      // Modo de teste - aceita qualquer credencial se for URL de teste
-      if (settings.authWebhookUrl.includes('httpbin.org')) {
+      const success = await login(loginData.teamId, loginData.password);
+      
+      if (success) {
         toast({
-          title: "Modo de Teste Ativo",
-          description: `Acesso liberado para equipe ${loginData.teamId} (modo desenvolvimento)`,
+          title: "Acesso autorizado",
+          description: `Bem-vindo à equipe ${loginData.teamId}!`,
         });
-        // Simula login bem-sucedido
-        const success = await login(loginData.teamId, loginData.password, settings.authWebhookUrl);
         navigate("/enviar-caso");
       } else {
-        const success = await login(loginData.teamId, loginData.password, settings.authWebhookUrl);
-        
-        if (success) {
-          toast({
-            title: "Acesso autorizado",
-            description: `Bem-vindo à equipe ${loginData.teamId}!`,
-          });
-          navigate("/enviar-caso");
-        } else {
-          toast({
-            title: "Acesso negado",
-            description: "ID da equipe ou senha incorretos.",
-            variant: "destructive"
-          });
-        }
+        toast({
+          title: "Acesso negado",
+          description: "ID da equipe ou senha incorretos.",
+          variant: "destructive"
+        });
       }
     } catch (error) {
       toast({
