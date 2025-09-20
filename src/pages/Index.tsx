@@ -438,23 +438,24 @@ const Index = () => {
       </section>
 
       {/* Footer - Padrão AxControl™ conforme referência */}
-      <footer className="bg-white border-t border-axcontrol-secondary-1/30 py-8 px-4">
+      <footer className="bg-white border-t border-axcontrol-secondary-1/30 py-6 md:py-8 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center">
-            <div className="flex items-center justify-center space-x-3 mb-4">
+            <div className="flex items-center justify-center space-x-3 mb-3 md:mb-4">
               <img 
                 src="/logo-axia-principal.png"
                 alt="AxiaCare" 
-                className="w-8 h-8 object-contain"
+                className="w-7 h-7 md:w-8 md:h-8 object-contain"
               />
-              <span className="text-axcontrol-primary font-semibold">AxiaCare</span>
+              <span className="text-axcontrol-primary font-semibold text-sm md:text-base">AxiaCare</span>
             </div>
             
-            <p className="text-axcontrol-dark/70 text-sm mb-4">
+            <p className="text-axcontrol-dark/70 text-xs md:text-sm mb-3 md:mb-4">
               AxView™ | WebApps – Gestão e Consultoria em Saúde
             </p>
             
-            <div className="flex items-center justify-center space-x-6 text-sm text-axcontrol-dark/60 flex-wrap">
+            {/* Desktop layout */}
+            <div className="hidden md:flex items-center justify-center space-x-6 text-sm text-axcontrol-dark/60">
               <a href="https://axcare.com.br" target="_blank" rel="noopener noreferrer" className="hover:text-axcontrol-primary transition-smooth">
                 axcare.com.br
               </a>
@@ -462,6 +463,18 @@ const Index = () => {
               <span>Copyright © 2025 AxiaCare | Todos os direitos reservados</span>
               <span>|</span>
               <span>Uma empresa GTCorp.</span>
+            </div>
+            
+            {/* Mobile layout */}
+            <div className="md:hidden space-y-2 text-xs text-axcontrol-dark/60">
+              <div>
+                <a href="https://axcare.com.br" target="_blank" rel="noopener noreferrer" className="hover:text-axcontrol-primary transition-smooth">
+                  axcare.com.br
+                </a>
+              </div>
+              <div>Copyright © 2025 AxiaCare</div>
+              <div>Todos os direitos reservados</div>
+              <div>Uma empresa GTCorp.</div>
             </div>
           </div>
         </div>
