@@ -153,6 +153,8 @@ const Access = () => {
               <img 
                 src="/logo-axia-principal.png"
                 alt="AxiaCare Logo" 
+                width="64"
+                height="64"
                 className="w-12 h-12 md:w-16 md:h-16 object-contain flex-shrink-0"
               />
               <div className="flex flex-col min-w-0">
@@ -442,6 +444,10 @@ const Access = () => {
               <img 
                 src="/logo-axia-principal.png"
                 alt="AxiaCare" 
+                width="32"
+                height="32"
+                loading="lazy"
+                decoding="async"
                 className="w-7 h-7 md:w-8 md:h-8 object-contain"
               />
               <span className="text-axcontrol-primary font-semibold text-sm md:text-base">AxiaCare</span>
