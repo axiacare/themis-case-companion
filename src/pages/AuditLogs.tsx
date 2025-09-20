@@ -128,11 +128,14 @@ const AuditLogs = () => {
           <div className="container mx-auto px-4 py-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-3 md:space-x-4 flex-1 min-w-0">
-                <img 
-                  src="/logo-axia-principal-optimized.png"
-                  alt="AxiaCare Logo" 
-                  className="w-12 h-12 md:w-16 md:h-16 object-contain flex-shrink-0"
-                />
+                <picture>
+                  <source srcSet="/logo-axia-principal-optimized.webp" type="image/webp" />
+                  <img 
+                    src="/logo-axia-principal-optimized.png"
+                    alt="AxiaCare Logo" 
+                    className="w-12 h-12 md:w-16 md:h-16 object-contain flex-shrink-0"
+                  />
+                </picture>
                 <div className="flex flex-col min-w-0">
                   <h1 className="text-xl md:text-2xl font-bold text-axcontrol-dark">Themis™</h1>
                   <span className="text-xs md:text-sm text-axcontrol-primary font-medium hidden sm:block">
@@ -280,11 +283,14 @@ const AuditLogs = () => {
           <div className="container mx-auto max-w-6xl">
             <div className="text-center">
               <div className="flex items-center justify-center space-x-3 mb-3 md:mb-4">
-                <img 
-                  src="/logo-axia-principal-optimized.png"
-                  alt="AxiaCare" 
-                  className="w-7 h-7 md:w-8 md:h-8 object-contain"
-                />
+                <picture>
+                  <source srcSet="/logo-axia-principal-optimized.webp" type="image/webp" />
+                  <img 
+                    src="/logo-axia-principal-optimized.png"
+                    alt="AxiaCare" 
+                    className="w-7 h-7 md:w-8 md:h-8 object-contain"
+                  />
+                </picture>
                 <span className="text-axcontrol-primary font-semibold text-sm md:text-base">AxiaCare</span>
               </div>
               

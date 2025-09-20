@@ -190,11 +190,14 @@ const Admin = () => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <img 
-                src="/logo-axia-principal-optimized.png"
-                alt="Themis™ Logo" 
-                className="w-16 h-16 object-contain"
-              />
+              <picture>
+                <source srcSet="/logo-axia-principal-optimized.webp" type="image/webp" />
+                <img 
+                  src="/logo-axia-principal-optimized.png"
+                  alt="Themis™ Logo" 
+                  className="w-16 h-16 object-contain"
+                />
+              </picture>
               <div className="flex flex-col">
                 <h1 className="text-2xl font-bold text-white">Themis™</h1>
                 <span className="text-lg text-white/90 font-semibold">Painel Administrador</span>

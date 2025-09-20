@@ -11,13 +11,16 @@ const Index = () => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3 md:space-x-4 flex-1 min-w-0">
-              <img 
-                src="/logo-axia-principal-optimized.png"
-                alt="AxiaCare Logo" 
-                width="64"
-                height="64"
-                className="w-12 h-12 md:w-16 md:h-16 object-contain flex-shrink-0"
-              />
+              <picture>
+                <source srcSet="/logo-axia-principal-optimized.webp" type="image/webp" />
+                <img 
+                  src="/logo-axia-principal-optimized.png"
+                  alt="AxiaCare Logo" 
+                  width="64"
+                  height="64"
+                  className="w-12 h-12 md:w-16 md:h-16 object-contain flex-shrink-0"
+                />
+              </picture>
               <div className="flex flex-col min-w-0">
                 <h1 className="text-xl md:text-2xl font-bold text-axcontrol-dark">Themis™</h1>
                 <span className="text-xs md:text-sm text-axcontrol-primary font-medium hidden sm:block">
@@ -31,13 +34,16 @@ const Index = () => {
             
             <div className="flex items-center space-x-2 md:space-x-3 flex-shrink-0">
               <div className="hidden md:block">
-                <img 
-                  src="/axiacare-logo-oficial-optimized.png"
-                  alt="AxiaCare" 
-                  width="103"
-                  height="32"
-                  className="h-8 object-contain"
-                />
+                <picture>
+                  <source srcSet="/axiacare-logo-oficial-optimized.webp" type="image/webp" />
+                  <img 
+                    src="/axiacare-logo-oficial-optimized.png"
+                    alt="AxiaCare" 
+                    width="103"
+                    height="32"
+                    className="h-8 object-contain"
+                  />
+                </picture>
               </div>
               <div className="flex items-center space-x-2">
                 <Link to="/admin">
@@ -314,15 +320,18 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
             <div>
               <div className="flex items-center space-x-2 md:space-x-3 mb-4 md:mb-6">
-                <img 
-                  src="/axia-logo-optimized.png" 
-                  alt="AxiaCare®" 
-                  width="64"
-                  height="64"
-                  loading="lazy"
-                  decoding="async"
-                  className="w-12 h-12 md:w-16 md:h-16 object-contain shadow-button"
-                />
+                <picture>
+                  <source srcSet="/axia-logo-optimized.webp" type="image/webp" />
+                  <img 
+                    src="/axia-logo-optimized.png" 
+                    alt="AxiaCare®" 
+                    width="64"
+                    height="64"
+                    loading="lazy"
+                    decoding="async"
+                    className="w-12 h-12 md:w-16 md:h-16 object-contain shadow-button"
+                  />
+                </picture>
                 <h3 className="text-2xl md:text-3xl font-bold text-axcontrol-primary">A força da AxiaCare®</h3>
               </div>
               
@@ -400,15 +409,18 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-8 items-start">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <img 
-                  src="/medvalor-logo-new-optimized.png"
-                  alt="MedValor Logo" 
-                  width="48"
-                  height="48"
-                  loading="lazy"
-                  decoding="async"
-                  className="w-10 h-10 md:w-12 md:h-12 object-contain opacity-80"
-                />
+                <picture>
+                  <source srcSet="/medvalor-logo-new-optimized.webp" type="image/webp" />
+                  <img 
+                    src="/medvalor-logo-new-optimized.png"
+                    alt="MedValor Logo" 
+                    width="48"
+                    height="48"
+                    loading="lazy"
+                    decoding="async"
+                    className="w-10 h-10 md:w-12 md:h-12 object-contain opacity-80"
+                  />
+                </picture>
                 <h3 className="text-lg md:text-xl font-semibold text-axcontrol-primary/80">AxWise™ - MedValor®</h3>
               </div>
               
@@ -464,15 +476,18 @@ const Index = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center">
             <div className="flex items-center justify-center space-x-3 mb-3 md:mb-4">
-              <img 
-                src="/logo-axia-principal-optimized.png"
-                alt="AxiaCare" 
-                width="32"
-                height="32"
-                loading="lazy"
-                decoding="async"
-                className="w-7 h-7 md:w-8 md:h-8 object-contain"
-              />
+              <picture>
+                <source srcSet="/logo-axia-principal-optimized.webp" type="image/webp" />
+                <img 
+                  src="/logo-axia-principal-optimized.png"
+                  alt="AxiaCare" 
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                  decoding="async"
+                  className="w-7 h-7 md:w-8 md:h-8 object-contain"
+                />
+              </picture>
               <span className="text-axcontrol-primary font-semibold text-sm md:text-base">AxiaCare</span>
             </div>
             
