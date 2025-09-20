@@ -181,21 +181,27 @@ const Access = () => {
       <header className="header-sticky bg-card border-b border-axcontrol-secondary-1/30">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-3 md:space-x-4 flex-1 min-w-0">
               <img 
                 src="/logo-axia-principal.png"
                 alt="AxiaCare Logo" 
-                className="w-16 h-16 object-contain"
+                className="w-12 h-12 md:w-16 md:h-16 object-contain flex-shrink-0"
               />
-              <div className="flex flex-col">
-                <h1 className="text-2xl font-bold text-axcontrol-dark">Themis™</h1>
-                <span className="text-sm text-axcontrol-primary font-medium">Ambiente Inteligente de Necessidades Jurídicas na Saúde</span>
+              <div className="flex flex-col min-w-0">
+                <h1 className="text-xl md:text-2xl font-bold text-axcontrol-dark">Themis™</h1>
+                <span className="text-xs md:text-sm text-axcontrol-primary font-medium hidden sm:block">
+                  Ambiente Inteligente de Necessidades Jurídicas na Saúde
+                </span>
+                <span className="text-xs text-axcontrol-primary font-medium sm:hidden">
+                  Necessidades Jurídicas na Saúde
+                </span>
               </div>
             </div>
             <Link to="/">
-              <Button variant="outline" className="transition-smooth">
-                <ArrowLeft className="w-4 h-4 mr-2" />
-                Voltar
+              <Button variant="outline" size="sm" className="transition-smooth text-xs md:text-sm px-2 md:px-4">
+                <ArrowLeft className="w-3 h-3 md:w-4 md:h-4 mr-1 md:mr-2" />
+                <span className="hidden sm:inline">Voltar</span>
+                <span className="sm:hidden">←</span>
               </Button>
             </Link>
           </div>
@@ -204,17 +210,17 @@ const Access = () => {
 
       {/* LGPD Badge */}
       <div className="bg-axcontrol-secondary-2/20 border-b border-axcontrol-accent/20">
-        <div className="container mx-auto px-4 py-2">
-          <div className="flex items-center justify-center space-x-4 text-sm text-axcontrol-dark">
+        <div className="container mx-auto px-4 py-1.5 md:py-2">
+          <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-4 text-xs md:text-sm text-axcontrol-dark">
             <div className="flex items-center space-x-2">
-              <Shield className="w-4 h-4 text-axcontrol-accent" />
-              <span className="font-medium">Ambiente interno por equipe • LGPD</span>
+              <Shield className="w-3 h-3 md:w-4 md:h-4 text-axcontrol-accent" />
+              <span className="font-medium text-center">Ambiente interno por equipe • LGPD</span>
             </div>
             <a 
               href="https://hub.guithome.com.br/axia/privacidade.html"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-axcontrol-accent/20 hover:bg-axcontrol-accent/30 px-3 py-1 rounded-full text-xs font-medium text-axcontrol-dark/90 hover:text-axcontrol-dark transition-smooth border border-axcontrol-accent/30 hover:border-axcontrol-accent/50 shadow-sm hover:shadow-md"
+              className="bg-axcontrol-accent/20 hover:bg-axcontrol-accent/30 px-2 md:px-3 py-1 rounded-full text-xs font-medium text-axcontrol-dark/90 hover:text-axcontrol-dark transition-smooth border border-axcontrol-accent/30 hover:border-axcontrol-accent/50 shadow-sm hover:shadow-md"
             >
               Política de Privacidade
             </a>
@@ -223,39 +229,39 @@ const Access = () => {
       </div>
 
       {/* Main Content */}
-      <div className="container mx-auto px-4 py-16 max-w-2xl">
-        <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold text-primary mb-4">Acesso ao Ambiente</h2>
-          <p className="text-lg text-muted-foreground">
+      <div className="container mx-auto px-4 py-8 md:py-16 max-w-2xl">
+        <div className="text-center mb-6 md:mb-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-primary mb-2 md:mb-4">Acesso ao Ambiente</h2>
+          <p className="text-base md:text-lg text-muted-foreground">
             Entre com sua equipe cadastrada ou solicite o cadastro de uma nova equipe
           </p>
         </div>
 
         <Card className="shadow-elegant">
-          <CardHeader>
-            <CardTitle className="text-primary text-center">Acesso por Equipe</CardTitle>
+          <CardHeader className="pb-4 md:pb-6">
+            <CardTitle className="text-primary text-center text-lg md:text-xl">Acesso por Equipe</CardTitle>
           </CardHeader>
-          <CardContent>
+          <CardContent className="pt-0">
             <Tabs defaultValue="login" className="w-full">
-              <TabsList className="grid w-full grid-cols-2">
+              <TabsList className="grid w-full grid-cols-2 text-xs md:text-sm">
                 <TabsTrigger value="login">Sou equipe cadastrada</TabsTrigger>
                 <TabsTrigger value="register">Solicitar cadastro</TabsTrigger>
               </TabsList>
               
-              <TabsContent value="login" className="space-y-6 mt-6">
-                <div className="flex items-center space-x-3 p-4 bg-primary/5 rounded-lg">
-                  <Building className="w-6 h-6 text-primary" />
+              <TabsContent value="login" className="space-y-4 md:space-y-6 mt-4 md:mt-6">
+                <div className="flex items-center space-x-3 p-3 md:p-4 bg-primary/5 rounded-lg">
+                  <Building className="w-5 h-5 md:w-6 md:h-6 text-primary flex-shrink-0" />
                   <div>
-                    <p className="font-medium text-primary">Equipe Cadastrada</p>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="font-medium text-primary text-sm md:text-base">Equipe Cadastrada</p>
+                    <p className="text-xs md:text-sm text-muted-foreground">
                       Acesse com o ID e senha da sua equipe
                     </p>
                   </div>
                 </div>
 
-                <form onSubmit={handleLogin} className="space-y-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="teamId" className="text-sm font-medium">
+                <form onSubmit={handleLogin} className="space-y-3 md:space-y-4">
+                  <div className="space-y-1.5 md:space-y-2">
+                    <Label htmlFor="teamId" className="text-xs md:text-sm font-medium">
                       ID da Equipe *
                     </Label>
                     <Input
@@ -264,13 +270,13 @@ const Access = () => {
                       placeholder="Ex: unimed236"
                       value={loginData.teamId}
                       onChange={(e) => setLoginData(prev => ({ ...prev, teamId: e.target.value }))}
-                      className="transition-smooth focus:ring-2 focus:ring-primary/20"
+                      className="transition-smooth focus:ring-2 focus:ring-primary/20 text-sm md:text-base"
                       required
                     />
                   </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="password" className="text-sm font-medium">
+                  <div className="space-y-1.5 md:space-y-2">
+                    <Label htmlFor="password" className="text-xs md:text-sm font-medium">
                       Senha da Equipe *
                     </Label>
                     <Input
@@ -279,7 +285,7 @@ const Access = () => {
                       placeholder="Digite a senha da equipe"
                       value={loginData.password}
                       onChange={(e) => setLoginData(prev => ({ ...prev, password: e.target.value }))}
-                      className="transition-smooth focus:ring-2 focus:ring-primary/20"
+                      className="transition-smooth focus:ring-2 focus:ring-primary/20 text-sm md:text-base"
                       required
                     />
                   </div>
@@ -288,27 +294,27 @@ const Access = () => {
                     type="submit"
                     size="lg"
                     disabled={isLoggingIn}
-                    className="w-full gradient-primary text-primary-foreground shadow-button hover:shadow-elegant transition-bounce hover:scale-[1.02]"
+                    className="w-full gradient-primary text-primary-foreground shadow-button hover:shadow-elegant transition-bounce hover:scale-[1.02] text-sm md:text-base py-3 md:py-4"
                   >
                     {isLoggingIn ? "Validando..." : "Entrar na minha equipe"}
                   </Button>
                 </form>
               </TabsContent>
 
-              <TabsContent value="register" className="space-y-6 mt-6">
-                <div className="flex items-center space-x-3 p-4 bg-accent/50 rounded-lg">
-                  <Shield className="w-6 h-6 text-primary" />
+              <TabsContent value="register" className="space-y-4 md:space-y-6 mt-4 md:mt-6">
+                <div className="flex items-center space-x-3 p-3 md:p-4 bg-accent/50 rounded-lg">
+                  <Shield className="w-5 h-5 md:w-6 md:h-6 text-primary flex-shrink-0" />
                   <div>
-                    <p className="font-medium text-primary">Solicitar Cadastro</p>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="font-medium text-primary text-sm md:text-base">Solicitar Cadastro</p>
+                    <p className="text-xs md:text-sm text-muted-foreground">
                       Cadastre sua equipe para ter um ambiente próprio da Themis™ (dados segregados por unidade)
                     </p>
                   </div>
                 </div>
 
-                <form onSubmit={handleRegistration} className="space-y-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="institution" className="text-sm font-medium">
+                <form onSubmit={handleRegistration} className="space-y-3 md:space-y-4">
+                  <div className="space-y-1.5 md:space-y-2">
+                    <Label htmlFor="institution" className="text-xs md:text-sm font-medium">
                       Instituição/Empresa *
                     </Label>
                     <Input
@@ -317,7 +323,7 @@ const Access = () => {
                       placeholder="Nome da instituição ou empresa"
                       value={registrationData.institution}
                       onChange={(e) => setRegistrationData(prev => ({ ...prev, institution: e.target.value }))}
-                      className="transition-smooth focus:ring-2 focus:ring-primary/20"
+                      className="transition-smooth focus:ring-2 focus:ring-primary/20 text-sm md:text-base"
                       required
                     />
                   </div>
@@ -461,23 +467,24 @@ const Access = () => {
       </div>
 
       {/* Footer - Padrão AxControl™ conforme referência */}
-      <footer className="bg-white border-t border-axcontrol-secondary-1/30 py-8 px-4">
+      <footer className="bg-white border-t border-axcontrol-secondary-1/30 py-6 md:py-8 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center">
-            <div className="flex items-center justify-center space-x-3 mb-4">
+            <div className="flex items-center justify-center space-x-3 mb-3 md:mb-4">
               <img 
                 src="/logo-axia-principal.png"
                 alt="AxiaCare" 
-                className="w-8 h-8 object-contain"
+                className="w-7 h-7 md:w-8 md:h-8 object-contain"
               />
-              <span className="text-axcontrol-primary font-semibold">AxiaCare</span>
+              <span className="text-axcontrol-primary font-semibold text-sm md:text-base">AxiaCare</span>
             </div>
             
-            <p className="text-axcontrol-dark/70 text-sm mb-4">
+            <p className="text-axcontrol-dark/70 text-xs md:text-sm mb-3 md:mb-4">
               AxView™ | WebApps – Gestão e Consultoria em Saúde
             </p>
             
-            <div className="flex items-center justify-center space-x-6 text-sm text-axcontrol-dark/60 flex-wrap">
+            {/* Desktop layout */}
+            <div className="hidden md:flex items-center justify-center space-x-6 text-sm text-axcontrol-dark/60">
               <a href="https://axcare.com.br" target="_blank" rel="noopener noreferrer" className="hover:text-axcontrol-primary transition-smooth">
                 axcare.com.br
               </a>
@@ -485,6 +492,18 @@ const Access = () => {
               <span>Copyright © 2025 AxiaCare | Todos os direitos reservados</span>
               <span>|</span>
               <span>Uma empresa GTCorp.</span>
+            </div>
+            
+            {/* Mobile layout */}
+            <div className="md:hidden space-y-2 text-xs text-axcontrol-dark/60">
+              <div>
+                <a href="https://axcare.com.br" target="_blank" rel="noopener noreferrer" className="hover:text-axcontrol-primary transition-smooth">
+                  axcare.com.br
+                </a>
+              </div>
+              <div>Copyright © 2025 AxiaCare</div>
+              <div>Todos os direitos reservados</div>
+              <div>Uma empresa GTCorp.</div>
             </div>
           </div>
         </div>
