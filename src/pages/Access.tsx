@@ -294,7 +294,7 @@ const Access = () => {
                     type="submit"
                     size="lg"
                     disabled={isLoggingIn}
-                    className="w-full gradient-primary text-primary-foreground shadow-button hover:shadow-elegant transition-bounce hover:scale-[1.02] text-sm md:text-base py-3 md:py-4"
+                    className="w-full bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] text-sm md:text-base py-3 md:py-4 border-0"
                   >
                     {isLoggingIn ? "Validando..." : "Entrar na minha equipe"}
                   </Button>
@@ -455,7 +455,7 @@ const Access = () => {
                     type="submit"
                     size="lg"
                     disabled={isSubmittingRegistration}
-                    className="w-full gradient-primary text-primary-foreground shadow-button hover:shadow-elegant transition-bounce hover:scale-[1.02]"
+                    className="w-full bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-primary-foreground font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] text-sm md:text-base py-3 md:py-4 border-0"
                   >
                     {isSubmittingRegistration ? "Enviando..." : "Solicitar cadastro da equipe"}
                   </Button>
