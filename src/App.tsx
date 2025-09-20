@@ -18,25 +18,27 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TeamAuthProvider>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/acesso" element={<Access />} />
-            <Route path="/enviar-caso" element={<SubmitCase />} />
-            <Route path="/confirmacao" element={<Confirmation />} />
-            <Route path="/politica-privacidade" element={<PrivacyPolicy />} />
-            <Route path="/configuracoes" element={<Settings />} />
-            <Route path="/admin" element={<Admin />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </TooltipProvider>
-    </TeamAuthProvider>
+    <AdminAuthProvider>
+      <TeamAuthProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/acesso" element={<Access />} />
+              <Route path="/enviar-caso" element={<SubmitCase />} />
+              <Route path="/confirmacao" element={<Confirmation />} />
+              <Route path="/politica-privacidade" element={<PrivacyPolicy />} />
+              <Route path="/configuracoes" element={<Settings />} />
+              <Route path="/admin" element={<Admin />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </BrowserRouter>
+        </TooltipProvider>
+      </TeamAuthProvider>
+    </AdminAuthProvider>
   </QueryClientProvider>
 );
 
