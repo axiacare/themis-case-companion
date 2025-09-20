@@ -84,13 +84,6 @@ export type Database = {
             foreignKeyName: "cases_team_id_fkey"
             columns: ["team_id"]
             isOneToOne: false
-            referencedRelation: "teams_public_safe"
-            referencedColumns: ["team_id"]
-          },
-          {
-            foreignKeyName: "cases_team_id_fkey"
-            columns: ["team_id"]
-            isOneToOne: false
             referencedRelation: "teams_safe"
             referencedColumns: ["team_id"]
           },
@@ -124,13 +117,6 @@ export type Database = {
             columns: ["team_id"]
             isOneToOne: false
             referencedRelation: "teams"
-            referencedColumns: ["team_id"]
-          },
-          {
-            foreignKeyName: "team_settings_team_id_fkey"
-            columns: ["team_id"]
-            isOneToOne: false
-            referencedRelation: "teams_public_safe"
             referencedColumns: ["team_id"]
           },
           {
@@ -189,36 +175,6 @@ export type Database = {
       }
     }
     Views: {
-      teams_public_safe: {
-        Row: {
-          cnpj: string | null
-          created_at: string | null
-          email: string | null
-          phone: string | null
-          responsible_name: string | null
-          team_id: string | null
-          team_name: string | null
-        }
-        Insert: {
-          cnpj?: never
-          created_at?: string | null
-          email?: never
-          phone?: never
-          responsible_name?: never
-          team_id?: string | null
-          team_name?: string | null
-        }
-        Update: {
-          cnpj?: never
-          created_at?: string | null
-          email?: never
-          phone?: never
-          responsible_name?: never
-          team_id?: string | null
-          team_name?: string | null
-        }
-        Relationships: []
-      }
       teams_safe: {
         Row: {
           created_at: string | null
@@ -287,6 +243,18 @@ export type Database = {
       get_current_team_id: {
         Args: Record<PropertyKey, never>
         Returns: string
+      }
+      get_teams_safe: {
+        Args: Record<PropertyKey, never>
+        Returns: {
+          cnpj: string
+          created_at: string
+          email: string
+          phone: string
+          responsible_name: string
+          team_id: string
+          team_name: string
+        }[]
       }
       is_system_admin: {
         Args: Record<PropertyKey, never>

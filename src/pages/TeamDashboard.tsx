@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useTeamAuth } from "@/contexts/TeamAuthContext";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import SecurityIndicator from "@/components/SecurityIndicator";
 import { 
   FileText, 
   MessageCircle, 
@@ -18,7 +19,8 @@ import {
   Shield,
   Scale,
   Sparkles,
-  Bot
+  Bot,
+  FileCheck
 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
@@ -180,7 +182,8 @@ const TeamDashboard = () => {
       <main className="container mx-auto px-4 py-6 md:py-8">
         {/* Welcome Section */}
         <div className="mb-6 md:mb-8">
-          <div className="bg-gradient-to-r from-primary/10 to-primary/5 rounded-xl p-4 md:p-6 border">
+          <SecurityIndicator />
+          <div className="bg-gradient-to-r from-primary/10 to-primary/5 rounded-xl p-4 md:p-6 border mt-4">
             <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
               Olá, {teamData.team_name}! 👋
             </h2>
@@ -298,15 +301,17 @@ const TeamDashboard = () => {
           </Card>
 
           <Card className="p-6 hover:shadow-md transition-shadow cursor-pointer">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-gray-500/10 rounded-lg flex items-center justify-center">
-                <Settings className="w-6 h-6 text-gray-600" />
+            <Link to="/auditoria" className="block">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-green-500/10 rounded-lg flex items-center justify-center">
+                  <FileCheck className="w-6 h-6 text-green-600" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-foreground">Logs de Auditoria</h4>
+                  <p className="text-muted-foreground text-sm">Transparência total de acessos</p>
+                </div>
               </div>
-              <div>
-                <h4 className="font-semibold text-foreground">Configurações</h4>
-                <p className="text-muted-foreground text-sm">Gerencie sua equipe</p>
-              </div>
-            </div>
+            </Link>
           </Card>
         </div>
 
