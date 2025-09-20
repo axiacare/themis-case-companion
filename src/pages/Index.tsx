@@ -7,14 +7,14 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Header - AxControl™ Visual */}
-      <header className="header-sticky bg-white border-b border-axcontrol-secondary-1/30">
+      <header className="header-sticky bg-card border-b border-axcontrol-secondary-1/30">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <img 
                 src="/logo-axia-principal.png"
                 alt="AxiaCare Logo" 
-                className="w-12 h-12 object-contain"
+                className="w-16 h-16 object-contain"
               />
               <div className="flex flex-col">
                 <h1 className="text-2xl font-bold text-axcontrol-dark">Themis™</h1>
@@ -306,19 +306,19 @@ const Index = () => {
                 <div className="space-y-3">
                   <div className="flex items-center space-x-3">
                     <div className="w-3 h-3 bg-axcontrol-accent rounded-full"></div>
-                    <span className="text-axcontrol-dark"><strong>AxWay™</strong> - Plataforma base de conectividade</span>
+                    <span className="text-axcontrol-dark"><strong>AxWay™</strong> - Experiência clínica aplicada à área jurídica.</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <div className="w-3 h-3 bg-axcontrol-secondary-2 rounded-full"></div>
-                    <span className="text-axcontrol-dark"><strong>AxView™</strong> - Visualização e dashboards inteligentes</span>
+                    <span className="text-axcontrol-dark"><strong>AxView™</strong> - Documentos organizados em padrões profissionais.</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <div className="w-3 h-3 bg-axcontrol-primary rounded-full"></div>
-                    <span className="text-axcontrol-dark"><strong>AxIntel™</strong> - Inteligência artificial especializada</span>
+                    <span className="text-axcontrol-dark"><strong>AxIntel™</strong> - Inteligência artificial especializada.</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <div className="w-3 h-3 bg-axcontrol-secondary-1 rounded-full"></div>
-                    <span className="text-axcontrol-dark"><strong>AxWise™</strong> - Educação continuada e MedValor®</span>
+                    <span className="text-axcontrol-dark"><strong>AxWise™</strong> - Educação continuada e MedValor®.</span>
                   </div>
                 </div>
               </div>
