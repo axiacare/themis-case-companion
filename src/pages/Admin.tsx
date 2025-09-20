@@ -128,7 +128,8 @@ const Admin = () => {
                 className="w-16 h-16 object-contain"
               />
               <div className="flex flex-col">
-                <h1 className="text-2xl font-bold text-white">Painel Administrador</h1>
+                <h1 className="text-2xl font-bold text-white">Themis™</h1>
+                <span className="text-lg text-white/90 font-semibold">Painel Administrador</span>
                 <span className="text-sm text-white/80 font-medium">Gerenciamento de Equipes</span>
               </div>
             </div>
