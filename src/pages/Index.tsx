@@ -323,15 +323,6 @@ const Index = () => {
                 </div>
               </div>
 
-              <div className="bg-axcontrol-light p-6 rounded-lg border border-axcontrol-secondary-1/30">
-                <h5 className="font-semibold text-axcontrol-primary mb-3">Fórmulas Core do AxControl™:</h5>
-                <div className="space-y-2 text-sm text-axcontrol-dark">
-                  <div><strong>Eficiência:</strong> AxWay™ + AxView™ = Fluxos otimizados</div>
-                  <div><strong>Inteligência:</strong> AxIntel™ + AxSet™ = Decisões precisas</div>
-                  <div><strong>Evolução:</strong> AxWise™ + AxLearning™ = Conhecimento contínuo</div>
-                </div>
-              </div>
-
               <div className="mt-6">
                 <a 
                   href="https://axiacare.com.br" 
@@ -342,17 +333,6 @@ const Index = () => {
                   Conheça mais sobre a AxiaCare® 
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </a>
-              </div>
-            </div>
-
-            <div className="text-center">
-              <div className="bg-gradient-accent/20 p-8 rounded-2xl border border-axcontrol-accent/30">
-                <TrendingUp className="w-20 h-20 text-axcontrol-accent mx-auto mb-6" />
-                <h4 className="text-2xl font-bold text-axcontrol-primary mb-4">VBHC em Foco</h4>
-                <p className="text-axcontrol-dark/80">
-                  Cada solução AxControl™ é desenhada para gerar valor mensurável em saúde, 
-                  conectando eficiência operacional com melhores desfechos clínicos.
-                </p>
               </div>
             </div>
           </div>
@@ -378,7 +358,7 @@ const Index = () => {
             </Link>
             
             <p className="text-sm text-white/80">
-              Ou solicite cadastro para sua equipe: <a href="mailto:contato@axiacare.com.br" className="text-white underline font-medium">contato@axiacare.com.br</a>
+              Ou solicite cadastro para sua equipe: <a href="mailto:themis@axcare.com.br" className="text-white underline font-medium">themis@axcare.com.br</a>
             </p>
           </div>
         </div>
