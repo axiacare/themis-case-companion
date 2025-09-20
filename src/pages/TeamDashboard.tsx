@@ -21,7 +21,7 @@ import { useToast } from "@/hooks/use-toast";
 
 const TeamDashboard = () => {
   const navigate = useNavigate();
-  const { teamData, logout, isAuthenticated } = useTeamAuth();
+  const { teamData, logout, isAuthenticated, isLoading: authLoading } = useTeamAuth();
   const { toast } = useToast();
   const [stats, setStats] = useState({
     totalCases: 0,
@@ -31,12 +31,15 @@ const TeamDashboard = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    // Wait for auth loading to complete before checking authentication
+    if (authLoading) return;
+    
     if (!isAuthenticated || !teamData) {
       navigate("/acesso");
       return;
     }
     loadStats();
-  }, [isAuthenticated, teamData, navigate]);
+  }, [isAuthenticated, teamData, navigate, authLoading]);
 
   const loadStats = async () => {
     if (!teamData) return;
@@ -99,8 +102,15 @@ const TeamDashboard = () => {
     });
   };
 
-  if (!teamData) {
-    return null;
+  if (authLoading || !teamData) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20 flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <p className="text-muted-foreground">Carregando...</p>
+        </div>
+      </div>
+    );
   }
 
   return (
