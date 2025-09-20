@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -7,10 +7,11 @@ import { Label } from "@/components/ui/label";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, Plus, Shield, Edit, Trash2, Eye, EyeOff, FileText, LogOut } from "lucide-react";
+import { ArrowLeft, Plus, Shield, Edit, Trash2, Eye, EyeOff, FileText, LogOut, Upload, File } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useAdmin, TeamWithStats } from "@/hooks/useAdmin";
 import { useAdminAuth } from "@/contexts/AdminAuthContext";
+import { supabase } from "@/integrations/supabase/client";
 import AdminLogin from "@/components/AdminLogin";
 
 const Admin = () => {
@@ -20,10 +21,18 @@ const Admin = () => {
   const [dialogOpen, setDialogOpen] = useState(false);
   const [editingTeam, setEditingTeam] = useState<TeamWithStats | null>(null);
   const [showPassword, setShowPassword] = useState(false);
+  const [uploading, setUploading] = useState(false);
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const [formData, setFormData] = useState({
     team_id: "",
     team_name: "",
     password: "",
+    cnpj: "",
+    responsible_name: "",
+    email: "",
+    phone: "",
+    terms_document_url: "",
   });
 
   // Show login screen if not authenticated
@@ -44,10 +53,30 @@ const Admin = () => {
     }
 
     try {
+      let termsDocumentUrl = formData.terms_document_url;
+
+      // Upload file if selected
+      if (selectedFile) {
+        setUploading(true);
+        const fileName = `${formData.team_id}/terms_${Date.now()}_${selectedFile.name}`;
+        
+        const { data, error } = await supabase.storage
+          .from('terms')
+          .upload(fileName, selectedFile);
+
+        if (error) throw error;
+        termsDocumentUrl = data.path;
+      }
+
       if (editingTeam) {
         await updateTeam(editingTeam.id, {
           team_name: formData.team_name,
           password: formData.password || undefined,
+          cnpj: formData.cnpj,
+          responsible_name: formData.responsible_name,
+          email: formData.email,
+          phone: formData.phone,
+          terms_document_url: termsDocumentUrl,
         });
 
         toast({
@@ -59,6 +88,11 @@ const Admin = () => {
           team_id: formData.team_id,
           team_name: formData.team_name,
           password: formData.password,
+          cnpj: formData.cnpj,
+          responsible_name: formData.responsible_name,
+          email: formData.email,
+          phone: formData.phone,
+          terms_document_url: termsDocumentUrl,
         });
 
         toast({
@@ -69,13 +103,25 @@ const Admin = () => {
 
       setDialogOpen(false);
       setEditingTeam(null);
-      setFormData({ team_id: "", team_name: "", password: "" });
+      setSelectedFile(null);
+      setFormData({ 
+        team_id: "", 
+        team_name: "", 
+        password: "", 
+        cnpj: "", 
+        responsible_name: "", 
+        email: "", 
+        phone: "", 
+        terms_document_url: "" 
+      });
     } catch (error: any) {
       toast({
         title: "Erro",
         description: error.message || "Erro ao salvar equipe.",
         variant: "destructive"
       });
+    } finally {
+      setUploading(false);
     }
   };
 
@@ -85,6 +131,11 @@ const Admin = () => {
       team_id: team.team_id,
       team_name: team.team_name,
       password: "",
+      cnpj: team.cnpj || "",
+      responsible_name: team.responsible_name || "",
+      email: team.email || "",
+      phone: team.phone || "",
+      terms_document_url: team.terms_document_url || "",
     });
     setDialogOpen(true);
   };
@@ -110,9 +161,26 @@ const Admin = () => {
   };
 
   const resetForm = () => {
-    setFormData({ team_id: "", team_name: "", password: "" });
+    setFormData({ 
+      team_id: "", 
+      team_name: "", 
+      password: "", 
+      cnpj: "", 
+      responsible_name: "", 
+      email: "", 
+      phone: "", 
+      terms_document_url: "" 
+    });
     setEditingTeam(null);
     setShowPassword(false);
+    setSelectedFile(null);
+  };
+
+  const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file) {
+      setSelectedFile(file);
+    }
   };
 
   return (
@@ -176,7 +244,7 @@ const Admin = () => {
                 Nova Equipe
               </Button>
             </DialogTrigger>
-            <DialogContent className="sm:max-w-md">
+            <DialogContent className="sm:max-w-2xl max-h-[90vh] overflow-y-auto">
               <DialogHeader>
                 <DialogTitle className="flex items-center space-x-2">
                   <Shield className="w-5 h-5 text-primary" />
@@ -184,37 +252,80 @@ const Admin = () => {
                 </DialogTitle>
               </DialogHeader>
               <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="space-y-2">
-                  <Label htmlFor="team_id">ID da Equipe</Label>
-                  <Input
-                    id="team_id"
-                    placeholder="ex: unimed236"
-                    value={formData.team_id}
-                    onChange={(e) => setFormData({ ...formData, team_id: e.target.value })}
-                    disabled={!!editingTeam}
-                    required
-                  />
-                  {editingTeam && (
-                    <p className="text-xs text-muted-foreground">
-                      O ID da equipe não pode ser alterado após a criação
-                    </p>
-                  )}
-                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="team_id">ID da Equipe *</Label>
+                    <Input
+                      id="team_id"
+                      placeholder="ex: unimed236"
+                      value={formData.team_id}
+                      onChange={(e) => setFormData({ ...formData, team_id: e.target.value })}
+                      disabled={!!editingTeam}
+                      required
+                    />
+                    {editingTeam && (
+                      <p className="text-xs text-muted-foreground">
+                        O ID da equipe não pode ser alterado após a criação
+                      </p>
+                    )}
+                  </div>
 
-                <div className="space-y-2">
-                  <Label htmlFor="team_name">Nome da Equipe</Label>
-                  <Input
-                    id="team_name"
-                    placeholder="ex: Unimed São Paulo"
-                    value={formData.team_name}
-                    onChange={(e) => setFormData({ ...formData, team_name: e.target.value })}
-                    required
-                  />
+                  <div className="space-y-2">
+                    <Label htmlFor="team_name">Nome da Equipe *</Label>
+                    <Input
+                      id="team_name"
+                      placeholder="ex: Unimed São Paulo"
+                      value={formData.team_name}
+                      onChange={(e) => setFormData({ ...formData, team_name: e.target.value })}
+                      required
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="cnpj">CNPJ</Label>
+                    <Input
+                      id="cnpj"
+                      placeholder="00.000.000/0000-00"
+                      value={formData.cnpj}
+                      onChange={(e) => setFormData({ ...formData, cnpj: e.target.value })}
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="responsible_name">Responsável pelo Cadastro</Label>
+                    <Input
+                      id="responsible_name"
+                      placeholder="Nome do responsável"
+                      value={formData.responsible_name}
+                      onChange={(e) => setFormData({ ...formData, responsible_name: e.target.value })}
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="email">E-mail</Label>
+                    <Input
+                      id="email"
+                      type="email"
+                      placeholder="contato@empresa.com"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="phone">Telefone com DDD</Label>
+                    <Input
+                      id="phone"
+                      placeholder="(11) 99999-9999"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    />
+                  </div>
                 </div>
 
                 <div className="space-y-2">
                   <Label htmlFor="password">
-                    {editingTeam ? 'Nova Senha (deixe vazio para manter)' : 'Senha'}
+                    {editingTeam ? 'Nova Senha (deixe vazio para manter)' : 'Senha *'}
                   </Label>
                   <div className="relative">
                     <Input
@@ -241,6 +352,43 @@ const Admin = () => {
                   </div>
                 </div>
 
+                <div className="space-y-2">
+                  <Label>Termo de Aceite</Label>
+                  <div className="flex items-center space-x-2">
+                    <input
+                      type="file"
+                      ref={fileInputRef}
+                      onChange={handleFileSelect}
+                      accept=".pdf,.doc,.docx"
+                      className="hidden"
+                    />
+                    <Button
+                      type="button"
+                      variant="outline"
+                      onClick={() => fileInputRef.current?.click()}
+                      className="flex items-center space-x-2"
+                    >
+                      <Upload className="w-4 h-4" />
+                      <span>Selecionar Arquivo</span>
+                    </Button>
+                    {selectedFile && (
+                      <div className="flex items-center space-x-2 text-sm text-muted-foreground">
+                        <File className="w-4 h-4" />
+                        <span>{selectedFile.name}</span>
+                      </div>
+                    )}
+                    {!selectedFile && formData.terms_document_url && (
+                      <div className="flex items-center space-x-2 text-sm text-muted-foreground">
+                        <File className="w-4 h-4" />
+                        <span>Documento anexado</span>
+                      </div>
+                    )}
+                  </div>
+                  <p className="text-xs text-muted-foreground">
+                    Aceitos: PDF, DOC, DOCX (máximo 10MB)
+                  </p>
+                </div>
+
                 <div className="flex justify-end space-x-3 pt-4">
                   <Button 
                     type="button" 
@@ -249,8 +397,8 @@ const Admin = () => {
                   >
                     Cancelar
                   </Button>
-                  <Button type="submit" className="gradient-primary">
-                    {editingTeam ? 'Atualizar' : 'Cadastrar'}
+                  <Button type="submit" className="gradient-primary" disabled={uploading}>
+                    {uploading ? 'Enviando...' : (editingTeam ? 'Atualizar' : 'Cadastrar')}
                   </Button>
                 </div>
               </form>
@@ -286,6 +434,7 @@ const Admin = () => {
                   <TableRow>
                     <TableHead>ID da Equipe</TableHead>
                     <TableHead>Nome da Equipe</TableHead>
+                    <TableHead>E-mail</TableHead>
                     <TableHead>Casos</TableHead>
                     <TableHead>Data de Cadastro</TableHead>
                     <TableHead className="text-right">Ações</TableHead>
@@ -296,6 +445,7 @@ const Admin = () => {
                     <TableRow key={team.id}>
                       <TableCell className="font-mono">{team.team_id}</TableCell>
                       <TableCell className="font-medium">{team.team_name}</TableCell>
+                      <TableCell>{team.email || "-"}</TableCell>
                       <TableCell>
                         <Badge variant="secondary">{team.cases_count || 0}</Badge>
                       </TableCell>

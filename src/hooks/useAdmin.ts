@@ -11,6 +11,11 @@ export interface TeamWithStats {
   id: string;
   team_id: string;
   team_name: string;
+  cnpj?: string;
+  responsible_name?: string;
+  email?: string;
+  phone?: string;
+  terms_document_url?: string;
   created_at: string;
   updated_at: string;
   cases_count?: number;
@@ -90,7 +95,16 @@ export const useAdmin = () => {
     }
   };
 
-  const createTeam = async (teamData: { team_id: string; team_name: string; password: string }) => {
+  const createTeam = async (teamData: { 
+    team_id: string; 
+    team_name: string; 
+    password: string;
+    cnpj?: string;
+    responsible_name?: string;
+    email?: string;
+    phone?: string;
+    terms_document_url?: string;
+  }) => {
     try {
       // Simple hash - in production, use bcrypt or similar
       const passwordHash = btoa(teamData.password);
@@ -101,6 +115,11 @@ export const useAdmin = () => {
           team_id: teamData.team_id,
           team_name: teamData.team_name,
           password_hash: passwordHash,
+          cnpj: teamData.cnpj,
+          responsible_name: teamData.responsible_name,
+          email: teamData.email,
+          phone: teamData.phone,
+          terms_document_url: teamData.terms_document_url,
         });
 
       if (error) throw error;
@@ -116,11 +135,24 @@ export const useAdmin = () => {
 
   const updateTeam = async (
     teamId: string, 
-    updateData: { team_name: string; password?: string }
+    updateData: { 
+      team_name: string; 
+      password?: string;
+      cnpj?: string;
+      responsible_name?: string;
+      email?: string;
+      phone?: string;
+      terms_document_url?: string;
+    }
   ) => {
     try {
       const payload: any = {
         team_name: updateData.team_name,
+        cnpj: updateData.cnpj,
+        responsible_name: updateData.responsible_name,
+        email: updateData.email,
+        phone: updateData.phone,
+        terms_document_url: updateData.terms_document_url,
         updated_at: new Date().toISOString(),
       };
 

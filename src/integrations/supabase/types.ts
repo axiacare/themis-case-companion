@@ -80,29 +80,44 @@ export type Database = {
       }
       teams: {
         Row: {
+          cnpj: string | null
           created_at: string
+          email: string | null
           id: string
           password_hash: string
+          phone: string | null
+          responsible_name: string | null
           team_id: string
           team_name: string
+          terms_document_url: string | null
           updated_at: string
           webhook_url: string | null
         }
         Insert: {
+          cnpj?: string | null
           created_at?: string
+          email?: string | null
           id?: string
           password_hash: string
+          phone?: string | null
+          responsible_name?: string | null
           team_id: string
           team_name: string
+          terms_document_url?: string | null
           updated_at?: string
           webhook_url?: string | null
         }
         Update: {
+          cnpj?: string | null
           created_at?: string
+          email?: string | null
           id?: string
           password_hash?: string
+          phone?: string | null
+          responsible_name?: string | null
           team_id?: string
           team_name?: string
+          terms_document_url?: string | null
           updated_at?: string
           webhook_url?: string | null
         }
