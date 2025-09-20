@@ -15,8 +15,12 @@ All colors MUST be HSL.
     --color-dark: 222 21% 18%;           /* #252b3a - Texto, ícones - escurecido */
     --color-light: 40 25% 94%;           /* #f6f3ee - Fundo geral - escurecido */
     --color-white: 0 0% 100%;            /* #ffffff - Áreas neutras */
-    --color-accent: 158 55% 38%;         /* #26a96d - AxiaCare/Unihealth - escurecido */
+    --color-accent: 158 55% 28%;         /* #1e8a5a - AxiaCare/Unihealth - darkened for contrast */
     --color-accent-medvalor: 34 100% 45%; /* #e68000 - MedValor - escurecido */
+
+    /* Text contrast colors for better accessibility */
+    --color-text-muted: 222 21% 35%;     /* Darker muted text for better contrast */
+    --color-text-subtle: 158 55% 20%;    /* Darker accent for links on light backgrounds */
 
     /* Mapeamento Shadcn/UI com tokens AxControl™ */
     --background: var(--color-light);
@@ -36,7 +40,7 @@ All colors MUST be HSL.
     --secondary-foreground: var(--color-dark);
 
     --muted: 150 20% 92%;
-    --muted-foreground: 222 15% 55%;
+    --muted-foreground: 222 21% 35%;     /* Darker for better contrast */
 
     --accent: var(--color-accent);
     --accent-foreground: var(--color-white);
@@ -90,7 +94,7 @@ All colors MUST be HSL.
     --secondary-foreground: var(--color-light);
 
     --muted: 222 21% 20%;
-    --muted-foreground: 222 15% 65%;
+    --muted-foreground: 222 21% 70%;     /* Lighter for better contrast in dark mode */
 
     --accent: var(--color-accent);
     --accent-foreground: var(--color-white);
@@ -140,6 +144,11 @@ All colors MUST be HSL.
   .text-axcontrol-dark { color: hsl(var(--color-dark)); }
   .text-axcontrol-light { color: hsl(var(--color-light)); }
   .text-axcontrol-accent { color: hsl(var(--color-accent)); }
+
+  /* High contrast text variants for accessibility - WCAG AA compliant */
+  .text-axcontrol-muted { color: hsl(222 21% 35%); } /* Better contrast than text-axcontrol-dark/60 */
+  .text-axcontrol-accent-subtle { color: hsl(158 55% 20%); } /* Better contrast than text-axcontrol-accent/80 */
+  .text-axcontrol-primary-subtle { color: hsl(205 67% 25%); } /* Better contrast than text-axcontrol-primary/80 */
 
   .bg-axcontrol-primary { background-color: hsl(var(--color-primary)); }
   .bg-axcontrol-secondary-1 { background-color: hsl(var(--color-secondary-1)); }

@@ -464,7 +464,7 @@ const Access = () => {
             </p>
             
             {/* Desktop layout */}
-            <div className="hidden md:flex items-center justify-center space-x-6 text-sm text-axcontrol-dark/60">
+            <div className="hidden md:flex items-center justify-center space-x-6 text-sm text-axcontrol-muted">
               <a href="https://axcare.com.br" target="_blank" rel="noopener noreferrer" className="hover:text-axcontrol-primary transition-smooth">
                 axcare.com.br
               </a>
@@ -475,7 +475,7 @@ const Access = () => {
             </div>
             
             {/* Mobile layout */}
-            <div className="md:hidden text-xs text-axcontrol-dark/60 leading-relaxed">
+            <div className="md:hidden text-xs text-axcontrol-muted leading-relaxed">
               <a href="https://axcare.com.br" target="_blank" rel="noopener noreferrer" className="hover:text-axcontrol-primary transition-smooth">
                 axcare.com.br
               </a>

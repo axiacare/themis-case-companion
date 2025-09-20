@@ -367,7 +367,7 @@ const Index = () => {
                   href="https://axiacare.com.br" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="inline-flex items-center text-axcontrol-accent hover:text-axcontrol-primary transition-smooth font-medium text-sm md:text-base"
+                  className="inline-flex items-center text-axcontrol-accent-subtle hover:text-axcontrol-primary transition-smooth font-medium text-sm md:text-base"
                 >
                   Conheça mais sobre a AxiaCare® 
                   <ArrowRight className="w-3 h-3 md:w-4 md:h-4 ml-1 md:ml-2" />
@@ -421,7 +421,7 @@ const Index = () => {
                     className="w-10 h-10 md:w-12 md:h-12 object-contain opacity-80"
                   />
                 </picture>
-                <h3 className="text-lg md:text-xl font-semibold text-axcontrol-primary/80">AxWise™ - MedValor®</h3>
+                <h3 className="text-lg md:text-xl font-semibold text-axcontrol-primary-subtle">AxWise™ - MedValor®</h3>
               </div>
               
               <p className="text-sm md:text-base text-axcontrol-dark/70 mb-4 leading-relaxed">
@@ -434,7 +434,7 @@ const Index = () => {
                   href="https://cursos.medvalor.com.br" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-axcontrol-accent/80 hover:text-axcontrol-primary transition-smooth"
+                  className="text-axcontrol-accent-subtle hover:text-axcontrol-primary transition-smooth"
                 >
                   Ver cursos disponíveis →
                 </a>
@@ -443,7 +443,7 @@ const Index = () => {
                   href="https://medvalor.med.br" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-axcontrol-accent/80 hover:text-axcontrol-primary transition-smooth"
+                  className="text-axcontrol-accent-subtle hover:text-axcontrol-primary transition-smooth"
                 >
                   Acesse MedValor® →
                 </a>
@@ -456,7 +456,7 @@ const Index = () => {
                   <Building className="w-4 h-4 md:w-5 md:h-5 text-white" />
                 </div>
                 <h4 className="text-sm md:text-base font-semibold text-axcontrol-primary mb-1">Eventos Corporativos</h4>
-                <p className="text-xs text-axcontrol-dark/60">Workshops e treinamentos in-company</p>
+                <p className="text-xs text-axcontrol-muted">Workshops e treinamentos in-company</p>
               </Card>
 
               <Card className="bg-white/60 border border-axcontrol-secondary-1/20 p-3 md:p-4 text-center">
@@ -464,7 +464,7 @@ const Index = () => {
                   <Users className="w-4 h-4 md:w-5 md:h-5 text-axcontrol-dark" />
                 </div>
                 <h4 className="text-sm md:text-base font-semibold text-axcontrol-primary mb-1">Cursos Online</h4>
-                <p className="text-xs text-axcontrol-dark/60">Capacitação a distância especializada</p>
+                <p className="text-xs text-axcontrol-muted">Capacitação a distância especializada</p>
               </Card>
             </div>
           </div>
@@ -496,7 +496,7 @@ const Index = () => {
             </p>
             
             {/* Desktop layout */}
-            <div className="hidden md:flex items-center justify-center space-x-6 text-sm text-axcontrol-dark/60">
+            <div className="hidden md:flex items-center justify-center space-x-6 text-sm text-axcontrol-muted">
               <a href="https://axcare.com.br" target="_blank" rel="noopener noreferrer" className="hover:text-axcontrol-primary transition-smooth">
                 axcare.com.br
               </a>
@@ -507,7 +507,7 @@ const Index = () => {
             </div>
             
             {/* Mobile layout */}
-            <div className="md:hidden text-xs text-axcontrol-dark/60 leading-relaxed">
+            <div className="md:hidden text-xs text-axcontrol-muted leading-relaxed">
               <a href="https://axcare.com.br" target="_blank" rel="noopener noreferrer" className="hover:text-axcontrol-primary transition-smooth">
                 axcare.com.br
               </a>

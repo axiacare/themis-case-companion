@@ -342,7 +342,7 @@ const TeamDashboard = () => {
             </p>
             
             {/* Desktop layout */}
-            <div className="hidden md:flex items-center justify-center space-x-6 text-sm text-axcontrol-dark/60">
+            <div className="hidden md:flex items-center justify-center space-x-6 text-sm text-axcontrol-muted">
               <a href="https://axcare.com.br" target="_blank" rel="noopener noreferrer" className="hover:text-axcontrol-primary transition-smooth">
                 axcare.com.br
               </a>
