@@ -7,12 +7,15 @@ import { Label } from "@/components/ui/label";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, Plus, Shield, Edit, Trash2, Eye, EyeOff, FileText } from "lucide-react";
+import { ArrowLeft, Plus, Shield, Edit, Trash2, Eye, EyeOff, FileText, LogOut } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useAdmin, TeamWithStats } from "@/hooks/useAdmin";
+import { useAdminAuth } from "@/contexts/AdminAuthContext";
+import AdminLogin from "@/components/AdminLogin";
 
 const Admin = () => {
   const { toast } = useToast();
+  const { isAuthenticated, logout } = useAdminAuth();
   const { teams, stats, loading, createTeam, updateTeam, deleteTeam } = useAdmin();
   const [dialogOpen, setDialogOpen] = useState(false);
   const [editingTeam, setEditingTeam] = useState<TeamWithStats | null>(null);
@@ -22,6 +25,11 @@ const Admin = () => {
     team_name: "",
     password: "",
   });
+
+  // Show login screen if not authenticated
+  if (!isAuthenticated) {
+    return <AdminLogin />;
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -124,12 +132,22 @@ const Admin = () => {
                 <span className="text-sm text-white/80 font-medium">Gerenciamento de Equipes</span>
               </div>
             </div>
-            <Link to="/">
-              <Button variant="outline" className="transition-smooth">
-                <ArrowLeft className="w-4 h-4 mr-2" />
-                Voltar
+            <div className="flex items-center space-x-2">
+              <Link to="/">
+                <Button variant="outline" className="transition-smooth">
+                  <ArrowLeft className="w-4 h-4 mr-2" />
+                  Voltar
+                </Button>
+              </Link>
+              <Button 
+                variant="outline" 
+                onClick={logout}
+                className="text-destructive border-destructive hover:bg-destructive hover:text-destructive-foreground transition-smooth"
+              >
+                <LogOut className="w-4 h-4 mr-2" />
+                Sair
               </Button>
-            </Link>
+            </div>
           </div>
         </div>
       </header>
