@@ -205,7 +205,7 @@ const SubmitCase = () => {
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-4">
               <img 
-                src="/logo-axia-principal.png"
+                src="/logo-axia-principal-optimized.png"
                 alt="Themis™ Logo" 
                 className="w-16 h-16 object-contain"
               />

@@ -12,7 +12,7 @@ const Index = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3 md:space-x-4 flex-1 min-w-0">
               <img 
-                src="/logo-axia-principal.png"
+                src="/logo-axia-principal-optimized.png"
                 alt="AxiaCare Logo" 
                 width="64"
                 height="64"
@@ -32,7 +32,7 @@ const Index = () => {
             <div className="flex items-center space-x-2 md:space-x-3 flex-shrink-0">
               <div className="hidden md:block">
                 <img 
-                  src="/axiacare-logo-oficial.png"
+                  src="/axiacare-logo-oficial-optimized.png"
                   alt="AxiaCare" 
                   width="103"
                   height="32"
@@ -315,7 +315,7 @@ const Index = () => {
             <div>
               <div className="flex items-center space-x-2 md:space-x-3 mb-4 md:mb-6">
                 <img 
-                  src="/axia-logo.png" 
+                  src="/axia-logo-optimized.png" 
                   alt="AxiaCare®" 
                   width="64"
                   height="64"
@@ -401,7 +401,7 @@ const Index = () => {
             <div>
               <div className="flex items-center space-x-2 mb-4">
                 <img 
-                  src="/medvalor-logo-new.png"
+                  src="/medvalor-logo-new-optimized.png"
                   alt="MedValor Logo" 
                   width="48"
                   height="48"
@@ -465,7 +465,7 @@ const Index = () => {
           <div className="text-center">
             <div className="flex items-center justify-center space-x-3 mb-3 md:mb-4">
               <img 
-                src="/logo-axia-principal.png"
+                src="/logo-axia-principal-optimized.png"
                 alt="AxiaCare" 
                 width="32"
                 height="32"
