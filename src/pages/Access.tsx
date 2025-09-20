@@ -60,7 +60,7 @@ const Access = () => {
           title: "Acesso autorizado",
           description: `Bem-vindo à equipe ${loginData.teamId}!`,
         });
-        navigate("/enviar-caso");
+        navigate("/central-equipe");
       } else {
         toast({
           title: "Acesso negado",

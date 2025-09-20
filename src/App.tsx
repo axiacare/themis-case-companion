@@ -28,7 +28,7 @@ const App = () => (
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/acesso" element={<Access />} />
-              <Route path="/central" element={<TeamDashboard />} />
+              <Route path="/central-equipe" element={<TeamDashboard />} />
               <Route path="/enviar-caso" element={<SubmitCase />} />
               <Route path="/confirmacao" element={<Confirmation />} />
               <Route path="/politica-privacidade" element={<PrivacyPolicy />} />
