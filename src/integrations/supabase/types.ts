@@ -44,6 +44,13 @@ export type Database = {
             referencedRelation: "teams"
             referencedColumns: ["team_id"]
           },
+          {
+            foreignKeyName: "cases_team_id_fkey"
+            columns: ["team_id"]
+            isOneToOne: false
+            referencedRelation: "teams_safe"
+            referencedColumns: ["team_id"]
+          },
         ]
       }
       team_settings: {
@@ -74,6 +81,13 @@ export type Database = {
             columns: ["team_id"]
             isOneToOne: false
             referencedRelation: "teams"
+            referencedColumns: ["team_id"]
+          },
+          {
+            foreignKeyName: "team_settings_team_id_fkey"
+            columns: ["team_id"]
+            isOneToOne: false
+            referencedRelation: "teams_safe"
             referencedColumns: ["team_id"]
           },
         ]
@@ -125,16 +139,44 @@ export type Database = {
       }
     }
     Views: {
-      [_ in never]: never
+      teams_safe: {
+        Row: {
+          created_at: string | null
+          team_id: string | null
+          team_name: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          team_id?: string | null
+          team_name?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          team_id?: string | null
+          team_name?: string | null
+        }
+        Relationships: []
+      }
     }
     Functions: {
       get_current_team_id: {
         Args: Record<PropertyKey, never>
         Returns: string
       }
+      is_system_admin: {
+        Args: Record<PropertyKey, never>
+        Returns: boolean
+      }
       set_team_context: {
         Args: { p_team_id: string }
         Returns: undefined
+      }
+      verify_team_login: {
+        Args: { p_password: string; p_team_id: string }
+        Returns: {
+          success: boolean
+          team_data: Json
+        }[]
       }
     }
     Enums: {
