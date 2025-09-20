@@ -71,14 +71,11 @@ const AdminLogin = () => {
       <div className="flex-1 flex items-center justify-center p-4">
         <div className="w-full max-w-md">
           <div className="text-center mb-8">
-            <picture>
-              <source srcSet="/logo-axia-principal-optimized.webp" type="image/webp" />
-              <img 
-                src="/logo-axia-principal-optimized.png"
-                alt="Themis™ Logo" 
-                className="w-20 h-20 object-contain mx-auto mb-4"
-              />
-            </picture>
+            <img 
+              src="/logo-axia-principal.png"
+              alt="Themis™ Logo" 
+              className="w-20 h-20 object-contain mx-auto mb-4"
+            />
             <h1 className="text-3xl font-bold text-primary mb-2">Painel Administrador</h1>
             <p className="text-muted-foreground">
               Acesso restrito para administradores do sistema

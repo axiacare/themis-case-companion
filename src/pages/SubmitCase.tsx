@@ -204,14 +204,11 @@ const SubmitCase = () => {
           <div className="container mx-auto px-4 py-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-4">
-              <picture>
-                <source srcSet="/logo-axia-principal-optimized.webp" type="image/webp" />
-                <img 
-                  src="/logo-axia-principal-optimized.png"
-                  alt="Themis™ Logo" 
-                  className="w-16 h-16 object-contain"
-                />
-              </picture>
+              <img 
+                src="/logo-axia-principal.png"
+                alt="Themis™ Logo" 
+                className="w-16 h-16 object-contain"
+              />
                 <div className="flex flex-col">
                   <h1 className="text-2xl font-bold text-white">Themis™</h1>
                   <span className="text-sm text-white/80 font-medium">AxControl™</span>
