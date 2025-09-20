@@ -10,19 +10,25 @@ const Index = () => {
       <header className="header-sticky bg-card border-b border-axcontrol-secondary-1/30">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-3 md:space-x-4 flex-1 min-w-0">
               <img 
                 src="/logo-axia-principal.png"
                 alt="AxiaCare Logo" 
-                className="w-16 h-16 object-contain"
+                className="w-12 h-12 md:w-16 md:h-16 object-contain flex-shrink-0"
               />
-              <div className="flex flex-col">
-                <h1 className="text-2xl font-bold text-axcontrol-dark">Themis™</h1>
-                <span className="text-sm text-axcontrol-primary font-medium">Ambiente Inteligente de Necessidades Jurídicas na Saúde</span>
+              <div className="flex flex-col min-w-0">
+                <h1 className="text-xl md:text-2xl font-bold text-axcontrol-dark">Themis™</h1>
+                <span className="text-xs md:text-sm text-axcontrol-primary font-medium hidden sm:block">
+                  Ambiente Inteligente de Necessidades Jurídicas na Saúde
+                </span>
+                <span className="text-xs text-axcontrol-primary font-medium sm:hidden">
+                  Necessidades Jurídicas na Saúde
+                </span>
               </div>
             </div>
-            <div className="flex items-center space-x-3">
-              <div className="text-right">
+            
+            <div className="flex items-center space-x-2 md:space-x-3 flex-shrink-0">
+              <div className="hidden md:block">
                 <img 
                   src="/axiacare-logo-oficial.png"
                   alt="AxiaCare" 
@@ -30,9 +36,13 @@ const Index = () => {
                 />
               </div>
               <Link to="/acesso">
-                <Button className="bg-axcontrol-primary hover:bg-axcontrol-primary/90 text-white shadow-button px-6 py-2.5 text-base font-medium">
-                  Entrar no ambiente
-                  <ArrowRight className="w-4 h-4 ml-2" />
+                <Button 
+                  size="sm"
+                  className="bg-axcontrol-primary hover:bg-axcontrol-primary/90 text-white shadow-button px-3 md:px-6 py-2 md:py-2.5 text-sm md:text-base font-medium whitespace-nowrap"
+                >
+                  <span className="hidden sm:inline">Entrar no ambiente</span>
+                  <span className="sm:hidden">Entrar</span>
+                  <ArrowRight className="w-3 h-3 md:w-4 md:h-4 ml-1 md:ml-2" />
                 </Button>
               </Link>
             </div>
