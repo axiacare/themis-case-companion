@@ -70,10 +70,8 @@ export const TeamAuthProvider: React.FC<TeamAuthProviderProps> = ({ children }) 
         return false;
       }
 
-      // Simple password verification (in production, use proper hashing)
-      // For now, doing simple comparison since we don't have bcrypt in frontend
-      const isPasswordValid = team.password_hash === password || 
-        team.password_hash.includes(password); // Temporary for transition
+      // Simple password verification for now
+      const isPasswordValid = team.password_hash === password;
 
       if (!isPasswordValid) {
         console.error('Invalid password');

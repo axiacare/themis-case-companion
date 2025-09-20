@@ -10,13 +10,11 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Scale, ArrowLeft, Building, Shield } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useTeamAuth } from "@/contexts/TeamAuthContext";
-import { useWebhookSettings } from "@/hooks/useWebhookSettings";
 
 const Access = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
   const { login } = useTeamAuth();
-  const { settings } = useWebhookSettings();
   
   const [isLoggingIn, setIsLoggingIn] = useState(false);
   const [isSubmittingRegistration, setIsSubmittingRegistration] = useState(false);
@@ -116,30 +114,11 @@ const Access = () => {
     setIsSubmittingRegistration(true);
 
     try {
-      // Modo de teste - simula sucesso se for URL de teste
-      if (settings.teamWebhookUrl.includes('httpbin.org')) {
-        toast({
-          title: "Modo de Teste Ativo",
-          description: "Solicitação simulada com sucesso (modo desenvolvimento).",
-        });
-      } else {
-        const response = await fetch(settings.teamWebhookUrl, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(registrationData),
-        });
-
-        if (!response.ok) {
-          throw new Error('Failed to submit');
-        }
-
-        toast({
-          title: "Solicitação enviada",
-          description: "Recebemos sua solicitação. Em breve entraremos em contato.",
-        });
-      }
+      // Para o registro, implementaremos posteriormente via Supabase
+      toast({
+        title: "Funcionalidade em desenvolvimento",
+        description: "O registro de novas equipes será implementado em breve.",
+      });
       
       // Reset form
       setRegistrationData({
