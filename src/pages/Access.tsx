@@ -176,20 +176,20 @@ const Access = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-secondary">
-      {/* Header */}
-      <header className="border-b bg-card backdrop-blur-sm sticky top-0 z-10">
+    <div className="min-h-screen bg-background text-foreground">
+      {/* Header - AxControl™ Visual */}
+      <header className="header-sticky bg-card border-b border-axcontrol-secondary-1/30">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <img 
                 src="/logo-axia-principal.png"
-                alt="Themis™ Logo" 
+                alt="AxiaCare Logo" 
                 className="w-16 h-16 object-contain"
               />
               <div className="flex flex-col">
-                <h1 className="text-2xl font-bold text-white">Themis™</h1>
-                <span className="text-sm text-white/80 font-medium">AxControl™</span>
+                <h1 className="text-2xl font-bold text-axcontrol-dark">Themis™</h1>
+                <span className="text-sm text-axcontrol-primary font-medium">Ambiente Inteligente de Necessidades Jurídicas na Saúde</span>
               </div>
             </div>
             <Link to="/">
@@ -203,18 +203,18 @@ const Access = () => {
       </header>
 
       {/* LGPD Badge */}
-      <div className="bg-primary/10 border-b border-primary/20">
+      <div className="bg-axcontrol-secondary-2/20 border-b border-axcontrol-accent/20">
         <div className="container mx-auto px-4 py-2">
-          <div className="flex items-center justify-center space-x-4 text-sm text-white">
+          <div className="flex items-center justify-center space-x-4 text-sm text-axcontrol-dark">
             <div className="flex items-center space-x-2">
-              <Shield className="w-4 h-4" />
+              <Shield className="w-4 h-4 text-axcontrol-accent" />
               <span className="font-medium">Ambiente interno por equipe • LGPD</span>
             </div>
             <a 
               href="https://hub.guithome.com.br/axia/privacidade.html"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-primary/20 hover:bg-primary/30 px-3 py-1 rounded-full text-xs font-medium text-white/90 hover:text-white transition-smooth border border-primary/30 hover:border-primary/50 shadow-sm hover:shadow-md"
+              className="bg-axcontrol-accent/20 hover:bg-axcontrol-accent/30 px-3 py-1 rounded-full text-xs font-medium text-axcontrol-dark/90 hover:text-axcontrol-dark transition-smooth border border-axcontrol-accent/30 hover:border-axcontrol-accent/50 shadow-sm hover:shadow-md"
             >
               Política de Privacidade
             </a>
@@ -459,6 +459,36 @@ const Access = () => {
           </CardContent>
         </Card>
       </div>
+
+      {/* Footer - Padrão AxControl™ conforme referência */}
+      <footer className="bg-white border-t border-axcontrol-secondary-1/30 py-8 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center">
+            <div className="flex items-center justify-center space-x-3 mb-4">
+              <img 
+                src="/logo-axia-principal.png"
+                alt="AxiaCare" 
+                className="w-8 h-8 object-contain"
+              />
+              <span className="text-axcontrol-primary font-semibold">AxiaCare</span>
+            </div>
+            
+            <p className="text-axcontrol-dark/70 text-sm mb-4">
+              AxView™ | WebApps – Gestão e Consultoria em Saúde
+            </p>
+            
+            <div className="flex items-center justify-center space-x-6 text-sm text-axcontrol-dark/60 flex-wrap">
+              <a href="https://axcare.com.br" target="_blank" rel="noopener noreferrer" className="hover:text-axcontrol-primary transition-smooth">
+                axcare.com.br
+              </a>
+              <span>|</span>
+              <span>Copyright © 2025 AxiaCare | Todos os direitos reservados</span>
+              <span>|</span>
+              <span>Uma empresa GTCorp.</span>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
