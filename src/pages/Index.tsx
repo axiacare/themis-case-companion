@@ -464,15 +464,11 @@ const Index = () => {
             </div>
             
             {/* Mobile layout */}
-            <div className="md:hidden space-y-2 text-xs text-axcontrol-dark/60">
-              <div>
-                <a href="https://axcare.com.br" target="_blank" rel="noopener noreferrer" className="hover:text-axcontrol-primary transition-smooth">
-                  axcare.com.br
-                </a>
-              </div>
-              <div>Copyright © 2025 AxiaCare</div>
-              <div>Todos os direitos reservados</div>
-              <div>Uma empresa GTCorp.</div>
+            <div className="md:hidden text-xs text-axcontrol-dark/60 leading-relaxed">
+              <a href="https://axcare.com.br" target="_blank" rel="noopener noreferrer" className="hover:text-axcontrol-primary transition-smooth">
+                axcare.com.br
+              </a>
+              <span> © 2025 AxiaCare Todos os direitos reservados</span>
             </div>
           </div>
         </div>
