@@ -14,13 +14,113 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      cases: {
+        Row: {
+          case_data: Json
+          created_at: string
+          id: string
+          team_id: string
+          updated_at: string
+        }
+        Insert: {
+          case_data: Json
+          created_at?: string
+          id?: string
+          team_id: string
+          updated_at?: string
+        }
+        Update: {
+          case_data?: Json
+          created_at?: string
+          id?: string
+          team_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "cases_team_id_fkey"
+            columns: ["team_id"]
+            isOneToOne: false
+            referencedRelation: "teams"
+            referencedColumns: ["team_id"]
+          },
+        ]
+      }
+      team_settings: {
+        Row: {
+          created_at: string
+          id: string
+          settings: Json
+          team_id: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          settings?: Json
+          team_id: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          settings?: Json
+          team_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "team_settings_team_id_fkey"
+            columns: ["team_id"]
+            isOneToOne: false
+            referencedRelation: "teams"
+            referencedColumns: ["team_id"]
+          },
+        ]
+      }
+      teams: {
+        Row: {
+          created_at: string
+          id: string
+          password_hash: string
+          team_id: string
+          team_name: string
+          updated_at: string
+          webhook_url: string | null
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          password_hash: string
+          team_id: string
+          team_name: string
+          updated_at?: string
+          webhook_url?: string | null
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          password_hash?: string
+          team_id?: string
+          team_name?: string
+          updated_at?: string
+          webhook_url?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      get_current_team_id: {
+        Args: Record<PropertyKey, never>
+        Returns: string
+      }
+      set_team_context: {
+        Args: { p_team_id: string }
+        Returns: undefined
+      }
     }
     Enums: {
       [_ in never]: never
