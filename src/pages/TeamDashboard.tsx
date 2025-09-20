@@ -120,20 +120,27 @@ const TeamDashboard = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
       {/* Header */}
-      <header className="bg-background/80 backdrop-blur-sm border-b sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-3 md:py-4">
+      <header className="header-sticky bg-card border-b border-axcontrol-secondary-1/30">
+        <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3 md:gap-4 flex-1 min-w-0">
-              <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-primary to-primary/80 rounded-xl flex items-center justify-center shadow-lg">
-                <Sparkles className="w-5 h-5 md:w-6 md:h-6 text-primary-foreground" />
-              </div>
-              <div className="min-w-0">
-                <h1 className="text-lg md:text-2xl font-bold text-foreground">Themis™ - Ambiente Inteligente</h1>
-                <p className="text-muted-foreground text-xs md:text-sm">Central de Equipe • Análise Jurídico-Médica</p>
+            <div className="flex items-center space-x-3 md:space-x-4 flex-1 min-w-0">
+              <img 
+                src="/logo-axia-principal.png"
+                alt="AxiaCare Logo" 
+                className="w-12 h-12 md:w-16 md:h-16 object-contain flex-shrink-0"
+              />
+              <div className="flex flex-col min-w-0">
+                <h1 className="text-xl md:text-2xl font-bold text-axcontrol-dark">Themis™</h1>
+                <span className="text-xs md:text-sm text-axcontrol-primary font-medium hidden sm:block">
+                  Central de Equipe • Análise Jurídico-Médica
+                </span>
+                <span className="text-xs text-axcontrol-primary font-medium sm:hidden">
+                  Central de Equipe
+                </span>
               </div>
             </div>
             
-            <div className="flex items-center gap-2 md:gap-3 flex-shrink-0">
+            <div className="flex items-center space-x-2 md:space-x-3 flex-shrink-0">
               <Badge variant="secondary" className="px-2 md:px-3 py-1 text-xs">
                 <Users className="w-3 h-3 md:w-4 md:h-4 mr-1" />
                 <span className="hidden sm:inline">{teamData.team_id}</span>
@@ -155,16 +162,16 @@ const TeamDashboard = () => {
       </header>
 
       {/* Security Banner */}
-      <div className="bg-muted/30 border-b">
-        <div className="container mx-auto px-4 py-2">
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-xs text-muted-foreground">
-            <div className="flex items-center gap-2">
-              <Shield className="w-3 h-3 text-green-600" />
-              <span className="font-medium">Ambiente seguro • ISO/IEC 27001 e 27701 • LGPD</span>
+      <div className="bg-axcontrol-secondary-2/20 border-b border-axcontrol-accent/20">
+        <div className="container mx-auto px-4 py-1.5 md:py-2">
+          <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-4 text-xs md:text-sm text-axcontrol-dark">
+            <div className="flex items-center space-x-2">
+              <Shield className="w-3 h-3 md:w-4 md:h-4 text-axcontrol-accent" />
+              <span className="font-medium text-center">Ambiente seguro • ISO/IEC 27001 e 27701 • LGPD</span>
             </div>
-            <div className="flex items-center gap-2">
-              <Scale className="w-3 h-3 text-orange-600" />
-              <span className="font-medium">Ferramenta de apoio • Não substitui avaliação profissional</span>
+            <div className="flex items-center space-x-2">
+              <Scale className="w-3 h-3 md:w-4 md:h-4 text-axcontrol-accent" />
+              <span className="font-medium text-center">Ferramenta de apoio • Não substitui avaliação profissional</span>
             </div>
           </div>
         </div>
@@ -178,7 +185,7 @@ const TeamDashboard = () => {
               Olá, {teamData.team_name}! 👋
             </h2>
             <p className="text-muted-foreground text-base md:text-lg">
-              Bem-vindo à sua central de análises jurídico-médicas. 
+              Bem-vindo à sua Central de Equipe. 
               Gerencie seus casos, acesse insights e utilize nossas ferramentas de apoio.
             </p>
           </div>
@@ -234,7 +241,7 @@ const TeamDashboard = () => {
               <div>
                 <h3 className="text-xl font-semibold text-foreground mb-2">Novo Caso para Análise</h3>
                 <p className="text-muted-foreground mb-4">
-                  Envie um novo caso para análise jurídico-médica completa
+                  Envie um novo caso para análise completa
                 </p>
                 <Button onClick={handleNewCase} size="lg" className="w-full">
                   <FileText className="w-5 h-5 mr-2" />
@@ -248,15 +255,15 @@ const TeamDashboard = () => {
           <Card className="p-8 hover:shadow-lg transition-shadow">
             <div className="text-center space-y-6">
               <div className="w-16 h-16 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto">
-                <MessageCircle className="w-8 h-8 text-blue-600" />
+                <Bot className="w-8 h-8 text-blue-600" />
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-foreground mb-2">Assistente Temis</h3>
+                <h3 className="text-xl font-semibold text-foreground mb-2">Chatbot Themis™ AI</h3>
                 <p className="text-muted-foreground mb-4">
-                  Obtenha insights jurídicos e orientações instantâneas
+                  Obtenha insights e orientações instantâneas
                 </p>
                 <Button onClick={handleChatbot} variant="outline" size="lg" className="w-full">
-                  <MessageCircle className="w-5 h-5 mr-2" />
+                  <Bot className="w-5 h-5 mr-2" />
                   Iniciar Conversa
                 </Button>
               </div>
@@ -306,42 +313,40 @@ const TeamDashboard = () => {
         <Separator className="my-6 md:my-8" />
       </main>
 
-      {/* Footer - Padrão AxControl™ */}
-      <footer className="bg-background border-t py-6 md:py-8 px-4 mt-auto">
+      {/* Footer - Padrão AxControl™ conforme referência */}
+      <footer className="bg-white border-t border-axcontrol-secondary-1/30 py-6 md:py-8 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center">
-            <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 mb-4 md:mb-6">
-              <div className="flex items-center space-x-2">
-                <img 
-                  src="/axia-logo.png" 
-                  alt="AxiaCare®" 
-                  className="w-6 h-6 md:w-8 md:h-8 object-contain"
-                />
-                <span className="text-sm md:text-base font-semibold text-foreground">AxiaCare®</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <img 
-                  src="/medvalor-logo-new.png" 
-                  alt="MedValor" 
-                  className="w-6 h-6 md:w-8 md:h-8 object-contain"
-                />
-                <span className="text-sm md:text-base font-semibold text-foreground">MedValor</span>
-              </div>
+            <div className="flex items-center justify-center space-x-3 mb-3 md:mb-4">
+              <img 
+                src="/logo-axia-principal.png"
+                alt="AxiaCare" 
+                className="w-7 h-7 md:w-8 md:h-8 object-contain"
+              />
+              <span className="text-axcontrol-primary font-semibold text-sm md:text-base">AxiaCare</span>
             </div>
             
-            <div className="space-y-2 text-xs md:text-sm text-muted-foreground">
-              <p>
-                <strong>Themis™</strong> - Ambiente Inteligente de Necessidades Jurídicas na Saúde
-              </p>
-              <p>
-                Equipe: <strong>{teamData.team_name}</strong> • ID: <strong>{teamData.team_id}</strong>
-              </p>
-              <p>
-                Desenvolvido por <strong>AxiaCare®</strong> em parceria com <strong>MedValor</strong>
-              </p>
-              <p className="text-xs">
-                © 2024 AxiaCare®. Todos os direitos reservados. • Themis™ e AxIntel™ são marcas registradas.
-              </p>
+            <p className="text-axcontrol-dark/70 text-xs md:text-sm mb-3 md:mb-4">
+              AxView™ | WebApps – Gestão e Consultoria em Saúde
+            </p>
+            
+            {/* Desktop layout */}
+            <div className="hidden md:flex items-center justify-center space-x-6 text-sm text-axcontrol-dark/60">
+              <a href="https://axcare.com.br" target="_blank" rel="noopener noreferrer" className="hover:text-axcontrol-primary transition-smooth">
+                axcare.com.br
+              </a>
+              <span>|</span>
+              <span>Copyright © 2025 AxiaCare | Todos os direitos reservados</span>
+              <span>|</span>
+              <span>Uma empresa GTCorp.</span>
+            </div>
+            
+            {/* Mobile layout */}
+            <div className="md:hidden text-xs text-axcontrol-dark/60 leading-relaxed">
+              <a href="https://axcare.com.br" target="_blank" rel="noopener noreferrer" className="hover:text-axcontrol-primary transition-smooth">
+                axcare.com.br
+              </a>
+              <span> © 2025 AxiaCare Todos os direitos reservados</span>
             </div>
           </div>
         </div>
