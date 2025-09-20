@@ -14,6 +14,42 @@ export type Database = {
   }
   public: {
     Tables: {
+      audit_logs: {
+        Row: {
+          accessed_fields: string[] | null
+          action: string
+          id: string
+          ip_address: string | null
+          target_table: string | null
+          target_team_id: string | null
+          team_id: string
+          timestamp: string | null
+          user_agent: string | null
+        }
+        Insert: {
+          accessed_fields?: string[] | null
+          action: string
+          id?: string
+          ip_address?: string | null
+          target_table?: string | null
+          target_team_id?: string | null
+          team_id: string
+          timestamp?: string | null
+          user_agent?: string | null
+        }
+        Update: {
+          accessed_fields?: string[] | null
+          action?: string
+          id?: string
+          ip_address?: string | null
+          target_table?: string | null
+          target_team_id?: string | null
+          team_id?: string
+          timestamp?: string | null
+          user_agent?: string | null
+        }
+        Relationships: []
+      }
       cases: {
         Row: {
           case_data: Json
@@ -42,6 +78,13 @@ export type Database = {
             columns: ["team_id"]
             isOneToOne: false
             referencedRelation: "teams"
+            referencedColumns: ["team_id"]
+          },
+          {
+            foreignKeyName: "cases_team_id_fkey"
+            columns: ["team_id"]
+            isOneToOne: false
+            referencedRelation: "teams_public_safe"
             referencedColumns: ["team_id"]
           },
           {
@@ -81,6 +124,13 @@ export type Database = {
             columns: ["team_id"]
             isOneToOne: false
             referencedRelation: "teams"
+            referencedColumns: ["team_id"]
+          },
+          {
+            foreignKeyName: "team_settings_team_id_fkey"
+            columns: ["team_id"]
+            isOneToOne: false
+            referencedRelation: "teams_public_safe"
             referencedColumns: ["team_id"]
           },
           {
@@ -139,6 +189,36 @@ export type Database = {
       }
     }
     Views: {
+      teams_public_safe: {
+        Row: {
+          cnpj: string | null
+          created_at: string | null
+          email: string | null
+          phone: string | null
+          responsible_name: string | null
+          team_id: string | null
+          team_name: string | null
+        }
+        Insert: {
+          cnpj?: never
+          created_at?: string | null
+          email?: never
+          phone?: never
+          responsible_name?: never
+          team_id?: string | null
+          team_name?: string | null
+        }
+        Update: {
+          cnpj?: never
+          created_at?: string | null
+          email?: never
+          phone?: never
+          responsible_name?: never
+          team_id?: string | null
+          team_name?: string | null
+        }
+        Relationships: []
+      }
       teams_safe: {
         Row: {
           created_at: string | null
@@ -211,6 +291,24 @@ export type Database = {
       is_system_admin: {
         Args: Record<PropertyKey, never>
         Returns: boolean
+      }
+      log_sensitive_access: {
+        Args: {
+          p_accessed_fields: string[]
+          p_action: string
+          p_target_table: string
+          p_target_team_id: string
+        }
+        Returns: undefined
+      }
+      mask_sensitive_data: {
+        Args: {
+          data_type: string
+          data_value: string
+          owner_team_id: string
+          viewer_team_id: string
+        }
+        Returns: string
       }
       set_team_context: {
         Args: { p_team_id: string }
