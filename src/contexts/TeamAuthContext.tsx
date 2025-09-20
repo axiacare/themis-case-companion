@@ -55,34 +55,40 @@ export const TeamAuthProvider: React.FC<TeamAuthProviderProps> = ({ children }) 
 
   const login = async (teamId: string, password: string): Promise<boolean> => {
     try {
-      // Set team context for RLS
+      // Use secure login function instead of direct table access
+      const { data: loginResult, error } = await supabase.rpc('verify_team_login', {
+        p_team_id: teamId,
+        p_password: password
+      });
+
+      if (error) {
+        console.error('Login function error:', error);
+        return false;
+      }
+
+      // Check if login was successful
+      const result = loginResult?.[0];
+      if (!result?.success || !result?.team_data) {
+        console.error('Invalid credentials');
+        return false;
+      }
+
+      // Set team context for RLS after successful verification
       await supabase.rpc('set_team_context', { p_team_id: teamId });
-      
-      // Query team from Supabase
-      const { data: team, error } = await supabase
-        .from('teams')
-        .select('team_id, team_name, password_hash, email, responsible_name')
-        .eq('team_id', teamId)
-        .single();
 
-      if (error || !team) {
-        console.error('Team not found:', error);
-        return false;
-      }
-
-      // Simple password verification for now
-      const isPasswordValid = team.password_hash === password;
-
-      if (!isPasswordValid) {
-        console.error('Invalid password');
-        return false;
-      }
+      // Type assertion for team_data object
+      const teamDataObj = result.team_data as {
+        team_id: string;
+        team_name: string;
+        email?: string;
+        responsible_name?: string;
+      };
 
       const newTeamData: TeamData = {
-        team_id: team.team_id,
-        team_name: team.team_name,
-        email: team.email || undefined,
-        responsible_name: team.responsible_name || undefined,
+        team_id: teamDataObj.team_id,
+        team_name: teamDataObj.team_name,
+        email: teamDataObj.email || undefined,
+        responsible_name: teamDataObj.responsible_name || undefined,
       };
 
       setTeamData(newTeamData);
