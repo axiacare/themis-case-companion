@@ -159,6 +159,51 @@ export type Database = {
       }
     }
     Functions: {
+      admin_create_team: {
+        Args: {
+          p_cnpj?: string
+          p_email?: string
+          p_password: string
+          p_phone?: string
+          p_responsible_name?: string
+          p_team_id: string
+          p_team_name: string
+          p_terms_document_url?: string
+        }
+        Returns: string
+      }
+      admin_delete_team: {
+        Args: { p_team_uuid: string }
+        Returns: boolean
+      }
+      admin_list_teams: {
+        Args: Record<PropertyKey, never>
+        Returns: {
+          cnpj: string
+          created_at: string
+          email: string
+          id: string
+          phone: string
+          responsible_name: string
+          team_id: string
+          team_name: string
+          terms_document_url: string
+          updated_at: string
+        }[]
+      }
+      admin_update_team: {
+        Args: {
+          p_cnpj?: string
+          p_email?: string
+          p_password?: string
+          p_phone?: string
+          p_responsible_name?: string
+          p_team_name: string
+          p_team_uuid: string
+          p_terms_document_url?: string
+        }
+        Returns: boolean
+      }
       get_current_team_id: {
         Args: Record<PropertyKey, never>
         Returns: string

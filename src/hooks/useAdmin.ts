@@ -34,11 +34,9 @@ export const useAdmin = () => {
     try {
       setLoading(true);
       
-      // Load teams
+      // Load teams using secure admin function
       const { data: teamsData, error: teamsError } = await supabase
-        .from('teams')
-        .select('*')
-        .order('created_at', { ascending: false });
+        .rpc('admin_list_teams');
 
       if (teamsError) throw teamsError;
 
@@ -106,20 +104,17 @@ export const useAdmin = () => {
     terms_document_url?: string;
   }) => {
     try {
-      // Simple hash - in production, use bcrypt or similar
-      const passwordHash = btoa(teamData.password);
-
-      const { error } = await supabase
-        .from('teams')
-        .insert({
-          team_id: teamData.team_id,
-          team_name: teamData.team_name,
-          password_hash: passwordHash,
-          cnpj: teamData.cnpj,
-          responsible_name: teamData.responsible_name,
-          email: teamData.email,
-          phone: teamData.phone,
-          terms_document_url: teamData.terms_document_url,
+      // Use secure admin function to create team
+      const { data: teamId, error } = await supabase
+        .rpc('admin_create_team', {
+          p_team_id: teamData.team_id,
+          p_team_name: teamData.team_name,
+          p_password: teamData.password,
+          p_cnpj: teamData.cnpj || null,
+          p_responsible_name: teamData.responsible_name || null,
+          p_email: teamData.email || null,
+          p_phone: teamData.phone || null,
+          p_terms_document_url: teamData.terms_document_url || null,
         });
 
       if (error) throw error;
@@ -146,25 +141,18 @@ export const useAdmin = () => {
     }
   ) => {
     try {
-      const payload: any = {
-        team_name: updateData.team_name,
-        cnpj: updateData.cnpj,
-        responsible_name: updateData.responsible_name,
-        email: updateData.email,
-        phone: updateData.phone,
-        terms_document_url: updateData.terms_document_url,
-        updated_at: new Date().toISOString(),
-      };
-
-      if (updateData.password) {
-        // Simple hash - in production, use bcrypt or similar
-        payload.password_hash = btoa(updateData.password);
-      }
-
-      const { error } = await supabase
-        .from('teams')
-        .update(payload)
-        .eq('id', teamId);
+      // Use secure admin function to update team
+      const { data: success, error } = await supabase
+        .rpc('admin_update_team', {
+          p_team_uuid: teamId,
+          p_team_name: updateData.team_name,
+          p_password: updateData.password || null,
+          p_cnpj: updateData.cnpj || null,
+          p_responsible_name: updateData.responsible_name || null,
+          p_email: updateData.email || null,
+          p_phone: updateData.phone || null,
+          p_terms_document_url: updateData.terms_document_url || null,
+        });
 
       if (error) throw error;
 
@@ -179,10 +167,11 @@ export const useAdmin = () => {
 
   const deleteTeam = async (teamId: string) => {
     try {
-      const { error } = await supabase
-        .from('teams')
-        .delete()
-        .eq('id', teamId);
+      // Use secure admin function to delete team
+      const { data: success, error } = await supabase
+        .rpc('admin_delete_team', {
+          p_team_uuid: teamId
+        });
 
       if (error) throw error;
 
