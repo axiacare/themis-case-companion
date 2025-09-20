@@ -7,6 +7,7 @@ import { TeamAuthProvider } from "@/contexts/TeamAuthContext";
 import { AdminAuthProvider } from "@/contexts/AdminAuthContext";
 import Index from "./pages/Index";
 import Access from "./pages/Access";
+import TeamDashboard from "./pages/TeamDashboard";
 import SubmitCase from "./pages/SubmitCase";
 import Confirmation from "./pages/Confirmation";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
@@ -27,6 +28,7 @@ const App = () => (
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/acesso" element={<Access />} />
+              <Route path="/central" element={<TeamDashboard />} />
               <Route path="/enviar-caso" element={<SubmitCase />} />
               <Route path="/confirmacao" element={<Confirmation />} />
               <Route path="/politica-privacidade" element={<PrivacyPolicy />} />

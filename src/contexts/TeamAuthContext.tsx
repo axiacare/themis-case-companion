@@ -87,6 +87,9 @@ export const TeamAuthProvider: React.FC<TeamAuthProviderProps> = ({ children }) 
 
       setTeamData(newTeamData);
       sessionStorage.setItem('teamData', JSON.stringify(newTeamData));
+      
+      // Redirect to team dashboard after successful login
+      window.location.href = '/central';
       return true;
 
     } catch (error) {
