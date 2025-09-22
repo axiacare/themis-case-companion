@@ -40,6 +40,16 @@ const Index = () => {
                 />
               </div>
               <div className="flex items-center space-x-2">
+                <Link to="/conferencia-seguranca">
+                  <Button 
+                    variant="outline"
+                    size="sm"
+                    className="text-axcontrol-accent border-axcontrol-accent hover:bg-axcontrol-accent hover:text-white transition-smooth px-2 md:px-3"
+                  >
+                    <FileCheck className="w-3 h-3 md:w-4 md:h-4" />
+                    <span className="hidden md:inline ml-1">Segurança</span>
+                  </Button>
+                </Link>
                 <Link to="/admin">
                   <Button 
                     variant="outline"

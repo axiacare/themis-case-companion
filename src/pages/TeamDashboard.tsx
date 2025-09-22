@@ -301,6 +301,20 @@ const TeamDashboard = () => {
           </Card>
 
           <Card className="p-6 hover:shadow-md transition-shadow cursor-pointer">
+            <Link to="/conferencia-seguranca" className="block">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center">
+                  <Shield className="w-6 h-6 text-blue-600" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-foreground">Conferência de Segurança</h4>
+                  <p className="text-muted-foreground text-sm">Auditoria completa do sistema</p>
+                </div>
+              </div>
+            </Link>
+          </Card>
+
+          <Card className="p-6 hover:shadow-md transition-shadow cursor-pointer">
             <Link to="/auditoria" className="block">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-green-500/10 rounded-lg flex items-center justify-center">
