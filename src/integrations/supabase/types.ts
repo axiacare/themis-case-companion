@@ -14,6 +14,86 @@ export type Database = {
   }
   public: {
     Tables: {
+      admin_sessions: {
+        Row: {
+          admin_user_id: string
+          created_at: string
+          expires_at: string
+          id: string
+          ip_address: string | null
+          is_active: boolean | null
+          session_token: string
+          user_agent: string | null
+        }
+        Insert: {
+          admin_user_id: string
+          created_at?: string
+          expires_at: string
+          id?: string
+          ip_address?: string | null
+          is_active?: boolean | null
+          session_token: string
+          user_agent?: string | null
+        }
+        Update: {
+          admin_user_id?: string
+          created_at?: string
+          expires_at?: string
+          id?: string
+          ip_address?: string | null
+          is_active?: boolean | null
+          session_token?: string
+          user_agent?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "admin_sessions_admin_user_id_fkey"
+            columns: ["admin_user_id"]
+            isOneToOne: false
+            referencedRelation: "admin_users"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      admin_users: {
+        Row: {
+          created_at: string
+          email: string | null
+          failed_login_attempts: number | null
+          id: string
+          is_active: boolean | null
+          last_login_at: string | null
+          locked_until: string | null
+          password_hash: string
+          updated_at: string
+          username: string
+        }
+        Insert: {
+          created_at?: string
+          email?: string | null
+          failed_login_attempts?: number | null
+          id?: string
+          is_active?: boolean | null
+          last_login_at?: string | null
+          locked_until?: string | null
+          password_hash: string
+          updated_at?: string
+          username: string
+        }
+        Update: {
+          created_at?: string
+          email?: string | null
+          failed_login_attempts?: number | null
+          id?: string
+          is_active?: boolean | null
+          last_login_at?: string | null
+          locked_until?: string | null
+          password_hash?: string
+          updated_at?: string
+          username?: string
+        }
+        Relationships: []
+      }
       audit_logs: {
         Row: {
           accessed_fields: string[] | null
@@ -207,11 +287,58 @@ export type Database = {
         }
         Relationships: []
       }
+      webhook_settings: {
+        Row: {
+          auth_webhook_url: string | null
+          case_webhook_url: string | null
+          created_at: string
+          id: string
+          team_id: string
+          team_webhook_url: string | null
+          updated_at: string
+          webhook_secret: string | null
+        }
+        Insert: {
+          auth_webhook_url?: string | null
+          case_webhook_url?: string | null
+          created_at?: string
+          id?: string
+          team_id: string
+          team_webhook_url?: string | null
+          updated_at?: string
+          webhook_secret?: string | null
+        }
+        Update: {
+          auth_webhook_url?: string | null
+          case_webhook_url?: string | null
+          created_at?: string
+          id?: string
+          team_id?: string
+          team_webhook_url?: string | null
+          updated_at?: string
+          webhook_secret?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
+      admin_authenticate: {
+        Args: {
+          p_ip_address?: string
+          p_password: string
+          p_user_agent?: string
+          p_username: string
+        }
+        Returns: {
+          admin_data: Json
+          error_message: string
+          session_token: string
+          success: boolean
+        }[]
+      }
       admin_create_team: {
         Args: {
           p_cnpj?: string
@@ -223,6 +350,10 @@ export type Database = {
           p_team_name: string
           p_terms_document_url?: string
         }
+        Returns: string
+      }
+      admin_create_user: {
+        Args: { p_email?: string; p_password: string; p_username: string }
         Returns: string
       }
       admin_delete_team: {
@@ -244,6 +375,10 @@ export type Database = {
           updated_at: string
         }[]
       }
+      admin_logout: {
+        Args: { p_session_token: string }
+        Returns: boolean
+      }
       admin_update_team: {
         Args: {
           p_cnpj?: string
@@ -256,6 +391,13 @@ export type Database = {
           p_terms_document_url?: string
         }
         Returns: boolean
+      }
+      admin_validate_session: {
+        Args: { p_session_token: string }
+        Returns: {
+          admin_data: Json
+          valid: boolean
+        }[]
       }
       get_current_team_id: {
         Args: Record<PropertyKey, never>
@@ -306,6 +448,20 @@ export type Database = {
       set_team_context: {
         Args: { p_team_id: string }
         Returns: undefined
+      }
+      update_webhook_settings: {
+        Args: {
+          p_auth_webhook_url?: string
+          p_case_webhook_url?: string
+          p_team_id: string
+          p_team_webhook_url?: string
+          p_webhook_secret?: string
+        }
+        Returns: boolean
+      }
+      validate_webhook_url: {
+        Args: { p_url: string }
+        Returns: boolean
       }
       verify_team_login: {
         Args: { p_password: string; p_team_id: string }
