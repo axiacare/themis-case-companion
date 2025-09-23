@@ -332,23 +332,23 @@ const Index = () => {
               </p>
               
               <div className="mb-4 md:mb-6">
-                <h4 className="text-lg md:text-xl font-semibold text-axcontrol-primary mb-3 md:mb-4">AxControls™ - Ecossistema Integrado:</h4>
+                <h4 className="text-lg md:text-xl font-semibold text-axcontrol-primary mb-3 md:mb-4">AxControls™ — Ecossistema Integrado para Gestão Inteligente em Saúde</h4>
                 <div className="space-y-2 md:space-y-3 text-sm md:text-base">
                   <div className="flex items-center space-x-2 md:space-x-3">
                     <div className="w-2.5 h-2.5 md:w-3 md:h-3 bg-axcontrol-accent rounded-full"></div>
-                    <span className="text-axcontrol-dark"><strong>AxWay™</strong> - Experiência clínica aplicada à área jurídica.</span>
+                    <span className="text-axcontrol-dark"><strong>AxWay™</strong> — Métodos estruturados que traduzem visão sistêmica em prática efetiva.</span>
                   </div>
                   <div className="flex items-center space-x-2 md:space-x-3">
                     <div className="w-2.5 h-2.5 md:w-3 md:h-3 bg-axcontrol-secondary-2 rounded-full"></div>
-                    <span className="text-axcontrol-dark"><strong>AxView™</strong> - Documentos organizados em padrões profissionais.</span>
+                    <span className="text-axcontrol-dark"><strong>AxView™</strong> — Modelos visuais padronizados e profissionais, aplicados em todas as entregas.</span>
                   </div>
                   <div className="flex items-center space-x-2 md:space-x-3">
                     <div className="w-2.5 h-2.5 md:w-3 md:h-3 bg-axcontrol-primary rounded-full"></div>
-                    <span className="text-axcontrol-dark"><strong>AxIntel™</strong> - Inteligência artificial especializada.</span>
+                    <span className="text-axcontrol-dark"><strong>AxIntel™</strong> — Inteligência Artificial especializada, desenvolvida para decisões clínicas e de gestão.</span>
                   </div>
                   <div className="flex items-center space-x-2 md:space-x-3">
                     <div className="w-2.5 h-2.5 md:w-3 md:h-3 bg-axcontrol-secondary-1 rounded-full"></div>
-                    <span className="text-axcontrol-dark"><strong>AxWise™</strong> - Educação continuada e MedValor®.</span>
+                    <span className="text-axcontrol-dark"><strong>AxWise™</strong> — Educação contínua e aplicada, garantindo evolução e impacto real.</span>
                   </div>
                 </div>
               </div>
