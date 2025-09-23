@@ -337,7 +337,7 @@ const Index = () => {
               </div>
               
               <p className="text-base md:text-lg text-axcontrol-dark mb-4 md:mb-6 leading-relaxed">
-                A <strong>AxiaCare®</strong> é uma empresa comprometida com cuidados de saúde baseados em valor (VBHC - Value Based Health Care), 
+                A <strong>AxiaCare®</strong> é uma empresa de consultoria comprometida com cuidados de saúde baseados em valor (VBHC - Value Based Health Care), 
                 desenvolvendo soluções inteligentes que conectam profissionais, instituições e pacientes.
               </p>
               
