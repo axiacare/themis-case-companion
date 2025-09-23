@@ -424,7 +424,7 @@ const Index = () => {
               
               <p className="text-sm md:text-base text-axcontrol-dark/70 mb-4 leading-relaxed">
                 Aprendizado contínuo através de eventos e cursos especializados. A <strong>MedValor®</strong> 
-                oferece capacitação em VBHC, análises jurídico-médicas e uso de tecnologias em saúde.
+                promove eventos corporativos, palestras e capacitação em Gestão em Saúde.
               </p>
               
               <div className="flex flex-wrap gap-4 text-sm">
@@ -453,8 +453,8 @@ const Index = () => {
                 <div className="w-8 h-8 md:w-10 md:h-10 bg-axcontrol-primary/80 rounded-lg flex items-center justify-center mx-auto mb-2 md:mb-3">
                   <Building className="w-4 h-4 md:w-5 md:h-5 text-white" />
                 </div>
-                <h4 className="text-sm md:text-base font-semibold text-axcontrol-primary mb-1">Eventos Corporativos</h4>
-                <p className="text-xs text-axcontrol-muted">Workshops e treinamentos in-company</p>
+                <h4 className="text-sm md:text-base font-semibold text-axcontrol-primary mb-1">Palestras</h4>
+                <p className="text-xs text-axcontrol-muted">Apresentações especializadas em Gestão em Saúde e VBHC</p>
               </Card>
 
               <Card className="bg-white/60 border border-axcontrol-secondary-1/20 p-3 md:p-4 text-center">
