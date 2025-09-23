@@ -82,6 +82,42 @@ export type Database = {
           },
         ]
       }
+      team_auth: {
+        Row: {
+          created_at: string
+          failed_login_attempts: number | null
+          id: string
+          last_login_at: string | null
+          locked_until: string | null
+          password_hash: string
+          team_id: string
+          updated_at: string
+          webhook_url: string | null
+        }
+        Insert: {
+          created_at?: string
+          failed_login_attempts?: number | null
+          id?: string
+          last_login_at?: string | null
+          locked_until?: string | null
+          password_hash: string
+          team_id: string
+          updated_at?: string
+          webhook_url?: string | null
+        }
+        Update: {
+          created_at?: string
+          failed_login_attempts?: number | null
+          id?: string
+          last_login_at?: string | null
+          locked_until?: string | null
+          password_hash?: string
+          team_id?: string
+          updated_at?: string
+          webhook_url?: string | null
+        }
+        Relationships: []
+      }
       team_settings: {
         Row: {
           created_at: string
@@ -120,42 +156,36 @@ export type Database = {
           created_at: string
           email: string | null
           id: string
-          password_hash: string
           phone: string | null
           responsible_name: string | null
           team_id: string
           team_name: string
           terms_document_url: string | null
           updated_at: string
-          webhook_url: string | null
         }
         Insert: {
           cnpj?: string | null
           created_at?: string
           email?: string | null
           id?: string
-          password_hash: string
           phone?: string | null
           responsible_name?: string | null
           team_id: string
           team_name: string
           terms_document_url?: string | null
           updated_at?: string
-          webhook_url?: string | null
         }
         Update: {
           cnpj?: string | null
           created_at?: string
           email?: string | null
           id?: string
-          password_hash?: string
           phone?: string | null
           responsible_name?: string | null
           team_id?: string
           team_name?: string
           terms_document_url?: string | null
           updated_at?: string
-          webhook_url?: string | null
         }
         Relationships: []
       }
