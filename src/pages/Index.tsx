@@ -75,12 +75,12 @@ const Index = () => {
               <span className="font-medium text-center">Ambiente seguro • ISO/IEC 27001 e 27701 • LGPD</span>
             </div>
             <a 
-              href="https://hub.guithome.com.br/axia/privacidade.html"
+              href="https://hub.axcare.com.br/compliance"
               target="_blank"
               rel="noopener noreferrer"
               className="chip-compliance hover:bg-success/80 transition-smooth text-xs"
             >
-              Política de Privacidade
+              Central de Compliance
             </a>
           </div>
         </div>
