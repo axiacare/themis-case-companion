@@ -30,37 +30,41 @@ const Index = () => {
             </div>
             
             <div className="flex items-center space-x-2 md:space-x-3 flex-shrink-0">
-              <div className="hidden md:block">
+              <Link to="/admin">
+                <Button 
+                  variant="outline"
+                  size="sm"
+                  className="text-axcontrol-primary border-axcontrol-primary hover:bg-axcontrol-primary hover:text-white transition-smooth px-3 md:px-4"
+                >
+                  <span className="text-sm font-medium">Admin</span>
+                </Button>
+              </Link>
+              
+              <Link to="/acesso">
+                <Button 
+                  size="sm"
+                  className="bg-axcontrol-primary hover:bg-axcontrol-primary/90 text-white shadow-button px-3 md:px-6 py-2 md:py-2.5 text-sm md:text-base font-medium whitespace-nowrap"
+                >
+                  <span className="hidden sm:inline">Entrar no ambiente</span>
+                  <span className="sm:hidden">Entrar</span>
+                  <ArrowRight className="w-3 h-3 md:w-4 md:h-4 ml-1 md:ml-2" />
+                </Button>
+              </Link>
+              
+              <a 
+                href="https://axcare.com.br" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover-scale-sm transition-smooth ml-2"
+              >
                 <img 
                   src="/axiacare-logo-oficial.png"
                   alt="AxiaCare" 
-                  width="103"
-                  height="32"
-                  className="h-8 object-contain"
+                  width="120"
+                  height="37"
+                  className="h-9 md:h-10 object-contain"
                 />
-              </div>
-              <div className="flex items-center space-x-2">
-                <Link to="/admin">
-                  <Button 
-                    variant="outline"
-                    size="sm"
-                    className="text-axcontrol-primary border-axcontrol-primary hover:bg-axcontrol-primary hover:text-white transition-smooth px-2 md:px-3"
-                  >
-                    <Shield className="w-3 h-3 md:w-4 md:h-4" />
-                    <span className="hidden md:inline ml-1">Admin</span>
-                  </Button>
-                </Link>
-                <Link to="/acesso">
-                  <Button 
-                    size="sm"
-                    className="bg-axcontrol-primary hover:bg-axcontrol-primary/90 text-white shadow-button px-3 md:px-6 py-2 md:py-2.5 text-sm md:text-base font-medium whitespace-nowrap"
-                  >
-                    <span className="hidden sm:inline">Entrar no ambiente</span>
-                    <span className="sm:hidden">Entrar</span>
-                    <ArrowRight className="w-3 h-3 md:w-4 md:h-4 ml-1 md:ml-2" />
-                  </Button>
-                </Link>
-              </div>
+              </a>
             </div>
           </div>
         </div>
