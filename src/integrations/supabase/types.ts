@@ -256,6 +256,14 @@ export type Database = {
           team_name: string
         }[]
       }
+      get_teams_safe_secure: {
+        Args: Record<PropertyKey, never>
+        Returns: {
+          created_at: string
+          team_id: string
+          team_name: string
+        }[]
+      }
       is_system_admin: {
         Args: Record<PropertyKey, never>
         Returns: boolean
