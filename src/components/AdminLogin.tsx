@@ -10,7 +10,7 @@ import { useAdminAuth } from "@/contexts/AdminAuthContext";
 
 const AdminLogin = () => {
   const { toast } = useToast();
-  const { login } = useAdminAuth();
+  const { login, isLoading: authLoading } = useAdminAuth();
   const [formData, setFormData] = useState({
     username: "",
     password: "",
@@ -32,25 +32,33 @@ const AdminLogin = () => {
 
     setIsLoading(true);
 
-    // Simulate loading time
-    setTimeout(() => {
-      const success = login(formData.username, formData.password);
+    try {
+      const result = await login(formData.username, formData.password);
       
-      if (success) {
+      if (result.success) {
         toast({
           title: "Sucesso",
           description: "Login realizado com sucesso!",
         });
+        // Clear form
+        setFormData({ username: "", password: "" });
       } else {
         toast({
-          title: "Erro",
-          description: "Credenciais inválidas. Verifique o usuário e senha.",
+          title: "Erro de Autenticação",
+          description: result.error || "Credenciais inválidas. Verifique o usuário e senha.",
           variant: "destructive"
         });
       }
-      
+    } catch (error) {
+      console.error('Login error:', error);
+      toast({
+        title: "Erro de Conexão",
+        description: "Não foi possível conectar ao servidor. Tente novamente.",
+        variant: "destructive"
+      });
+    } finally {
       setIsLoading(false);
-    }, 800);
+    }
   };
 
   return (
@@ -136,9 +144,9 @@ const AdminLogin = () => {
                 <Button 
                   type="submit" 
                   className="w-full gradient-primary shadow-button hover:shadow-elegant transition-bounce hover:scale-[1.02]"
-                  disabled={isLoading}
+                  disabled={isLoading || authLoading}
                 >
-                  {isLoading ? (
+                  {(isLoading || authLoading) ? (
                     <div className="flex items-center space-x-2">
                       <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
                       <span>Autenticando...</span>

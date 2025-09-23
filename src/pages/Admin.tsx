@@ -14,12 +14,13 @@ import { useAdmin, TeamWithStats } from "@/hooks/useAdmin";
 import { useAdminAuth } from "@/contexts/AdminAuthContext";
 import { supabase } from "@/integrations/supabase/client";
 import AdminLogin from "@/components/AdminLogin";
+import AdminSetup from "@/components/AdminSetup";
 import SecurityIndicator from "@/components/SecurityIndicator";
 import SecurityDocumentation from "@/components/SecurityDocumentation";
 
 const Admin = () => {
   const { toast } = useToast();
-  const { isAuthenticated, logout } = useAdminAuth();
+  const { isAuthenticated, logout, isLoading: authLoading } = useAdminAuth();
   const { teams, stats, loading, createTeam, updateTeam, deleteTeam } = useAdmin();
   const [activeTab, setActiveTab] = useState("teams");
   const [dialogOpen, setDialogOpen] = useState(false);
@@ -27,6 +28,8 @@ const Admin = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [uploading, setUploading] = useState(false);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [needsSetup, setNeedsSetup] = useState<boolean | null>(null);
+  const [checkingSetup, setCheckingSetup] = useState(true);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [formData, setFormData] = useState({
     team_id: "",
@@ -38,6 +41,60 @@ const Admin = () => {
     phone: "",
     terms_document_url: "",
   });
+
+  // Check if admin setup is needed
+  useEffect(() => {
+    checkAdminSetup();
+  }, []);
+
+  const checkAdminSetup = async () => {
+    try {
+      setCheckingSetup(true);
+      
+      // Try to call the setup function with invalid data to see if admins exist
+      const { data, error } = await supabase.functions.invoke('setup-admin', {
+        body: {
+          username: 'test',
+          password: 'test',
+          setup_key: 'test'
+        }
+      });
+
+      // If we get a 409 error, it means admins already exist
+      if (data?.error === 'Admin users already exist. Cannot create more admins through setup.') {
+        setNeedsSetup(false);
+      } else {
+        setNeedsSetup(true);
+      }
+    } catch (error) {
+      console.error('Error checking admin setup:', error);
+      // On error, assume setup is needed
+      setNeedsSetup(true);
+    } finally {
+      setCheckingSetup(false);
+    }
+  };
+
+  // Show loading screen while checking setup
+  if (checkingSetup || authLoading) {
+    return (
+      <div className="min-h-screen bg-gradient-secondary flex items-center justify-center">
+        <Card className="w-full max-w-md shadow-elegant">
+          <CardContent className="flex items-center justify-center p-8">
+            <div className="flex items-center space-x-4">
+              <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin" />
+              <span className="text-lg">Carregando...</span>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
+
+  // Show setup screen if needed
+  if (needsSetup === true) {
+    return <AdminSetup onSetupComplete={() => setNeedsSetup(false)} />;
+  }
 
   // Show login screen if not authenticated
   if (!isAuthenticated) {
