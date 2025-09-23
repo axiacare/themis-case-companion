@@ -98,7 +98,7 @@ const Index = () => {
               Criado por profissionais da saúde. Potencializado por <span className="font-bold text-axcontrol-primary">AI</span>.
             </p>
             <p className="text-base md:text-lg text-axcontrol-dark/70 max-w-3xl mx-auto leading-relaxed">
-              Gera relatórios e quesitos para diferentes necessidades jurídico-médicas, com automações e motores de IA pensados para equipes.
+              Oferece apoio inteligente na construção de análises médico-jurídicas, com relatórios estruturados, quesitos claros e automações de IA para ampliar a segurança das equipes.
             </p>
           </div>
           
