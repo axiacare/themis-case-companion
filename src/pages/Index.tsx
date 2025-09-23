@@ -398,7 +398,7 @@ const Index = () => {
             </Link>
             
             <p className="text-xs md:text-sm text-white/80">
-              Ou solicite cadastro para sua equipe: <a href="mailto:themis@axcare.com.br" className="text-white underline font-medium">themis@axcare.com.br</a>
+              Ou solicite cadastro para sua equipe: <a href="mailto:contato@axcare.com.br" className="text-white underline font-medium">contato@axcare.com.br</a>
             </p>
           </div>
         </div>
