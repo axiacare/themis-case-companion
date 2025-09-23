@@ -80,13 +80,6 @@ export type Database = {
             referencedRelation: "teams"
             referencedColumns: ["team_id"]
           },
-          {
-            foreignKeyName: "cases_team_id_fkey"
-            columns: ["team_id"]
-            isOneToOne: false
-            referencedRelation: "teams_safe"
-            referencedColumns: ["team_id"]
-          },
         ]
       }
       team_settings: {
@@ -117,13 +110,6 @@ export type Database = {
             columns: ["team_id"]
             isOneToOne: false
             referencedRelation: "teams"
-            referencedColumns: ["team_id"]
-          },
-          {
-            foreignKeyName: "team_settings_team_id_fkey"
-            columns: ["team_id"]
-            isOneToOne: false
-            referencedRelation: "teams_safe"
             referencedColumns: ["team_id"]
           },
         ]
@@ -173,26 +159,27 @@ export type Database = {
         }
         Relationships: []
       }
-    }
-    Views: {
       teams_safe: {
         Row: {
-          created_at: string | null
-          team_id: string | null
-          team_name: string | null
+          created_at: string
+          team_id: string
+          team_name: string
         }
         Insert: {
-          created_at?: string | null
-          team_id?: string | null
-          team_name?: string | null
+          created_at?: string
+          team_id: string
+          team_name: string
         }
         Update: {
-          created_at?: string | null
-          team_id?: string | null
-          team_name?: string | null
+          created_at?: string
+          team_id?: string
+          team_name?: string
         }
         Relationships: []
       }
+    }
+    Views: {
+      [_ in never]: never
     }
     Functions: {
       admin_create_team: {
