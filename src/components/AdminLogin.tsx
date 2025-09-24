@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Shield, Eye, EyeOff, Lock, ArrowLeft } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useAdminAuth } from "@/contexts/AdminAuthContext";
+import { isRateLimited, recordFailedAttempt, recordSuccessfulAttempt, getUserIdentifier, formatRetryAfter } from "@/utils/rateLimiter";
 
 const AdminLogin = () => {
   const { toast } = useToast();
@@ -30,19 +31,39 @@ const AdminLogin = () => {
       return;
     }
 
+    // Security: Check rate limiting
+    const userIdentifier = getUserIdentifier();
+    const rateLimitCheck = isRateLimited(userIdentifier, 'adminLogin');
+    
+    if (!rateLimitCheck.allowed) {
+      const retryAfterFormatted = formatRetryAfter(rateLimitCheck.retryAfter || 0);
+      toast({
+        title: "Muitas tentativas",
+        description: `Muitas tentativas de login. Tente novamente em ${retryAfterFormatted}.`,
+        variant: "destructive"
+      });
+      return;
+    }
+
     setIsLoading(true);
 
     try {
       const result = await login(formData.username, formData.password);
       
       if (result.success) {
+        // Security: Record successful attempt (clears rate limiting)
+        recordSuccessfulAttempt(userIdentifier);
+        
         toast({
           title: "Sucesso",
           description: "Login realizado com sucesso!",
         });
-        // Clear form
+        // Clear form for security
         setFormData({ username: "", password: "" });
       } else {
+        // Security: Record failed attempt for rate limiting
+        recordFailedAttempt(userIdentifier, 'adminLogin');
+        
         toast({
           title: "Erro de Autenticação",
           description: result.error || "Credenciais inválidas. Verifique o usuário e senha.",
@@ -50,6 +71,9 @@ const AdminLogin = () => {
         });
       }
     } catch (error) {
+      // Security: Record failed attempt even for network errors
+      recordFailedAttempt(userIdentifier, 'adminLogin');
+      
       console.error('Login error:', error);
       toast({
         title: "Erro de Conexão",

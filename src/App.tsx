@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { TeamAuthProvider } from "@/contexts/TeamAuthContext";
 import { AdminAuthProvider } from "@/contexts/AdminAuthContext";
 import { lazy, Suspense } from "react";
+import SecurityHeaders from "@/components/SecurityHeaders";
 import Index from "./pages/Index";
 
 // Lazy load non-critical routes to reduce initial bundle size
@@ -27,6 +28,7 @@ const App = () => (
     <AdminAuthProvider>
       <TeamAuthProvider>
         <TooltipProvider>
+          <SecurityHeaders />
           <Toaster />
           <Sonner />
           <BrowserRouter>
