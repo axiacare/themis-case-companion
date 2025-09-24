@@ -20,10 +20,11 @@ interface AdminAuthProviderProps {
   children: ReactNode;
 }
 
-// CONFIGURAR: Ajuste as credenciais de admin para sua solução
+// SECURITY: This legacy auth is disabled for security reasons.
+// Use the secure Supabase-based admin authentication instead.
 const ADMIN_CREDENTIALS = {
-  username: 'admin.usuario', // ALTERE AQUI
-  password: 'sua_senha_admin_2025@' // ALTERE AQUI
+  username: '', // DISABLED - Use Supabase admin system
+  password: '' // DISABLED - Use Supabase admin system
 };
 
 export const AdminAuthProvider: React.FC<AdminAuthProviderProps> = ({ children }) => {
@@ -38,11 +39,9 @@ export const AdminAuthProvider: React.FC<AdminAuthProviderProps> = ({ children }
   }, []);
 
   const login = (username: string, password: string): boolean => {
-    if (username === ADMIN_CREDENTIALS.username && password === ADMIN_CREDENTIALS.password) {
-      setIsAuthenticated(true);
-      localStorage.setItem('admin_authenticated', 'true');
-      return true;
-    }
+    // SECURITY: This legacy authentication is disabled.
+    // Redirect to use the secure Supabase-based admin system.
+    console.warn('Legacy admin authentication disabled. Use secure Supabase admin system.');
     return false;
   };
 

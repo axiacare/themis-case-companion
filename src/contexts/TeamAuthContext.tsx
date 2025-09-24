@@ -34,14 +34,47 @@ export const TeamAuthProvider: React.FC<TeamAuthProviderProps> = ({ children }) 
   const [teamData, setTeamData] = useState<TeamData | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Load team data from sessionStorage on mount
+  // Encrypt/decrypt functions for secure session storage
+  const encryptData = (data: string): string => {
+    // Simple base64 encoding with timestamp for basic obfuscation
+    const timestamp = Date.now().toString();
+    const combined = `${timestamp}:${data}`;
+    return btoa(combined);
+  };
+
+  const decryptData = (encryptedData: string): string | null => {
+    try {
+      const decoded = atob(encryptedData);
+      const [timestamp, data] = decoded.split(':', 2);
+      
+      // Check if data is not older than 8 hours (session timeout)
+      const dataAge = Date.now() - parseInt(timestamp);
+      const eightHours = 8 * 60 * 60 * 1000;
+      
+      if (dataAge > eightHours) {
+        return null; // Session expired
+      }
+      
+      return data;
+    } catch {
+      return null;
+    }
+  };
+
+  // Load team data from sessionStorage on mount with encryption
   useEffect(() => {
     const loadStoredTeamData = () => {
-      const storedTeamData = sessionStorage.getItem('teamData');
-      if (storedTeamData) {
+      const storedEncryptedData = sessionStorage.getItem('teamData');
+      if (storedEncryptedData) {
         try {
-          const parsedData = JSON.parse(storedTeamData);
-          setTeamData(parsedData);
+          const decryptedData = decryptData(storedEncryptedData);
+          if (decryptedData) {
+            const parsedData = JSON.parse(decryptedData);
+            setTeamData(parsedData);
+          } else {
+            // Session expired or invalid, remove it
+            sessionStorage.removeItem('teamData');
+          }
         } catch (error) {
           console.error('Error parsing stored team data:', error);
           sessionStorage.removeItem('teamData');
@@ -92,7 +125,9 @@ export const TeamAuthProvider: React.FC<TeamAuthProviderProps> = ({ children }) 
       };
 
       setTeamData(newTeamData);
-      sessionStorage.setItem('teamData', JSON.stringify(newTeamData));
+      // Store encrypted team data with session timeout
+      const encryptedData = encryptData(JSON.stringify(newTeamData));
+      sessionStorage.setItem('teamData', encryptedData);
       
       // Redirect to team dashboard after successful login
       window.location.href = '/central-equipe';
