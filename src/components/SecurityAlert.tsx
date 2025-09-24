@@ -26,3 +26,5 @@ export const SecurityAlert: React.FC<SecurityAlertProps> = ({
     </Alert>
   );
 };
+
+export default SecurityAlert;

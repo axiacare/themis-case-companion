@@ -11,14 +11,14 @@ export interface TeamWithStats {
   id: string;
   team_id: string;
   team_name: string;
-  cnpj?: string;
-  responsible_name?: string;
-  email?: string;
-  phone?: string;
+  cnpj_masked?: string;
+  responsible_name_masked?: string;
+  email_masked?: string;
+  phone_masked?: string;
   terms_document_url?: string;
   created_at: string;
   updated_at: string;
-  cases_count?: number;
+  total_cases?: number;
 }
 
 export const useAdmin = () => {
@@ -34,34 +34,17 @@ export const useAdmin = () => {
     try {
       setLoading(true);
       
-      // Load teams using secure admin function
+      // Load teams using NEW secure admin function with masked data
       const { data: teamsData, error: teamsError } = await supabase
-        .rpc('admin_list_teams');
+        .rpc('admin_list_teams_secure');
 
       if (teamsError) throw teamsError;
 
-      // Load case counts per team
-      const { data: casesData, error: casesError } = await supabase
-        .from('cases')
-        .select('team_id')
-        .order('created_at', { ascending: false });
-
-      if (casesError) {
-        console.warn('Could not load cases data:', casesError);
-      }
-
-      // Count cases per team
-      const caseCounts: Record<string, number> = {};
-      if (casesData) {
-        casesData.forEach(caseItem => {
-          caseCounts[caseItem.team_id] = (caseCounts[caseItem.team_id] || 0) + 1;
-        });
-      }
-
-      // Combine teams with case counts
+      // The secure function already includes case counts and masked data
       const teamsWithStats: TeamWithStats[] = (teamsData || []).map(team => ({
         ...team,
-        cases_count: caseCounts[team.team_id] || 0,
+        // Map total_cases to our interface
+        total_cases: team.total_cases || 0,
       }));
 
       setTeams(teamsWithStats);
@@ -77,7 +60,7 @@ export const useAdmin = () => {
                createdDate.getFullYear() === currentYear;
       }).length;
 
-      const totalCases = Object.values(caseCounts).reduce((sum, count) => sum + count, 0);
+      const totalCases = teamsWithStats.reduce((sum, team) => sum + (team.total_cases || 0), 0);
 
       setStats({
         totalTeams: teamsWithStats.length,

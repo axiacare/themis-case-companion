@@ -375,6 +375,22 @@ export type Database = {
           updated_at: string
         }[]
       }
+      admin_list_teams_secure: {
+        Args: Record<PropertyKey, never>
+        Returns: {
+          cnpj_masked: string
+          created_at: string
+          email_masked: string
+          id: string
+          phone_masked: string
+          responsible_name_masked: string
+          team_id: string
+          team_name: string
+          terms_document_url: string
+          total_cases: number
+          updated_at: string
+        }[]
+      }
       admin_logout: {
         Args: { p_session_token: string }
         Returns: boolean

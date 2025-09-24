@@ -17,6 +17,7 @@ import AdminLogin from "@/components/AdminLogin";
 import AdminSetup from "@/components/AdminSetup";
 import SecurityIndicator from "@/components/SecurityIndicator";
 import SecurityDocumentation from "@/components/SecurityDocumentation";
+import { SecurityAlert } from "@/components/SecurityAlert";
 
 const Admin = () => {
   const { toast } = useToast();
@@ -192,10 +193,10 @@ const Admin = () => {
       team_id: team.team_id,
       team_name: team.team_name,
       password: "",
-      cnpj: team.cnpj || "",
-      responsible_name: team.responsible_name || "",
-      email: team.email || "",
-      phone: team.phone || "",
+      cnpj: team.cnpj_masked || "",
+      responsible_name: team.responsible_name_masked || "",
+      email: team.email_masked || "",
+      phone: team.phone_masked || "",
       terms_document_url: team.terms_document_url || "",
     });
     setDialogOpen(true);
@@ -476,6 +477,12 @@ const Admin = () => {
               </Dialog>
             </div>
 
+            {/* Security Notice */}
+            <SecurityAlert 
+              message="Por segurança, dados sensíveis (emails, telefones, CNPJ, nomes) são mascarados na visualização. Os dados reais são preservados no banco de dados e visíveis apenas para cada equipe proprietária." 
+              severity="medium" 
+            />
+
             {/* Teams Table */}
             <Card className="shadow-elegant">
               <CardHeader>
@@ -515,9 +522,9 @@ const Admin = () => {
                         <TableRow key={team.id}>
                           <TableCell className="font-mono">{team.team_id}</TableCell>
                           <TableCell className="font-medium">{team.team_name}</TableCell>
-                          <TableCell>{team.email || "-"}</TableCell>
+                          <TableCell>{team.email_masked || "-"}</TableCell>
                           <TableCell>
-                            <Badge variant="secondary">{team.cases_count || 0}</Badge>
+                            <Badge variant="secondary">{team.total_cases || 0}</Badge>
                           </TableCell>
                           <TableCell>{new Date(team.created_at).toLocaleDateString('pt-BR')}</TableCell>
                           <TableCell className="text-right">
