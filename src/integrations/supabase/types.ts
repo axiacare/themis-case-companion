@@ -436,6 +436,38 @@ export type Database = {
         }
         Returns: undefined
       }
+      mask_cnpj: {
+        Args: {
+          cnpj_value: string
+          owner_team_id: string
+          viewer_team_id: string
+        }
+        Returns: string
+      }
+      mask_email: {
+        Args: {
+          email_value: string
+          owner_team_id: string
+          viewer_team_id: string
+        }
+        Returns: string
+      }
+      mask_phone: {
+        Args: {
+          owner_team_id: string
+          phone_value: string
+          viewer_team_id: string
+        }
+        Returns: string
+      }
+      mask_responsible_name: {
+        Args: {
+          name_value: string
+          owner_team_id: string
+          viewer_team_id: string
+        }
+        Returns: string
+      }
       mask_sensitive_data: {
         Args: {
           data_type: string
