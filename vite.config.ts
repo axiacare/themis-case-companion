@@ -21,5 +21,12 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     sourcemap: true, // Enable source maps for production debugging
+    cssCodeSplit: true, // Enable CSS code splitting for better caching
+    rollupOptions: {
+      output: {
+        // Optimize CSS loading with preload hints
+        manualChunks: undefined,
+      },
+    },
   },
 }));

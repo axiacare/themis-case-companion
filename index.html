@@ -14,12 +14,39 @@
     <!-- Non-blocking font CSS using print media trick -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
-    <!-- Inline critical font-face definitions for instant rendering -->
+    <!-- Inline critical font-face definitions and CSS variables for instant rendering -->
     <style>
       @font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2) format('woff2')}
       @font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7W0Q5nw.woff2) format('woff2')}
       @font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa3pL7W0Q5nw.woff2) format('woff2')}
       @font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0pL7W0Q5nw.woff2) format('woff2')}
+      
+      /* Critical AxControl™ Design System Variables - Inlined for instant rendering */
+      :root {
+        --color-primary: 205 67% 30%;
+        --color-secondary-1: 154 35% 70%;
+        --color-secondary-2: 85 95% 72%;
+        --color-dark: 222 21% 18%;
+        --color-light: 40 25% 94%;
+        --color-white: 0 0% 100%;
+        --color-accent: 158 55% 28%;
+        --color-accent-medvalor: 34 100% 45%;
+        --background: var(--color-light);
+        --foreground: var(--color-dark);
+        --primary: var(--color-primary);
+        --primary-foreground: var(--color-white);
+      }
+      
+      /* Critical base styles for immediate layout */
+      *, ::before, ::after { box-sizing: border-box; }
+      body { 
+        font-family: 'Inter', system-ui, sans-serif; 
+        line-height: 1.5; 
+        background-color: hsl(var(--background)); 
+        color: hsl(var(--foreground)); 
+        margin: 0;
+      }
+      #root { min-height: 100vh; }
     </style>
     <title>Themis™ - Um ambiente inteligente em necessidades jurídicas na saúde | AxiaCare®</title>
     <meta name="description" content="Ambiente inteligente pensado para equipes. Gera relatórios e quesitos para diferentes necessidades jurídico-médicas, com automações e motores de IA. Criado por profissionais da saúde. Potencializado por IA." />
