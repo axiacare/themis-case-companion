@@ -8,33 +8,33 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground">
       {/* Header - AxControl™ Visual */}
       <header className="header-sticky bg-card border-b border-axcontrol-secondary-1/30">
-        <div className="container mx-auto px-4 py-4">
+        <div className="container mx-auto px-4 py-3 md:py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-3 md:space-x-4 flex-1 min-w-0">
+            <div className="flex items-center space-x-4 md:space-x-4 flex-1 min-w-0">
               <img 
                 src="/logo-axia-principal.png"
                 alt="AxiaCare Logo" 
                 width="64"
                 height="64"
-                className="w-12 h-12 md:w-16 md:h-16 object-contain flex-shrink-0"
+                className="w-14 h-14 md:w-16 md:h-16 object-contain flex-shrink-0"
               />
               <div className="flex flex-col min-w-0">
                 <h1 className="text-xl md:text-2xl font-bold text-axcontrol-dark">Themis™</h1>
-                <span className="text-xs md:text-sm text-axcontrol-primary font-medium hidden sm:block">
+                <span className="text-sm md:text-sm text-axcontrol-primary font-medium hidden sm:block">
                   Ambiente Inteligente de Necessidades Jurídicas na Saúde
                 </span>
-                <span className="text-xs text-axcontrol-primary font-medium sm:hidden">
+                <span className="text-sm text-axcontrol-primary font-medium sm:hidden">
                   Necessidades Jurídicas na Saúde
                 </span>
               </div>
             </div>
             
-            <div className="flex items-center space-x-2 md:space-x-3 flex-shrink-0">
+            <div className="flex items-center space-x-3 md:space-x-3 flex-shrink-0">
               <Link to="/admin">
                 <Button 
                   variant="outline"
                   size="sm"
-                  className="text-axcontrol-primary border-axcontrol-primary hover:bg-axcontrol-primary hover:text-white transition-smooth px-3 md:px-4"
+                  className="text-axcontrol-primary border-axcontrol-primary hover:bg-axcontrol-primary hover:text-white transition-smooth px-4 md:px-4 py-2 md:py-2"
                 >
                   <span className="text-sm font-medium">Admin</span>
                 </Button>
@@ -43,11 +43,11 @@ const Index = () => {
               <Link to="/acesso">
                 <Button 
                   size="sm"
-                  className="bg-axcontrol-primary hover:bg-axcontrol-primary/90 text-white shadow-button px-3 md:px-6 py-2 md:py-2.5 text-sm md:text-base font-medium whitespace-nowrap"
+                  className="bg-axcontrol-primary hover:bg-axcontrol-primary/90 text-white shadow-button px-5 md:px-6 py-2.5 md:py-2.5 text-sm md:text-base font-medium whitespace-nowrap"
                 >
                   <span className="hidden sm:inline">Entrar no ambiente</span>
                   <span className="sm:hidden">Entrar</span>
-                  <ArrowRight className="w-3 h-3 md:w-4 md:h-4 ml-1 md:ml-2" />
+                  <ArrowRight className="w-4 h-4 md:w-4 md:h-4 ml-2 md:ml-2" />
                 </Button>
               </Link>
               
@@ -55,7 +55,7 @@ const Index = () => {
                 href="https://axcare.com.br" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="hover-scale-sm transition-smooth ml-2"
+                className="hover-scale-sm transition-smooth ml-2 hidden sm:block"
               >
                 <img 
                   src="/axiacare-logo-oficial.png"
@@ -72,17 +72,17 @@ const Index = () => {
 
       {/* LGPD Badge */}
       <div className="bg-axcontrol-secondary-2/20 border-b border-axcontrol-accent/20">
-        <div className="container mx-auto px-4 py-1.5 md:py-2">
-          <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-4 text-xs md:text-sm text-axcontrol-dark">
+        <div className="container mx-auto px-4 py-2 md:py-2">
+          <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-4 text-sm md:text-sm text-axcontrol-dark">
             <div className="flex items-center space-x-2">
-              <Shield className="w-3 h-3 md:w-4 md:h-4 text-axcontrol-accent" />
+              <Shield className="w-4 h-4 md:w-4 md:h-4 text-axcontrol-accent" />
               <span className="font-medium text-center">Ambiente seguro • ISO/IEC 27001 e 27701 • LGPD</span>
             </div>
             <a 
               href="https://hub.axcare.com.br/compliance"
               target="_blank"
               rel="noopener noreferrer"
-              className="chip-compliance hover:bg-success/80 transition-smooth text-xs"
+              className="chip-compliance hover:bg-success/80 transition-smooth text-sm px-4 py-1.5"
             >
               Central de Compliance
             </a>
@@ -91,25 +91,25 @@ const Index = () => {
       </div>
 
       {/* Hero Section - Conteúdo Original */}
-      <section className="py-12 md:py-20 px-4 bg-axcontrol-light">
+      <section className="py-16 md:py-20 px-4 bg-axcontrol-light">
         <div className="container mx-auto text-center max-w-4xl">
-          <div className="mb-6 md:mb-8">
-            <h2 className="text-3xl md:text-5xl font-bold text-axcontrol-dark mb-4 md:mb-6">
+          <div className="mb-8 md:mb-8">
+            <h2 className="text-4xl md:text-5xl font-bold text-axcontrol-dark mb-6 md:mb-6">
               Themis™
-              <span className="block text-axcontrol-dark/80 text-xl md:text-3xl mt-2">Um ambiente inteligente em necessidades jurídicas na saúde</span>
+              <span className="block text-axcontrol-dark/80 text-2xl md:text-3xl mt-3">Um ambiente inteligente em necessidades jurídicas na saúde</span>
             </h2>
-            <p className="text-lg md:text-xl text-axcontrol-dark/80 max-w-3xl mx-auto leading-relaxed mb-4 md:mb-6 font-medium">
+            <p className="text-xl md:text-xl text-axcontrol-dark/80 max-w-3xl mx-auto leading-relaxed mb-6 md:mb-6 font-medium">
               Criado por profissionais da saúde. Potencializado por <span className="font-bold text-axcontrol-primary">AI</span>.
             </p>
-            <p className="text-base md:text-lg text-axcontrol-dark/70 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-lg text-axcontrol-dark/70 max-w-3xl mx-auto leading-relaxed">
               Oferece apoio inteligente na construção de análises médico-jurídicas, com relatórios estruturados, quesitos claros e automações de IA para ampliar a segurança das equipes.
             </p>
           </div>
           
           <Link to="/acesso">
-            <Button size="lg" className="bg-axcontrol-primary hover:bg-axcontrol-primary/90 text-white shadow-institutional hover-lift px-6 md:px-10 py-3 md:py-5 text-base md:text-lg font-semibold rounded-xl">
+            <Button size="lg" className="bg-axcontrol-primary hover:bg-axcontrol-primary/90 text-white shadow-institutional hover-lift px-8 md:px-10 py-4 md:py-5 text-lg md:text-lg font-semibold rounded-xl">
               Entrar no ambiente
-              <ArrowRight className="w-4 h-4 md:w-5 md:h-5 ml-2 md:ml-3" />
+              <ArrowRight className="w-5 h-5 md:w-5 md:h-5 ml-3 md:ml-3" />
             </Button>
           </Link>
         </div>

@@ -125,20 +125,20 @@ const AuditLogs = () => {
       <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
         {/* Header */}
         <header className="header-sticky bg-card border-b border-axcontrol-secondary-1/30">
-          <div className="container mx-auto px-4 py-4">
+          <div className="container mx-auto px-4 py-3 md:py-4">
             <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-3 md:space-x-4 flex-1 min-w-0">
+              <div className="flex items-center space-x-4 md:space-x-4 flex-1 min-w-0">
                 <img 
                   src="/logo-axia-principal.png"
                   alt="AxiaCare Logo" 
-                  className="w-12 h-12 md:w-16 md:h-16 object-contain flex-shrink-0"
+                  className="w-14 h-14 md:w-16 md:h-16 object-contain flex-shrink-0"
                 />
                 <div className="flex flex-col min-w-0">
                   <h1 className="text-xl md:text-2xl font-bold text-axcontrol-dark">Themis™</h1>
-                  <span className="text-xs md:text-sm text-axcontrol-primary font-medium hidden sm:block">
+                  <span className="text-sm md:text-sm text-axcontrol-primary font-medium hidden sm:block">
                     Logs de Auditoria • {teamData?.team_name}
                   </span>
-                  <span className="text-xs text-axcontrol-primary font-medium sm:hidden">
+                  <span className="text-sm text-axcontrol-primary font-medium sm:hidden">
                     Auditoria
                   </span>
                 </div>

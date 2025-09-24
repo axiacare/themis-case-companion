@@ -123,28 +123,28 @@ const TeamDashboard = () => {
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
       {/* Header */}
       <header className="header-sticky bg-card border-b border-axcontrol-secondary-1/30">
-        <div className="container mx-auto px-4 py-4">
+        <div className="container mx-auto px-4 py-3 md:py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-3 md:space-x-4 flex-1 min-w-0">
+            <div className="flex items-center space-x-4 md:space-x-4 flex-1 min-w-0">
               <img 
                 src="/logo-axia-principal.png"
                 alt="AxiaCare Logo" 
-                className="w-12 h-12 md:w-16 md:h-16 object-contain flex-shrink-0"
+                className="w-14 h-14 md:w-16 md:h-16 object-contain flex-shrink-0"
               />
               <div className="flex flex-col min-w-0">
                 <h1 className="text-xl md:text-2xl font-bold text-axcontrol-dark">Themis™</h1>
-                <span className="text-xs md:text-sm text-axcontrol-primary font-medium hidden sm:block">
+                <span className="text-sm md:text-sm text-axcontrol-primary font-medium hidden sm:block">
                   Central de Equipe • Análise Jurídico-Médica
                 </span>
-                <span className="text-xs text-axcontrol-primary font-medium sm:hidden">
+                <span className="text-sm text-axcontrol-primary font-medium sm:hidden">
                   Central de Equipe
                 </span>
               </div>
             </div>
             
-            <div className="flex items-center space-x-2 md:space-x-3 flex-shrink-0">
-              <Badge variant="secondary" className="px-2 md:px-3 py-1 text-xs">
-                <Users className="w-3 h-3 md:w-4 md:h-4 mr-1" />
+            <div className="flex items-center space-x-3 md:space-x-3 flex-shrink-0">
+              <Badge variant="secondary" className="px-3 md:px-3 py-1.5 text-sm">
+                <Users className="w-4 h-4 md:w-4 md:h-4 mr-1" />
                 <span className="hidden sm:inline">{teamData.team_id}</span>
                 <span className="sm:hidden">{teamData.team_id.substring(0, 8)}...</span>
               </Badge>
@@ -152,11 +152,10 @@ const TeamDashboard = () => {
                 variant="ghost"
                 size="sm"
                 onClick={handleLogout}
-                className="text-muted-foreground hover:text-foreground text-xs md:text-sm"
+                className="text-muted-foreground hover:text-foreground text-sm md:text-sm px-3 py-2"
               >
-                <LogOut className="w-3 h-3 md:w-4 md:h-4 mr-1 md:mr-2" />
-                <span className="hidden sm:inline">Sair</span>
-                <span className="sm:hidden">Sair</span>
+                <LogOut className="w-4 h-4 md:w-4 md:h-4 mr-2 md:mr-2" />
+                <span>Sair</span>
               </Button>
             </div>
           </div>

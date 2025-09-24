@@ -32,24 +32,25 @@ const Confirmation = () => {
   return (
     <div className="min-h-screen bg-gradient-secondary">
       {/* Header */}
-      <header className="border-b bg-card backdrop-blur-sm sticky top-0 z-10">
-        <div className="container mx-auto px-4 py-4">
+      <header className="header-sticky bg-card border-b border-axcontrol-secondary-1/30">
+        <div className="container mx-auto px-4 py-3 md:py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-4 md:space-x-4 flex-1 min-w-0">
               <img 
                 src="/logo-axia-principal.png"
                 alt="Themis™ Logo" 
-                className="w-16 h-16 object-contain"
+                className="w-14 h-14 md:w-16 md:h-16 object-contain flex-shrink-0"
               />
-              <div className="flex flex-col">
-                <h1 className="text-2xl font-bold text-white">Themis™</h1>
-                <span className="text-sm text-white/80 font-medium">AxControl™</span>
+              <div className="flex flex-col min-w-0">
+                <h1 className="text-xl md:text-2xl font-bold text-white">Themis™</h1>
+                <span className="text-sm md:text-sm text-white/80 font-medium">Confirmação de Envio</span>
               </div>
             </div>
-            <Link to="/">
-              <Button variant="outline" className="transition-smooth">
+            <Link to="/central-equipe">
+              <Button variant="outline" className="transition-smooth px-4 py-2 text-sm">
                 <ArrowLeft className="w-4 h-4 mr-2" />
-                Voltar
+                <span className="hidden sm:inline">Central</span>
+                <span className="sm:hidden">Central</span>
               </Button>
             </Link>
           </div>

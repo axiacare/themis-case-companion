@@ -248,34 +248,36 @@ const Admin = () => {
     <div className="min-h-screen bg-gradient-secondary">
       {/* Header */}
       <header className="border-b bg-card backdrop-blur-sm sticky top-0 z-10">
-        <div className="container mx-auto px-4 py-4">
+        <div className="container mx-auto px-4 py-3 md:py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-4 md:space-x-4">
               <img 
                 src="/logo-axia-principal.png"
                 alt="Themis™ Logo" 
-                className="w-16 h-16 object-contain"
+                className="w-14 h-14 md:w-16 md:h-16 object-contain"
               />
               <div className="flex flex-col">
-                <h1 className="text-2xl font-bold text-white">Themis™</h1>
-                <span className="text-lg text-white/90 font-semibold">Painel Administrador</span>
-                <span className="text-sm text-white/80 font-medium">Gerenciamento de Equipes</span>
+                <h1 className="text-xl md:text-2xl font-bold text-white">Themis™</h1>
+                <span className="text-base md:text-lg text-white/90 font-semibold">Painel Administrador</span>
+                <span className="text-sm md:text-sm text-white/80 font-medium">Gerenciamento de Equipes</span>
               </div>
             </div>
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-3 md:space-x-2">
               <Link to="/">
-                <Button variant="outline" className="transition-smooth">
+                <Button variant="outline" className="transition-smooth px-3 md:px-4 py-2">
                   <ArrowLeft className="w-4 h-4 mr-2" />
-                  Voltar
+                  <span className="hidden sm:inline">Voltar</span>
+                  <span className="sm:hidden">Voltar</span>
                 </Button>
               </Link>
               <Button 
                 variant="outline" 
                 onClick={logout}
-                className="text-destructive border-destructive hover:bg-destructive hover:text-destructive-foreground transition-smooth"
+                className="text-destructive border-destructive hover:bg-destructive hover:text-destructive-foreground transition-smooth px-3 md:px-4 py-2"
               >
                 <LogOut className="w-4 h-4 mr-2" />
-                Sair
+                <span className="hidden sm:inline">Sair</span>
+                <span className="sm:hidden">Sair</span>
               </Button>
             </div>
           </div>
