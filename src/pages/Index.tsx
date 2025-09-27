@@ -315,74 +315,76 @@ const Index = () => {
       {/* A força da AxiaCare® */}
       <section className="py-12 md:py-16 px-4 bg-white">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
-            <div>
-              <div className="flex items-center space-x-2 md:space-x-3 mb-4 md:mb-6">
-                <img 
-                  src="/axia-logo.png" 
-                  alt="AxiaCare®" 
-                  width="64"
-                  height="64"
-                  loading="lazy"
-                  decoding="async"
-                  className="w-12 h-12 md:w-16 md:h-16 object-contain shadow-button"
-                />
-                <h3 className="text-2xl md:text-3xl font-bold text-axcontrol-primary">A força da AxiaCare®</h3>
-              </div>
-              
-              <p className="text-base md:text-lg text-axcontrol-dark mb-4 md:mb-6 leading-relaxed">
-                A <strong>AxiaCare®</strong> é uma empresa de consultoria comprometida com cuidados de saúde baseados em valor (VBHC - Value Based Health Care), 
-                desenvolvendo soluções inteligentes que conectam profissionais, instituições e pacientes.
-              </p>
-              
-              <div className="mb-4 md:mb-6">
-                <h4 className="text-lg md:text-xl font-semibold text-axcontrol-primary mb-3 md:mb-4">AxControls™ — Ecossistema Integrado para Gestão Inteligente em Saúde</h4>
-                <div className="space-y-2 md:space-y-3 text-sm md:text-base">
-                  <div className="flex items-center space-x-2 md:space-x-3">
-                    <div className="w-2.5 h-2.5 md:w-3 md:h-3 bg-axcontrol-accent rounded-full"></div>
-                    <span className="text-axcontrol-dark"><strong>AxWay™</strong> — Métodos estruturados que traduzem visão sistêmica em prática efetiva.</span>
-                  </div>
-                  <div className="flex items-center space-x-2 md:space-x-3">
-                    <div className="w-2.5 h-2.5 md:w-3 md:h-3 bg-axcontrol-secondary-2 rounded-full"></div>
-                    <span className="text-axcontrol-dark"><strong>AxView™</strong> — Modelos visuais padronizados e profissionais, aplicados em todas as entregas.</span>
-                  </div>
-                  <div className="flex items-center space-x-2 md:space-x-3">
-                    <div className="w-2.5 h-2.5 md:w-3 md:h-3 bg-axcontrol-primary rounded-full"></div>
-                    <span className="text-axcontrol-dark"><strong>AxIntel™</strong> — Inteligência Artificial especializada, desenvolvida para decisões clínicas e de gestão.</span>
-                  </div>
-                  <div className="flex items-center space-x-2 md:space-x-3">
-                    <div className="w-2.5 h-2.5 md:w-3 md:h-3 bg-axcontrol-secondary-1 rounded-full"></div>
-                    <span className="text-axcontrol-dark"><strong>AxWise™</strong> — Educação contínua e aplicada, garantindo evolução e impacto real.</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-4 md:mt-6">
-                <a 
-                  href="https://axiacare.com.br" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-axcontrol-accent-subtle hover:text-axcontrol-primary transition-smooth font-medium text-sm md:text-base"
-                >
-                  Conheça mais sobre a AxiaCare® 
-                  <ArrowRight className="w-3 h-3 md:w-4 md:h-4 ml-1 md:ml-2" />
-                </a>
-              </div>
+          <div className="text-center mb-8 md:mb-12">
+            <div className="flex items-center justify-center space-x-2 md:space-x-3 mb-4 md:mb-6">
+              <img 
+                src="/axia-logo.png" 
+                alt="AxiaCare®" 
+                width="48"
+                height="48"
+                loading="lazy"
+                decoding="async"
+                className="w-10 h-10 md:w-12 md:h-12 object-contain"
+              />
+              <h3 className="text-2xl md:text-3xl font-bold text-axcontrol-primary">A força da AxiaCare®</h3>
             </div>
             
-            <div className="hidden lg:block">
-              <div className="relative">
-                <img 
-                  src="/logo-axia-principal-optimized.webp" 
-                  alt="AxiaCare® - Força e inovação em saúde" 
-                  width="500"
-                  height="400"
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-auto object-contain"
-                />
+            <p className="text-base md:text-lg text-axcontrol-dark max-w-4xl mx-auto leading-relaxed">
+              A <strong>AxiaCare®</strong> é uma empresa de consultoria comprometida com cuidados de saúde baseados em valor (VBHC - Value Based Health Care), 
+              desenvolvendo soluções inteligentes que conectam profissionais, instituições e pacientes.
+            </p>
+          </div>
+          
+          <div className="mb-8 md:mb-12">
+            <h4 className="text-xl md:text-2xl font-bold text-axcontrol-primary text-center mb-8 md:mb-10">
+              AxControls™ — Ecossistema Integrado para Gestão de Valor em Saúde
+            </h4>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+              <div className="text-center">
+                <div className="w-4 h-4 bg-blue-500 rounded-full mx-auto mb-4"></div>
+                <h5 className="text-lg md:text-xl font-semibold text-axcontrol-primary mb-3">AxWay™</h5>
+                <p className="text-sm md:text-base text-axcontrol-dark leading-relaxed">
+                  Métodos estruturados que traduzem visão sistêmica em prática efetiva.
+                </p>
+              </div>
+              
+              <div className="text-center">
+                <div className="w-4 h-4 bg-green-500 rounded-full mx-auto mb-4"></div>
+                <h5 className="text-lg md:text-xl font-semibold text-axcontrol-primary mb-3">AxView™</h5>
+                <p className="text-sm md:text-base text-axcontrol-dark leading-relaxed">
+                  Modelos visuais padronizados e profissionais, aplicados em todas as entregas.
+                </p>
+              </div>
+              
+              <div className="text-center">
+                <div className="w-4 h-4 bg-gray-400 rounded-full mx-auto mb-4"></div>
+                <h5 className="text-lg md:text-xl font-semibold text-axcontrol-primary mb-3">AxIntel™</h5>
+                <p className="text-sm md:text-base text-axcontrol-dark leading-relaxed">
+                  Inteligência Artificial especializada, desenvolvida para decisões clínicas e de gestão.
+                </p>
+              </div>
+              
+              <div className="text-center">
+                <div className="w-4 h-4 bg-green-400 rounded-full mx-auto mb-4"></div>
+                <h5 className="text-lg md:text-xl font-semibold text-axcontrol-primary mb-3">AxWise™</h5>
+                <p className="text-sm md:text-base text-axcontrol-dark leading-relaxed">
+                  Educação contínua e aplicada, garantindo evolução e impacto real.
+                </p>
               </div>
             </div>
+          </div>
+
+          <div className="text-center">
+            <a 
+              href="https://axiacare.com.br" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-6 py-3 border border-axcontrol-primary text-axcontrol-primary hover:bg-axcontrol-primary hover:text-white transition-smooth font-medium text-base md:text-lg rounded-lg"
+            >
+              Conheça mais sobre a AxiaCare® 
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </a>
           </div>
         </div>
       </section>
