@@ -369,6 +369,20 @@ const Index = () => {
                 </a>
               </div>
             </div>
+            
+            <div className="hidden lg:block">
+              <div className="relative">
+                <img 
+                  src="/logo-axia-principal-optimized.webp" 
+                  alt="AxiaCare® - Força e inovação em saúde" 
+                  width="500"
+                  height="400"
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-auto object-contain"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
