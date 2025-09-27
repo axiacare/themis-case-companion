@@ -356,7 +356,7 @@ const TeamDashboard = () => {
               <span>|</span>
               <span>Copyright © 2025 AxiaCare | Todos os direitos reservados</span>
               <span>|</span>
-              <span>Uma empresa GTCorp.</span>
+              <span>Uma empresa do Grupo CSV</span>
             </div>
             
             {/* Mobile layout */}
