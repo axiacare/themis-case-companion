@@ -374,7 +374,7 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-12 md:py-16 px-4 bg-axcontrol-primary">
+      <section className="py-12 md:py-16 px-4 gradient-institutional">
         <div className="container mx-auto max-w-4xl text-center">
           <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 md:mb-6">
             Pronto para transformar sua prática em uma gestão mais inteligente?
